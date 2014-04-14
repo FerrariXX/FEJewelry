@@ -1,0 +1,7 @@
+target 'Jewelry' do
+	platform:ios, '5.0'
+
+    #pod 'FEFramework', '0.0.1'
+    #pod 'FEFramework', :path => '../../FEFramework'
+	pod 'FEFramework',:git => 'git@github.com:FerrariXX/FEFramework.git'
+end

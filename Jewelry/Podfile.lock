@@ -1,0 +1,14 @@
+PODS:
+  - FEFramework (0.0.1)
+
+DEPENDENCIES:
+  - FEFramework (from `git@github.com:FerrariXX/FEFramework.git`)
+
+EXTERNAL SOURCES:
+  FEFramework:
+    :git: git@github.com:FerrariXX/FEFramework.git
+
+SPEC CHECKSUMS:
+  FEFramework: 8add7451d687b84be72fcf9ccffcedd661bb206f
+
+COCOAPODS: 0.29.0
