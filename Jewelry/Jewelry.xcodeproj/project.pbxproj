@@ -1,0 +1,538 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6B4A0FC8E3F64B148EE1BE36 /* libPods-Jewelry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7BAA831549477B9B0AB83F /* libPods-Jewelry.a */; };
+		C32712E818FC2DA600971956 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32712E718FC2DA600971956 /* Foundation.framework */; };
+		C32712EA18FC2DA600971956 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32712E918FC2DA600971956 /* CoreGraphics.framework */; };
+		C32712EC18FC2DA600971956 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32712EB18FC2DA600971956 /* UIKit.framework */; };
+		C32712F218FC2DA600971956 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C32712F018FC2DA600971956 /* InfoPlist.strings */; };
+		C32712F418FC2DA600971956 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C32712F318FC2DA600971956 /* main.m */; };
+		C32712F818FC2DA600971956 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C32712F718FC2DA600971956 /* AppDelegate.m */; };
+		C32712FB18FC2DA600971956 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C32712F918FC2DA600971956 /* Main.storyboard */; };
+		C32712FE18FC2DA600971956 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C32712FD18FC2DA600971956 /* FirstViewController.m */; };
+		C327130118FC2DA600971956 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C327130018FC2DA600971956 /* SecondViewController.m */; };
+		C327130318FC2DA600971956 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C327130218FC2DA600971956 /* Images.xcassets */; };
+		C327130A18FC2DA600971956 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C327130918FC2DA600971956 /* XCTest.framework */; };
+		C327130B18FC2DA600971956 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32712E718FC2DA600971956 /* Foundation.framework */; };
+		C327130C18FC2DA600971956 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32712EB18FC2DA600971956 /* UIKit.framework */; };
+		C327131418FC2DA600971956 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C327131218FC2DA600971956 /* InfoPlist.strings */; };
+		C327131618FC2DA600971956 /* JewelryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C327131518FC2DA600971956 /* JewelryTests.m */; };
+		C3A44D0518FC34A600E9B254 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A44D0418FC34A600E9B254 /* AVFoundation.framework */; };
+		C3A44D0718FC34AD00E9B254 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A44D0618FC34AD00E9B254 /* libz.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C327130D18FC2DA600971956 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C32712DC18FC2DA600971956 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C32712E318FC2DA600971956;
+			remoteInfo = Jewelry;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4F7BAA831549477B9B0AB83F /* libPods-Jewelry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Jewelry.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C32712E418FC2DA600971956 /* Jewelry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jewelry.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C32712E718FC2DA600971956 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C32712E918FC2DA600971956 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C32712EB18FC2DA600971956 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C32712EF18FC2DA600971956 /* Jewelry-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Jewelry-Info.plist"; sourceTree = "<group>"; };
+		C32712F118FC2DA600971956 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C32712F318FC2DA600971956 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C32712F518FC2DA600971956 /* Jewelry-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Jewelry-Prefix.pch"; sourceTree = "<group>"; };
+		C32712F618FC2DA600971956 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C32712F718FC2DA600971956 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C32712FA18FC2DA600971956 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C32712FC18FC2DA600971956 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		C32712FD18FC2DA600971956 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		C32712FF18FC2DA600971956 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		C327130018FC2DA600971956 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		C327130218FC2DA600971956 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C327130818FC2DA600971956 /* JewelryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JewelryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C327130918FC2DA600971956 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C327131118FC2DA600971956 /* JewelryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JewelryTests-Info.plist"; sourceTree = "<group>"; };
+		C327131318FC2DA600971956 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C327131518FC2DA600971956 /* JewelryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JewelryTests.m; sourceTree = "<group>"; };
+		C3A44D0418FC34A600E9B254 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C3A44D0618FC34AD00E9B254 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		EA1650D5B05F4F4BB03DA63A /* Pods-Jewelry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jewelry.xcconfig"; path = "Pods/Pods-Jewelry.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C32712E118FC2DA600971956 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3A44D0718FC34AD00E9B254 /* libz.dylib in Frameworks */,
+				C3A44D0518FC34A600E9B254 /* AVFoundation.framework in Frameworks */,
+				C32712EA18FC2DA600971956 /* CoreGraphics.framework in Frameworks */,
+				C32712EC18FC2DA600971956 /* UIKit.framework in Frameworks */,
+				C32712E818FC2DA600971956 /* Foundation.framework in Frameworks */,
+				6B4A0FC8E3F64B148EE1BE36 /* libPods-Jewelry.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C327130518FC2DA600971956 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C327130A18FC2DA600971956 /* XCTest.framework in Frameworks */,
+				C327130C18FC2DA600971956 /* UIKit.framework in Frameworks */,
+				C327130B18FC2DA600971956 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C32712DB18FC2DA600971956 = {
+			isa = PBXGroup;
+			children = (
+				C32712ED18FC2DA600971956 /* Jewelry */,
+				C327130F18FC2DA600971956 /* JewelryTests */,
+				C32712E618FC2DA600971956 /* Frameworks */,
+				C32712E518FC2DA600971956 /* Products */,
+				EA1650D5B05F4F4BB03DA63A /* Pods-Jewelry.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		C32712E518FC2DA600971956 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C32712E418FC2DA600971956 /* Jewelry.app */,
+				C327130818FC2DA600971956 /* JewelryTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C32712E618FC2DA600971956 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3A44D0618FC34AD00E9B254 /* libz.dylib */,
+				C3A44D0418FC34A600E9B254 /* AVFoundation.framework */,
+				C32712E718FC2DA600971956 /* Foundation.framework */,
+				C32712E918FC2DA600971956 /* CoreGraphics.framework */,
+				C32712EB18FC2DA600971956 /* UIKit.framework */,
+				C327130918FC2DA600971956 /* XCTest.framework */,
+				4F7BAA831549477B9B0AB83F /* libPods-Jewelry.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C32712ED18FC2DA600971956 /* Jewelry */ = {
+			isa = PBXGroup;
+			children = (
+				C32712F618FC2DA600971956 /* AppDelegate.h */,
+				C32712F718FC2DA600971956 /* AppDelegate.m */,
+				C32712F918FC2DA600971956 /* Main.storyboard */,
+				C32712FC18FC2DA600971956 /* FirstViewController.h */,
+				C32712FD18FC2DA600971956 /* FirstViewController.m */,
+				C32712FF18FC2DA600971956 /* SecondViewController.h */,
+				C327130018FC2DA600971956 /* SecondViewController.m */,
+				C327130218FC2DA600971956 /* Images.xcassets */,
+				C32712EE18FC2DA600971956 /* Supporting Files */,
+			);
+			path = Jewelry;
+			sourceTree = "<group>";
+		};
+		C32712EE18FC2DA600971956 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C32712EF18FC2DA600971956 /* Jewelry-Info.plist */,
+				C32712F018FC2DA600971956 /* InfoPlist.strings */,
+				C32712F318FC2DA600971956 /* main.m */,
+				C32712F518FC2DA600971956 /* Jewelry-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C327130F18FC2DA600971956 /* JewelryTests */ = {
+			isa = PBXGroup;
+			children = (
+				C327131518FC2DA600971956 /* JewelryTests.m */,
+				C327131018FC2DA600971956 /* Supporting Files */,
+			);
+			path = JewelryTests;
+			sourceTree = "<group>";
+		};
+		C327131018FC2DA600971956 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C327131118FC2DA600971956 /* JewelryTests-Info.plist */,
+				C327131218FC2DA600971956 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C32712E318FC2DA600971956 /* Jewelry */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C327131918FC2DA600971956 /* Build configuration list for PBXNativeTarget "Jewelry" */;
+			buildPhases = (
+				FEFA7C41CFC54858AE4F3CAC /* Check Pods Manifest.lock */,
+				C32712E018FC2DA600971956 /* Sources */,
+				C32712E118FC2DA600971956 /* Frameworks */,
+				C32712E218FC2DA600971956 /* Resources */,
+				2163E8BA94BC4D94BE743ED5 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Jewelry;
+			productName = Jewelry;
+			productReference = C32712E418FC2DA600971956 /* Jewelry.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C327130718FC2DA600971956 /* JewelryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C327131C18FC2DA600971956 /* Build configuration list for PBXNativeTarget "JewelryTests" */;
+			buildPhases = (
+				C327130418FC2DA600971956 /* Sources */,
+				C327130518FC2DA600971956 /* Frameworks */,
+				C327130618FC2DA600971956 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C327130E18FC2DA600971956 /* PBXTargetDependency */,
+			);
+			name = JewelryTests;
+			productName = JewelryTests;
+			productReference = C327130818FC2DA600971956 /* JewelryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C32712DC18FC2DA600971956 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = FE;
+				TargetAttributes = {
+					C327130718FC2DA600971956 = {
+						TestTargetID = C32712E318FC2DA600971956;
+					};
+				};
+			};
+			buildConfigurationList = C32712DF18FC2DA600971956 /* Build configuration list for PBXProject "Jewelry" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C32712DB18FC2DA600971956;
+			productRefGroup = C32712E518FC2DA600971956 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C32712E318FC2DA600971956 /* Jewelry */,
+				C327130718FC2DA600971956 /* JewelryTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C32712E218FC2DA600971956 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C327130318FC2DA600971956 /* Images.xcassets in Resources */,
+				C32712F218FC2DA600971956 /* InfoPlist.strings in Resources */,
+				C32712FB18FC2DA600971956 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C327130618FC2DA600971956 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C327131418FC2DA600971956 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2163E8BA94BC4D94BE743ED5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Jewelry-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEFA7C41CFC54858AE4F3CAC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C32712E018FC2DA600971956 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C327130118FC2DA600971956 /* SecondViewController.m in Sources */,
+				C32712F818FC2DA600971956 /* AppDelegate.m in Sources */,
+				C32712FE18FC2DA600971956 /* FirstViewController.m in Sources */,
+				C32712F418FC2DA600971956 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C327130418FC2DA600971956 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C327131618FC2DA600971956 /* JewelryTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C327130E18FC2DA600971956 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C32712E318FC2DA600971956 /* Jewelry */;
+			targetProxy = C327130D18FC2DA600971956 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C32712F018FC2DA600971956 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C32712F118FC2DA600971956 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C32712F918FC2DA600971956 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C32712FA18FC2DA600971956 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C327131218FC2DA600971956 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C327131318FC2DA600971956 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C327131718FC2DA600971956 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C327131818FC2DA600971956 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C327131A18FC2DA600971956 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA1650D5B05F4F4BB03DA63A /* Pods-Jewelry.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Jewelry/Jewelry-Prefix.pch";
+				INFOPLIST_FILE = "Jewelry/Jewelry-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C327131B18FC2DA600971956 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA1650D5B05F4F4BB03DA63A /* Pods-Jewelry.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Jewelry/Jewelry-Prefix.pch";
+				INFOPLIST_FILE = "Jewelry/Jewelry-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C327131D18FC2DA600971956 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Jewelry.app/Jewelry";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Jewelry/Jewelry-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "JewelryTests/JewelryTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C327131E18FC2DA600971956 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Jewelry.app/Jewelry";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Jewelry/Jewelry-Prefix.pch";
+				INFOPLIST_FILE = "JewelryTests/JewelryTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C32712DF18FC2DA600971956 /* Build configuration list for PBXProject "Jewelry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C327131718FC2DA600971956 /* Debug */,
+				C327131818FC2DA600971956 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C327131918FC2DA600971956 /* Build configuration list for PBXNativeTarget "Jewelry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C327131A18FC2DA600971956 /* Debug */,
+				C327131B18FC2DA600971956 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C327131C18FC2DA600971956 /* Build configuration list for PBXNativeTarget "JewelryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C327131D18FC2DA600971956 /* Debug */,
+				C327131E18FC2DA600971956 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C32712DC18FC2DA600971956 /* Project object */;
+}
