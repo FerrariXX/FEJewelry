@@ -13,18 +13,43 @@
 		C32712EC18FC2DA600971956 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32712EB18FC2DA600971956 /* UIKit.framework */; };
 		C32712F218FC2DA600971956 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C32712F018FC2DA600971956 /* InfoPlist.strings */; };
 		C32712F418FC2DA600971956 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C32712F318FC2DA600971956 /* main.m */; };
-		C32712F818FC2DA600971956 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C32712F718FC2DA600971956 /* AppDelegate.m */; };
-		C32712FB18FC2DA600971956 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C32712F918FC2DA600971956 /* Main.storyboard */; };
-		C32712FE18FC2DA600971956 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C32712FD18FC2DA600971956 /* FirstViewController.m */; };
-		C327130118FC2DA600971956 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C327130018FC2DA600971956 /* SecondViewController.m */; };
 		C327130318FC2DA600971956 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C327130218FC2DA600971956 /* Images.xcassets */; };
 		C327130A18FC2DA600971956 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C327130918FC2DA600971956 /* XCTest.framework */; };
 		C327130B18FC2DA600971956 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32712E718FC2DA600971956 /* Foundation.framework */; };
 		C327130C18FC2DA600971956 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32712EB18FC2DA600971956 /* UIKit.framework */; };
 		C327131418FC2DA600971956 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C327131218FC2DA600971956 /* InfoPlist.strings */; };
 		C327131618FC2DA600971956 /* JewelryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C327131518FC2DA600971956 /* JewelryTests.m */; };
+		C35C342B18FEC97E0062C334 /* JELeftSidePanelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C35C342918FEC97E0062C334 /* JELeftSidePanelVC.m */; };
+		C35C342C18FEC97E0062C334 /* JELeftSidePanelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C35C342A18FEC97E0062C334 /* JELeftSidePanelVC.xib */; };
+		C35C343018FEC9A90062C334 /* JERightSidePanelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C35C342E18FEC9A90062C334 /* JERightSidePanelVC.m */; };
+		C35C343118FEC9A90062C334 /* JERightSidePanelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C35C342F18FEC9A90062C334 /* JERightSidePanelVC.xib */; };
 		C3A44D0518FC34A600E9B254 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A44D0418FC34A600E9B254 /* AVFoundation.framework */; };
 		C3A44D0718FC34AD00E9B254 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A44D0618FC34AD00E9B254 /* libz.dylib */; };
+		C3F72CE918FD8A78007FDB69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F72C4718FD8A78007FDB69 /* AppDelegate.m */; };
+		C3F72CEC18FD8A78007FDB69 /* FETabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F72C4E18FD8A78007FDB69 /* FETabBarView.m */; };
+		C3F72CED18FD8A78007FDB69 /* FETabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F72C5018FD8A78007FDB69 /* FETabBarViewController.m */; };
+		C3F72CEE18FD8A78007FDB69 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = C3F72C5418FD8A78007FDB69 /* checked.png */; };
+		C3F72CEF18FD8A78007FDB69 /* checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3F72C5518FD8A78007FDB69 /* checked@2x.png */; };
+		C3F72CF018FD8A78007FDB69 /* ico_checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = C3F72C5618FD8A78007FDB69 /* ico_checkbox.png */; };
+		C3F72CF118FD8A78007FDB69 /* ico_choose.png in Resources */ = {isa = PBXBuildFile; fileRef = C3F72C5718FD8A78007FDB69 /* ico_choose.png */; };
+		C3F72CF218FD8A78007FDB69 /* login_button_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = C3F72C5818FD8A78007FDB69 /* login_button_normal.png */; };
+		C3F72CF318FD8A78007FDB69 /* login_button_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = C3F72C5918FD8A78007FDB69 /* login_button_pressed.png */; };
+		C3F72CF418FD8A78007FDB69 /* login_gray_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = C3F72C5A18FD8A78007FDB69 /* login_gray_normal.png */; };
+		C3F72CF518FD8A78007FDB69 /* login_gray_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = C3F72C5B18FD8A78007FDB69 /* login_gray_pressed.png */; };
+		C3F72CF718FD8A78007FDB69 /* notchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = C3F72C5D18FD8A78007FDB69 /* notchecked.png */; };
+		C3F72CF818FD8A78007FDB69 /* notchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3F72C5E18FD8A78007FDB69 /* notchecked@2x.png */; };
+		C3F72D0518FD8A78007FDB69 /* tab_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = C3F72C6B18FD8A78007FDB69 /* tab_normal.png */; };
+		C3F72D0618FD8A78007FDB69 /* tab_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = C3F72C6C18FD8A78007FDB69 /* tab_selected.png */; };
+		C3F72D0818FD8A78007FDB69 /* tab_settingsH@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3F72C6E18FD8A78007FDB69 /* tab_settingsH@2x.png */; };
+		C3F72D0A18FD8A78007FDB69 /* tab_settingsN@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3F72C7018FD8A78007FDB69 /* tab_settingsN@2x.png */; };
+		C3F72D8C18FD8E95007FDB69 /* JEFirstTabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F72D8A18FD8E95007FDB69 /* JEFirstTabbarVC.m */; };
+		C3F72D8D18FD8E95007FDB69 /* JEFirstTabbarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F72D8B18FD8E95007FDB69 /* JEFirstTabbarVC.xib */; };
+		C3F72D9518FD8FEC007FDB69 /* JESecondTabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F72D9318FD8FEC007FDB69 /* JESecondTabbarVC.m */; };
+		C3F72D9618FD8FEC007FDB69 /* JESecondTabbarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F72D9418FD8FEC007FDB69 /* JESecondTabbarVC.xib */; };
+		C3F72D9A18FD900C007FDB69 /* JEThirdTabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F72D9818FD900C007FDB69 /* JEThirdTabbarVC.m */; };
+		C3F72D9B18FD900C007FDB69 /* JEThirdTabbarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F72D9918FD900C007FDB69 /* JEThirdTabbarVC.xib */; };
+		C3F72D9F18FD901F007FDB69 /* JEFourthTabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F72D9D18FD901F007FDB69 /* JEFourthTabbarVC.m */; };
+		C3F72DA018FD901F007FDB69 /* JEFourthTabbarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F72D9E18FD901F007FDB69 /* JEFourthTabbarVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,21 +72,53 @@
 		C32712F118FC2DA600971956 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C32712F318FC2DA600971956 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C32712F518FC2DA600971956 /* Jewelry-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Jewelry-Prefix.pch"; sourceTree = "<group>"; };
-		C32712F618FC2DA600971956 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		C32712F718FC2DA600971956 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C32712FA18FC2DA600971956 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C32712FC18FC2DA600971956 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		C32712FD18FC2DA600971956 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		C32712FF18FC2DA600971956 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		C327130018FC2DA600971956 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		C327130218FC2DA600971956 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C327130818FC2DA600971956 /* JewelryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JewelryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C327130918FC2DA600971956 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C327131118FC2DA600971956 /* JewelryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JewelryTests-Info.plist"; sourceTree = "<group>"; };
 		C327131318FC2DA600971956 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C327131518FC2DA600971956 /* JewelryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JewelryTests.m; sourceTree = "<group>"; };
+		C35C342818FEC97E0062C334 /* JELeftSidePanelVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JELeftSidePanelVC.h; sourceTree = "<group>"; };
+		C35C342918FEC97E0062C334 /* JELeftSidePanelVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JELeftSidePanelVC.m; sourceTree = "<group>"; };
+		C35C342A18FEC97E0062C334 /* JELeftSidePanelVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JELeftSidePanelVC.xib; sourceTree = "<group>"; };
+		C35C342D18FEC9A90062C334 /* JERightSidePanelVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JERightSidePanelVC.h; sourceTree = "<group>"; };
+		C35C342E18FEC9A90062C334 /* JERightSidePanelVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JERightSidePanelVC.m; sourceTree = "<group>"; };
+		C35C342F18FEC9A90062C334 /* JERightSidePanelVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JERightSidePanelVC.xib; sourceTree = "<group>"; };
 		C3A44D0418FC34A600E9B254 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C3A44D0618FC34AD00E9B254 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		C3F72C4618FD8A78007FDB69 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C3F72C4718FD8A78007FDB69 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C3F72C4D18FD8A78007FDB69 /* FETabBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FETabBarView.h; sourceTree = "<group>"; };
+		C3F72C4E18FD8A78007FDB69 /* FETabBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FETabBarView.m; sourceTree = "<group>"; };
+		C3F72C4F18FD8A78007FDB69 /* FETabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FETabBarViewController.h; sourceTree = "<group>"; };
+		C3F72C5018FD8A78007FDB69 /* FETabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FETabBarViewController.m; sourceTree = "<group>"; };
+		C3F72C5418FD8A78007FDB69 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
+		C3F72C5518FD8A78007FDB69 /* checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checked@2x.png"; sourceTree = "<group>"; };
+		C3F72C5618FD8A78007FDB69 /* ico_checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_checkbox.png; sourceTree = "<group>"; };
+		C3F72C5718FD8A78007FDB69 /* ico_choose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_choose.png; sourceTree = "<group>"; };
+		C3F72C5818FD8A78007FDB69 /* login_button_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_button_normal.png; sourceTree = "<group>"; };
+		C3F72C5918FD8A78007FDB69 /* login_button_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_button_pressed.png; sourceTree = "<group>"; };
+		C3F72C5A18FD8A78007FDB69 /* login_gray_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_gray_normal.png; sourceTree = "<group>"; };
+		C3F72C5B18FD8A78007FDB69 /* login_gray_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_gray_pressed.png; sourceTree = "<group>"; };
+		C3F72C5D18FD8A78007FDB69 /* notchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notchecked.png; sourceTree = "<group>"; };
+		C3F72C5E18FD8A78007FDB69 /* notchecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notchecked@2x.png"; sourceTree = "<group>"; };
+		C3F72C6B18FD8A78007FDB69 /* tab_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_normal.png; sourceTree = "<group>"; };
+		C3F72C6C18FD8A78007FDB69 /* tab_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_selected.png; sourceTree = "<group>"; };
+		C3F72C6E18FD8A78007FDB69 /* tab_settingsH@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_settingsH@2x.png"; sourceTree = "<group>"; };
+		C3F72C7018FD8A78007FDB69 /* tab_settingsN@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_settingsN@2x.png"; sourceTree = "<group>"; };
+		C3F72D7E18FD8BAD007FDB69 /* JEConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEConst.h; sourceTree = "<group>"; };
+		C3F72D8918FD8E95007FDB69 /* JEFirstTabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEFirstTabbarVC.h; sourceTree = "<group>"; };
+		C3F72D8A18FD8E95007FDB69 /* JEFirstTabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEFirstTabbarVC.m; sourceTree = "<group>"; };
+		C3F72D8B18FD8E95007FDB69 /* JEFirstTabbarVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JEFirstTabbarVC.xib; sourceTree = "<group>"; };
+		C3F72D9218FD8FEC007FDB69 /* JESecondTabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JESecondTabbarVC.h; sourceTree = "<group>"; };
+		C3F72D9318FD8FEC007FDB69 /* JESecondTabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JESecondTabbarVC.m; sourceTree = "<group>"; };
+		C3F72D9418FD8FEC007FDB69 /* JESecondTabbarVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JESecondTabbarVC.xib; sourceTree = "<group>"; };
+		C3F72D9718FD900C007FDB69 /* JEThirdTabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEThirdTabbarVC.h; sourceTree = "<group>"; };
+		C3F72D9818FD900C007FDB69 /* JEThirdTabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEThirdTabbarVC.m; sourceTree = "<group>"; };
+		C3F72D9918FD900C007FDB69 /* JEThirdTabbarVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JEThirdTabbarVC.xib; sourceTree = "<group>"; };
+		C3F72D9C18FD901F007FDB69 /* JEFourthTabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEFourthTabbarVC.h; sourceTree = "<group>"; };
+		C3F72D9D18FD901F007FDB69 /* JEFourthTabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEFourthTabbarVC.m; sourceTree = "<group>"; };
+		C3F72D9E18FD901F007FDB69 /* JEFourthTabbarVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JEFourthTabbarVC.xib; sourceTree = "<group>"; };
 		EA1650D5B05F4F4BB03DA63A /* Pods-Jewelry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jewelry.xcconfig"; path = "Pods/Pods-Jewelry.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,13 +186,8 @@
 		C32712ED18FC2DA600971956 /* Jewelry */ = {
 			isa = PBXGroup;
 			children = (
-				C32712F618FC2DA600971956 /* AppDelegate.h */,
-				C32712F718FC2DA600971956 /* AppDelegate.m */,
-				C32712F918FC2DA600971956 /* Main.storyboard */,
-				C32712FC18FC2DA600971956 /* FirstViewController.h */,
-				C32712FD18FC2DA600971956 /* FirstViewController.m */,
-				C32712FF18FC2DA600971956 /* SecondViewController.h */,
-				C327130018FC2DA600971956 /* SecondViewController.m */,
+				C3F72C4518FD8A78007FDB69 /* Source */,
+				C3F72C5118FD8A78007FDB69 /* Resource */,
 				C327130218FC2DA600971956 /* Images.xcassets */,
 				C32712EE18FC2DA600971956 /* Supporting Files */,
 			);
@@ -169,6 +221,115 @@
 				C327131218FC2DA600971956 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C3F72C4518FD8A78007FDB69 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C3F72D7E18FD8BAD007FDB69 /* JEConst.h */,
+				C3F72C4618FD8A78007FDB69 /* AppDelegate.h */,
+				C3F72C4718FD8A78007FDB69 /* AppDelegate.m */,
+				C3F72D8818FD8E95007FDB69 /* FirstTabVC */,
+				C3F72D9118FD8FDC007FDB69 /* SecondTabVC */,
+				C3F72D8618FD8E95007FDB69 /* ThirdTabVC */,
+				C3F72D8518FD8E95007FDB69 /* FourthTabVC */,
+				C3F72C4C18FD8A78007FDB69 /* TabbarVC */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		C3F72C4C18FD8A78007FDB69 /* TabbarVC */ = {
+			isa = PBXGroup;
+			children = (
+				C3F72C4D18FD8A78007FDB69 /* FETabBarView.h */,
+				C3F72C4E18FD8A78007FDB69 /* FETabBarView.m */,
+				C3F72C4F18FD8A78007FDB69 /* FETabBarViewController.h */,
+				C3F72C5018FD8A78007FDB69 /* FETabBarViewController.m */,
+			);
+			path = TabbarVC;
+			sourceTree = "<group>";
+		};
+		C3F72C5118FD8A78007FDB69 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C3F72C5218FD8A78007FDB69 /* Images */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		C3F72C5218FD8A78007FDB69 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C3F72C5318FD8A78007FDB69 /* Common */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		C3F72C5318FD8A78007FDB69 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C3F72C5418FD8A78007FDB69 /* checked.png */,
+				C3F72C5518FD8A78007FDB69 /* checked@2x.png */,
+				C3F72C5618FD8A78007FDB69 /* ico_checkbox.png */,
+				C3F72C5718FD8A78007FDB69 /* ico_choose.png */,
+				C3F72C5818FD8A78007FDB69 /* login_button_normal.png */,
+				C3F72C5918FD8A78007FDB69 /* login_button_pressed.png */,
+				C3F72C5A18FD8A78007FDB69 /* login_gray_normal.png */,
+				C3F72C5B18FD8A78007FDB69 /* login_gray_pressed.png */,
+				C3F72C5D18FD8A78007FDB69 /* notchecked.png */,
+				C3F72C5E18FD8A78007FDB69 /* notchecked@2x.png */,
+				C3F72C6B18FD8A78007FDB69 /* tab_normal.png */,
+				C3F72C6C18FD8A78007FDB69 /* tab_selected.png */,
+				C3F72C6E18FD8A78007FDB69 /* tab_settingsH@2x.png */,
+				C3F72C7018FD8A78007FDB69 /* tab_settingsN@2x.png */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C3F72D8518FD8E95007FDB69 /* FourthTabVC */ = {
+			isa = PBXGroup;
+			children = (
+				C3F72D9C18FD901F007FDB69 /* JEFourthTabbarVC.h */,
+				C3F72D9D18FD901F007FDB69 /* JEFourthTabbarVC.m */,
+				C3F72D9E18FD901F007FDB69 /* JEFourthTabbarVC.xib */,
+			);
+			path = FourthTabVC;
+			sourceTree = "<group>";
+		};
+		C3F72D8618FD8E95007FDB69 /* ThirdTabVC */ = {
+			isa = PBXGroup;
+			children = (
+				C3F72D9718FD900C007FDB69 /* JEThirdTabbarVC.h */,
+				C3F72D9818FD900C007FDB69 /* JEThirdTabbarVC.m */,
+				C3F72D9918FD900C007FDB69 /* JEThirdTabbarVC.xib */,
+			);
+			path = ThirdTabVC;
+			sourceTree = "<group>";
+		};
+		C3F72D8818FD8E95007FDB69 /* FirstTabVC */ = {
+			isa = PBXGroup;
+			children = (
+				C35C342818FEC97E0062C334 /* JELeftSidePanelVC.h */,
+				C35C342918FEC97E0062C334 /* JELeftSidePanelVC.m */,
+				C35C342A18FEC97E0062C334 /* JELeftSidePanelVC.xib */,
+				C35C342D18FEC9A90062C334 /* JERightSidePanelVC.h */,
+				C35C342E18FEC9A90062C334 /* JERightSidePanelVC.m */,
+				C35C342F18FEC9A90062C334 /* JERightSidePanelVC.xib */,
+				C3F72D8918FD8E95007FDB69 /* JEFirstTabbarVC.h */,
+				C3F72D8A18FD8E95007FDB69 /* JEFirstTabbarVC.m */,
+				C3F72D8B18FD8E95007FDB69 /* JEFirstTabbarVC.xib */,
+			);
+			path = FirstTabVC;
+			sourceTree = "<group>";
+		};
+		C3F72D9118FD8FDC007FDB69 /* SecondTabVC */ = {
+			isa = PBXGroup;
+			children = (
+				C3F72D9218FD8FEC007FDB69 /* JESecondTabbarVC.h */,
+				C3F72D9318FD8FEC007FDB69 /* JESecondTabbarVC.m */,
+				C3F72D9418FD8FEC007FDB69 /* JESecondTabbarVC.xib */,
+			);
+			path = SecondTabVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,9 +410,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3F72D0818FD8A78007FDB69 /* tab_settingsH@2x.png in Resources */,
+				C35C342C18FEC97E0062C334 /* JELeftSidePanelVC.xib in Resources */,
+				C3F72CF218FD8A78007FDB69 /* login_button_normal.png in Resources */,
+				C3F72CF118FD8A78007FDB69 /* ico_choose.png in Resources */,
+				C3F72CEE18FD8A78007FDB69 /* checked.png in Resources */,
+				C3F72CF818FD8A78007FDB69 /* notchecked@2x.png in Resources */,
+				C3F72D9618FD8FEC007FDB69 /* JESecondTabbarVC.xib in Resources */,
+				C3F72D0518FD8A78007FDB69 /* tab_normal.png in Resources */,
 				C327130318FC2DA600971956 /* Images.xcassets in Resources */,
+				C3F72D0618FD8A78007FDB69 /* tab_selected.png in Resources */,
+				C3F72CF418FD8A78007FDB69 /* login_gray_normal.png in Resources */,
+				C3F72DA018FD901F007FDB69 /* JEFourthTabbarVC.xib in Resources */,
+				C35C343118FEC9A90062C334 /* JERightSidePanelVC.xib in Resources */,
+				C3F72CF318FD8A78007FDB69 /* login_button_pressed.png in Resources */,
+				C3F72CF018FD8A78007FDB69 /* ico_checkbox.png in Resources */,
+				C3F72D8D18FD8E95007FDB69 /* JEFirstTabbarVC.xib in Resources */,
+				C3F72CEF18FD8A78007FDB69 /* checked@2x.png in Resources */,
+				C3F72CF718FD8A78007FDB69 /* notchecked.png in Resources */,
 				C32712F218FC2DA600971956 /* InfoPlist.strings in Resources */,
-				C32712FB18FC2DA600971956 /* Main.storyboard in Resources */,
+				C3F72D0A18FD8A78007FDB69 /* tab_settingsN@2x.png in Resources */,
+				C3F72CF518FD8A78007FDB69 /* login_gray_pressed.png in Resources */,
+				C3F72D9B18FD900C007FDB69 /* JEThirdTabbarVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,10 +483,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C327130118FC2DA600971956 /* SecondViewController.m in Sources */,
-				C32712F818FC2DA600971956 /* AppDelegate.m in Sources */,
-				C32712FE18FC2DA600971956 /* FirstViewController.m in Sources */,
+				C3F72CE918FD8A78007FDB69 /* AppDelegate.m in Sources */,
+				C3F72D9F18FD901F007FDB69 /* JEFourthTabbarVC.m in Sources */,
+				C35C343018FEC9A90062C334 /* JERightSidePanelVC.m in Sources */,
+				C3F72CEC18FD8A78007FDB69 /* FETabBarView.m in Sources */,
+				C3F72D8C18FD8E95007FDB69 /* JEFirstTabbarVC.m in Sources */,
+				C3F72D9518FD8FEC007FDB69 /* JESecondTabbarVC.m in Sources */,
 				C32712F418FC2DA600971956 /* main.m in Sources */,
+				C35C342B18FEC97E0062C334 /* JELeftSidePanelVC.m in Sources */,
+				C3F72CED18FD8A78007FDB69 /* FETabBarViewController.m in Sources */,
+				C3F72D9A18FD900C007FDB69 /* JEThirdTabbarVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,14 +521,6 @@
 				C32712F118FC2DA600971956 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		C32712F918FC2DA600971956 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C32712FA18FC2DA600971956 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		C327131218FC2DA600971956 /* InfoPlist.strings */ = {
