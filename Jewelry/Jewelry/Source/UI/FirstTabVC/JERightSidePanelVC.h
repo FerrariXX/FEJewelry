@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JERightSidePanelVC : UIViewController
+@interface JERightSidePanelVC : UITableViewController
 
 @end

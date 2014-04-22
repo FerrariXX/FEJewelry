@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JEFirstTabbarVC : UIViewController
+@interface JEFirstTabbarVC : UITableViewController
 
 @end

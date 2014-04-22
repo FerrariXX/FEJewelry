@@ -16,4 +16,9 @@
 #import "FEUtil.h"
 #import "JEConst.h"
 #import "FEMacroDefine.h"
+#import "NSObject+FENib.h"
+#import "UIView+FEGeometry.h"
+#import "UIView+FETouchBlocks.h"
+
+#import "UIImageView+WebCache.h"
 #endif
