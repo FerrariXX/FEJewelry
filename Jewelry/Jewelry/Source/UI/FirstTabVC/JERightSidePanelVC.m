@@ -7,6 +7,7 @@
 //
 
 #import "JERightSidePanelVC.h"
+#import "JEHomePageManager.h"
 #import "JEPriceRange.h"
 
 @interface JERightSidePanelVC ()
@@ -21,7 +22,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        _priceRange = [[JEPriceRange alloc] init];
+        _priceRange = [[JEHomePageManager sharedHomePageManager] jewelryPriceRange];
     }
     return self;
 }
@@ -59,8 +60,7 @@
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil)
-	{
+    if (cell == nil){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 	}
 	cell.textLabel.text = [self.priceRange contentAtIndexPath:indexPath];
@@ -74,7 +74,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	//[self.category setSelectedPerson:isSelected indexpath:indexPath];
+    [self.priceRange didSelectRowAtIndexPath:indexPath];
 }
 
 

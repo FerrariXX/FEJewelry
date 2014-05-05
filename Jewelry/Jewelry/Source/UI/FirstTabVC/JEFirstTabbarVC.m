@@ -10,6 +10,9 @@
 #import "FESidePanelController.h"
 #import "JEHomePageModel.h"
 #import "JEHomePageTableViewCell.h"
+#import "JEDetailVC.h"
+#import "FETabBarViewController.h"
+#import "JEDetailModel.h"
 
 @interface JEFirstTabbarVC ()
 @property(nonatomic, strong)JEHomePageModel  *homePageModel;
@@ -91,6 +94,8 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             cell.leftPlaceHolderView.backgroundColor = [UIColor clearColor];
         });
+        NSLog(@">>>left id = %@", item.idNumber);
+        [self didSelectedWithId:item.idNumber];
     }];
     
     item = [self.homePageModel contentAtIndexPath:index +1];
@@ -103,6 +108,9 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             cell.rightPlaceHolderView.backgroundColor = [UIColor clearColor];
         });
+        NSLog(@">>>right id = %@", item.idNumber);
+        [self didSelectedWithId:item.idNumber];
+
     }];
     return cell;
 }
@@ -117,6 +125,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	//[self.category setSelectedPerson:isSelected indexpath:indexPath];
+}
+
+#pragma mark - Private Method
+- (void)didSelectedWithId:(NSString*)idString{
+
+    JEDetailModel *model = [[JEDetailModel alloc] initWithId:idString];
+    JEDetailVC *detailVC = [[JEDetailVC alloc] initWithNibName:@"JEDetailVC" bundle:nil];
+    [detailVC setModel:model];
+    [self.navigationController pushViewController:detailVC animated:YES];
+
 }
 
 

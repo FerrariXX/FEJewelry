@@ -15,7 +15,7 @@
 #import "JELeftSidePanelVC.h"
 #import "JERightSidePanelVC.h"
 #import "FESidePanelController.h"
-@interface AppDelegate()<UITabBarControllerDelegate>
+@interface AppDelegate()<UITabBarControllerDelegate,UINavigationControllerDelegate>
 @property (nonatomic, strong)	FETabBarViewController*	tabBarController;
 @end
 
@@ -47,11 +47,13 @@
     UINavigationController* leftNavi   = [[UINavigationController alloc] initWithRootViewController:leftVC];
     UINavigationController* rightNavi  = [[UINavigationController alloc] initWithRootViewController:rightVC];
     UINavigationController* centerNavi = [[UINavigationController alloc] initWithRootViewController:centerVC];
+    centerNavi.delegate = self;
     FESidePanelController *sidePanel   = [[FESidePanelController alloc] initWithCenterViewController:centerNavi
                                                           leftViewController:leftNavi
                                                          rightViewController:rightNavi];
     
 	centerVC.title = FEObjectAtIndex(titlesArr, 0);
+    sidePanel.title = FEObjectAtIndex(titlesArr, 0);
 	[controllerArr addObject:sidePanel];
     
     vc = [[JESecondTabbarVC alloc] init];
@@ -118,5 +120,20 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma mark - UINavigationControllerDelegate
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    [UIView animateWithDuration:0.3 animations:^{
+        if ([[navigationController viewControllers] count] ==1) {
+                [self.tabBarController setCustomTabBarHide:NO];
+        }else {
+            [self.tabBarController setCustomTabBarHide:YES];
+        }
+    }];
+}
+
+//- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+//}
 
 @end

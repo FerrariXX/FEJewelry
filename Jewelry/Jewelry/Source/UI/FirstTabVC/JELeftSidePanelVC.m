@@ -7,6 +7,7 @@
 //
 
 #import "JELeftSidePanelVC.h"
+#import "JEHomePageManager.h"
 #import "JECategory.h"
 @interface JELeftSidePanelVC ()
 @property(nonatomic, strong)JECategory *category;
@@ -21,7 +22,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        _category = [[JECategory alloc] init];
+        _category = [[JEHomePageManager sharedHomePageManager] jewelryCategory];
     }
     return self;
 }
@@ -39,13 +40,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Getter & Setter 
-- (JECategory *)category{
-    if (_category == nil) {
-        _category = [[JECategory alloc] init];
-    }
-    return _category;
-}
 
 #pragma mark - Table view data source
 
@@ -66,8 +60,7 @@
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil)
-	{
+    if (cell == nil){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 	}
 	cell.textLabel.text = [self.category contentAtIndexPath:indexPath];
@@ -76,12 +69,10 @@
 }
 
 
-
 #pragma mark - Table view delegate
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	//[self.category setSelectedPerson:isSelected indexpath:indexPath];
+    [self.category didSelectRowAtIndexPath:indexPath];
 }
 
 

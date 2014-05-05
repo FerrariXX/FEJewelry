@@ -17,7 +17,7 @@
         //"http://gw2.alicdn.com/bao/uploaded/i3/T1QPnBFmleXXXXXXXX_!!0-item_pic.jpg",
         self.imgURL = @"http://gw3.alicdn.com/bao/uploaded/i4/12590030640458113/T1iYQHFotfXXXXXXXX_!!2-item_pic.png";
         self.desInfo  = @"菲尔美床上用品 学生单人 颈椎枕头 慢回弹枕芯 枕头zhentou包邮";
-        self.idNumber = @"36978203909";
+        self.idNumber = [NSString stringWithFormat:@"%.6f",[[NSDate date] timeIntervalSince1970]];//@"36978203909";
         self.price    = @"111.343";
     }
     return self;
@@ -52,6 +52,11 @@
 - (JEHomePageItem*)contentAtIndexPath:(NSInteger)index{
     return FEObjectAtIndex(self.contentArray,index);
 }
+
+- (void)loadDataWithCategory:(NSString*)categroy priceRange:(NSString*)priceRange{
+    //TODO:
+}
+
 
 #pragma mark - Private Method
 - (void)baseInit{

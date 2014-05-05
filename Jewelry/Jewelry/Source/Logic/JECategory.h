@@ -12,4 +12,8 @@
 - (NSInteger)numberOfSection;
 - (NSInteger)numberOfRowsInSection:(NSInteger)section;
 - (NSString*)contentAtIndexPath:(NSIndexPath *)indexPath;
+- (void)didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+
+- (NSString*)currentSelectedPriceRange;
+
 @end

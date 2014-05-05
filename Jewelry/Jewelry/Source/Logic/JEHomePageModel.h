@@ -19,4 +19,6 @@
 - (NSInteger)numberOfSection;
 - (NSInteger)numberOfRowsInSection:(NSInteger)section;
 - (JEHomePageItem*)contentAtIndexPath:(NSInteger)index;
+
+- (void)loadDataWithCategory:(NSString*)categroy priceRange:(NSString*)priceRange;
 @end
