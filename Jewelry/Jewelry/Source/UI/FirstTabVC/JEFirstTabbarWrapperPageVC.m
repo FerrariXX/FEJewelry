@@ -17,6 +17,7 @@
 
 @interface JEFirstTabbarWrapperPageVC ()<ViewPagerDataSource,ViewPagerDelegate>
 @property(nonatomic, readonly)JECategory *jewelryCategory;
+@property(nonatomic, assign)NSInteger currentTabIndex;
 @end
 
 @implementation JEFirstTabbarWrapperPageVC
@@ -45,7 +46,11 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self selectTabAtIndex:[self.jewelryCategory currentSelectedIndex]];
+    NSInteger index = [self.jewelryCategory currentSelectedIndex];
+    if (self.currentTabIndex != index) {
+        [self selectTabAtIndex:index];
+        self.currentTabIndex = index;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -150,6 +155,7 @@
 - (void)viewPager:(ViewPagerController *)viewPager didChangeTabToIndex:(NSUInteger)index {
     
     // TODO: something useful
+    self.currentTabIndex = index;
 }
 
 @end
