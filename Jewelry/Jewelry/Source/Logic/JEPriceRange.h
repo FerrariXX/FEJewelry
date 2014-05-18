@@ -2,7 +2,7 @@
 //  JEPriceRange.h
 //  Jewelry
 //
-//  Created by lv on 14-4-21.
+//  Created by xxx on 14-4-21.
 //  Copyright (c) 2014年 FE. All rights reserved.
 //
 

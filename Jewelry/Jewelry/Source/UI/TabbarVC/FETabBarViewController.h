@@ -2,7 +2,7 @@
 //  FETabBarViewController.h
 //  Pumpkin
 //
-//  Created by lv on 7/15/12.
+//  Created by xxx on 7/15/12.
 //  Copyright (c) 2012 XXX. All rights reserved.
 //
 
