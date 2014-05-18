@@ -15,7 +15,9 @@
 #import "JELeftSidePanelVC.h"
 #import "JERightSidePanelVC.h"
 #import "FESidePanelController.h"
-@interface AppDelegate()<UITabBarControllerDelegate,UINavigationControllerDelegate>
+#import "JEFirstTabbarWrapperPageVC.h"
+
+@interface AppDelegate()<UITabBarControllerDelegate,UINavigationControllerDelegate,FESidePanelControllerDelegate>
 @property (nonatomic, strong)	FETabBarViewController*	tabBarController;
 @end
 
@@ -24,6 +26,7 @@
 #pragma mark - Private Method
 - (void)initTabBarController
 {
+    //TODO:
 	NSArray* titlesArr = [NSArray arrayWithObjects:@"商城",@"珠宝圈",@"学苑",@"我", nil];
 	UIImage* image1 = [UIImage imageNamed:@"tab_settingsN.png"];
 	UIImage* image2 = [UIImage imageNamed:@"tab_settingsN.png"];
@@ -43,14 +46,17 @@
 
     JELeftSidePanelVC* leftVC   = [[JELeftSidePanelVC alloc] initWithNibName:@"JELeftSidePanelVC" bundle:nil];
     JERightSidePanelVC* rightVC = [[JERightSidePanelVC alloc] initWithNibName:@"JERightSidePanelVC" bundle:nil];
-    JEFirstTabbarVC*centerVC = [[JEFirstTabbarVC alloc] initWithNibName:@"JEFirstTabbarVC" bundle:nil];
+    //TODO:JEFirstTabbarVC*centerVC = [[JEFirstTabbarVC alloc] initWithNibName:@"JEFirstTabbarVC" bundle:nil];
+    JEFirstTabbarWrapperPageVC *centerVC = [[JEFirstTabbarWrapperPageVC alloc] init];
     UINavigationController* leftNavi   = [[UINavigationController alloc] initWithRootViewController:leftVC];
     UINavigationController* rightNavi  = [[UINavigationController alloc] initWithRootViewController:rightVC];
     UINavigationController* centerNavi = [[UINavigationController alloc] initWithRootViewController:centerVC];
     centerNavi.delegate = self;
-    FESidePanelController *sidePanel   = [[FESidePanelController alloc] initWithCenterViewController:centerNavi
-                                                          leftViewController:leftNavi
-                                                         rightViewController:rightNavi];
+    FESidePanelController *sidePanel   = [[FESidePanelController alloc]
+                                          initWithCenterViewController:centerNavi
+                                                    leftViewController:leftNavi
+                                                   rightViewController:rightNavi];
+    [sidePanel setDelegate:self];
     
 	centerVC.title = FEObjectAtIndex(titlesArr, 0);
     sidePanel.title = FEObjectAtIndex(titlesArr, 0);
@@ -122,8 +128,8 @@
 }
 
 #pragma mark - UINavigationControllerDelegate
-
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    //进入二级页面后，tabbar隐藏
     [UIView animateWithDuration:0.3 animations:^{
         if ([[navigationController viewControllers] count] ==1) {
                 [self.tabBarController setCustomTabBarHide:NO];
@@ -135,5 +141,18 @@
 
 //- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
 //}
+#pragma mark - FESidePanelControllerDelegate
+- (void)sidePanelController:(FESidePanelController*)sidePanelController willShowController:(UIViewController*)controller{
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        if (controller == sidePanelController.centerPanel) {
+            [self.tabBarController setCustomTabBarHide:NO];
+        }else {
+            [self.tabBarController setCustomTabBarHide:YES];
+        }
+    }];
+}
+
+#pragma mark - Private Method
 
 @end

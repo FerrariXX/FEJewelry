@@ -52,6 +52,7 @@
         cell.rightPlaceHolderView.backgroundColor= [UIColor clearColor];
         [cell.contentView insertSubview:cell.leftItemView belowSubview:cell.leftPlaceHolderView];
         [cell.contentView insertSubview:cell.rightItemView belowSubview:cell.rightPlaceHolderView];
+        cell.contentView.backgroundColor = [UIColor colorWithRed:241/255.0 green:241/255.0 blue:241/255.0 alpha:1.0];
         return cell;
     }
     return nil;

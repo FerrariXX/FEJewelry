@@ -9,6 +9,9 @@
 #import "JELeftSidePanelVC.h"
 #import "JEHomePageManager.h"
 #import "JECategory.h"
+#import "FESidePanelController.h"
+
+
 @interface JELeftSidePanelVC ()
 @property(nonatomic, strong)JECategory *category;
 @end
@@ -73,6 +76,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.category didSelectRowAtIndexPath:indexPath];
+    [self.sidePanelController showCenterPanelAnimated:YES];
 }
 
 

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class JEHomePageModel;
+
 @interface JEFirstTabbarVC : UITableViewController
+@property(nonatomic, strong)JEHomePageModel  *homePageModel;
 
 @end

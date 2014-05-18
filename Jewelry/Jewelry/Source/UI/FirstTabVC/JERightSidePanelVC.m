@@ -9,6 +9,8 @@
 #import "JERightSidePanelVC.h"
 #import "JEHomePageManager.h"
 #import "JEPriceRange.h"
+#import "FESidePanelController.h"
+
 
 @interface JERightSidePanelVC ()
 @property(nonatomic, strong)JEPriceRange *priceRange;
@@ -75,6 +77,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.priceRange didSelectRowAtIndexPath:indexPath];
+    [self.sidePanelController showCenterPanelAnimated:YES];
+
 }
 
 

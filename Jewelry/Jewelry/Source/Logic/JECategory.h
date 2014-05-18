@@ -14,6 +14,6 @@
 - (NSString*)contentAtIndexPath:(NSIndexPath *)indexPath;
 - (void)didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 
-- (NSString*)currentSelectedPriceRange;
-
+- (NSString*)currentSelectedCategory;
+- (NSInteger)currentSelectedIndex;
 @end

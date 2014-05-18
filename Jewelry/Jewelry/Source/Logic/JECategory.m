@@ -45,8 +45,12 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-- (NSString*)currentSelectedPriceRange{
+- (NSString*)currentSelectedCategory{
     return self.currentSelected;
+}
+
+- (NSInteger)currentSelectedIndex{
+    return [self.contentArray indexOfObject:self.currentSelected];
 }
 
 

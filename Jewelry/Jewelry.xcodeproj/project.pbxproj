@@ -44,6 +44,7 @@
 		C3D00592190573A900FC4A64 /* JEHomePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D00591190573A900FC4A64 /* JEHomePageModel.m */; };
 		C3E0589C19168E2C002E2770 /* JEDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E0589A19168E2C002E2770 /* JEDetailVC.m */; };
 		C3E0589D19168E2C002E2770 /* JEDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E0589B19168E2C002E2770 /* JEDetailVC.xib */; };
+		C3F13F1D192857A10024AEC3 /* JEFirstTabbarWrapperPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F13F1C192857A10024AEC3 /* JEFirstTabbarWrapperPageVC.m */; };
 		C3F72CE918FD8A78007FDB69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F72C4718FD8A78007FDB69 /* AppDelegate.m */; };
 		C3F72CEE18FD8A78007FDB69 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = C3F72C5418FD8A78007FDB69 /* checked.png */; };
 		C3F72CEF18FD8A78007FDB69 /* checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3F72C5518FD8A78007FDB69 /* checked@2x.png */; };
@@ -127,6 +128,8 @@
 		C3E0589919168E2C002E2770 /* JEDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEDetailVC.h; sourceTree = "<group>"; };
 		C3E0589A19168E2C002E2770 /* JEDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEDetailVC.m; sourceTree = "<group>"; };
 		C3E0589B19168E2C002E2770 /* JEDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JEDetailVC.xib; sourceTree = "<group>"; };
+		C3F13F1B192857A10024AEC3 /* JEFirstTabbarWrapperPageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEFirstTabbarWrapperPageVC.h; sourceTree = "<group>"; };
+		C3F13F1C192857A10024AEC3 /* JEFirstTabbarWrapperPageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEFirstTabbarWrapperPageVC.m; sourceTree = "<group>"; };
 		C3F72C4618FD8A78007FDB69 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C3F72C4718FD8A78007FDB69 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C3F72C5418FD8A78007FDB69 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
@@ -266,6 +269,8 @@
 				C3D005891905719E00FC4A64 /* JEHomePageTableViewCell.h */,
 				C3D0058A1905719E00FC4A64 /* JEHomePageTableViewCell.m */,
 				C3D0058E190571FD00FC4A64 /* JEHomePageTableViewCell.xib */,
+				C3F13F1B192857A10024AEC3 /* JEFirstTabbarWrapperPageVC.h */,
+				C3F13F1C192857A10024AEC3 /* JEFirstTabbarWrapperPageVC.m */,
 				C3D0055A19056C8700FC4A64 /* JEFirstTabbarVC.h */,
 				C3D0055B19056C8700FC4A64 /* JEFirstTabbarVC.m */,
 				C3D0055C19056C8700FC4A64 /* JEFirstTabbarVC.xib */,
@@ -551,6 +556,7 @@
 				C3D0058819056CD000FC4A64 /* JEPriceRange.m in Sources */,
 				C3D0057F19056C8700FC4A64 /* FETabBarView.m in Sources */,
 				C3D0058119056C8700FC4A64 /* JEThirdTabbarVC.m in Sources */,
+				C3F13F1D192857A10024AEC3 /* JEFirstTabbarWrapperPageVC.m in Sources */,
 				C3D0057D19056C8700FC4A64 /* JESecondTabbarVC.m in Sources */,
 				C3D0058519056CB400FC4A64 /* JECategory.m in Sources */,
 				C3D0058B1905719E00FC4A64 /* JEHomePageTableViewCell.m in Sources */,

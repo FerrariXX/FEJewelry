@@ -15,7 +15,6 @@
 #import "JEDetailModel.h"
 
 @interface JEFirstTabbarVC ()
-@property(nonatomic, strong)JEHomePageModel  *homePageModel;
 
 @end
 
@@ -26,6 +25,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        //TODO: 
         self.homePageModel = [[JEHomePageModel alloc] init];
     }
     return self;
@@ -35,8 +35,8 @@
 {
     [super viewDidLoad];
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分类" style:UIBarButtonItemStyleBordered target:self action:@selector(leftBarButtonPressed:)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"筛选" style:UIBarButtonItemStyleBordered target:self action:@selector(rightBarButtonPressed:)];
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分类" style:UIBarButtonItemStyleBordered target:self action:@selector(leftBarButtonPressed:)];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"筛选" style:UIBarButtonItemStyleBordered target:self action:@selector(rightBarButtonPressed:)];
     
     self.tableView.separatorColor = [UIColor clearColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -49,14 +49,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - NaviBar Button 
-- (void)leftBarButtonPressed:(id)sender{
-    [self.sidePanelController showLeftPanelAnimated:YES];
-}
-
-- (void)rightBarButtonPressed:(id)sender{
-    [self.sidePanelController showRightPanelAnimated:YES];
-}
+//#pragma mark - NaviBar Button 
+//- (void)leftBarButtonPressed:(id)sender{
+//    [self.sidePanelController showLeftPanelAnimated:YES];
+//}
+//
+//- (void)rightBarButtonPressed:(id)sender{
+//    [self.sidePanelController showRightPanelAnimated:YES];
+//}
 
 
 #pragma mark - Table view data source

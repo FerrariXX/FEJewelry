@@ -21,4 +21,5 @@
 #import "UIView+FETouchBlocks.h"
 
 #import "UIImageView+WebCache.h"
+#import "ViewPagerController.h"
 #endif
