@@ -11,6 +11,7 @@
 @interface JEDetailModel : NSObject
 @property(nonatomic, strong)NSArray* images;
 @property(nonatomic, strong)NSString* title;
+@property(nonatomic, strong)NSString* price;
 @property(nonatomic, strong)NSString* status;
 @property(nonatomic, strong)NSString* category;
 @property(nonatomic, strong)NSString* idNumber;

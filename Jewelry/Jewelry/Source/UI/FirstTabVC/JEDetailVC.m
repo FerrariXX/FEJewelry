@@ -7,9 +7,11 @@
 //
 
 #import "JEDetailVC.h"
+#import "FEScrollPageView.h"
+#import "JEDetailModel.h"
 
 @interface JEDetailVC ()
-@property (strong, nonatomic) IBOutlet UIScrollView *imagesView;
+@property (strong, nonatomic) IBOutlet FEScrollPageView *imagesView;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *salePriceLabel;
 @property (strong, nonatomic) IBOutlet UILabel *stateLabel;
@@ -45,9 +47,26 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"商品详情";
-    self.imagesView.backgroundColor = [UIColor orangeColor];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"预定" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonPressed:)];
+    self.edgesForExtendedLayout = UIRectEdgeBottom;
+    [self.imagesView setImageItems:self.model.images selectedBlock:^(FEImageItem *sender) {
+        //do nothing here
+    } isAutoPlay:YES];
+    self.titleLabel.text = self.model.title;
+    self.salePriceLabel.text = self.model.price;
+    self.stateLabel.text     = self.model.status;
+    self.categoryLabel.text  = self.model.category;
+    self.idLabel.text     = self.model.idNumber;
+    self.onLineLabel.text = self.model.onlineDate;
+    self.otherLabel.text  = self.model.other;
+    self.contactLabel.text= self.model.contact;
+    self.phoneLabel.text  = self.model.phone;
     
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.imagesView stopAutoPlay];
 }
 
 - (void)didReceiveMemoryWarning
