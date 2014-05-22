@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JESecondTabbarVC : UIViewController
+@interface JESecondTabbarVC : UITableViewController
 
 @end

@@ -9,6 +9,7 @@
 #import "JEDetailVC.h"
 #import "FEScrollPageView.h"
 #import "JEDetailModel.h"
+#import "FEMicroMsgPopoverView.h"
 
 @interface JEDetailVC ()
 @property (strong, nonatomic) IBOutlet FEScrollPageView *imagesView;
@@ -26,7 +27,10 @@
 @property (strong, nonatomic) IBOutlet UIButton *modifyButton;
 @property (strong, nonatomic) IBOutlet UIButton *deleteButton;
 @property (strong, nonatomic) IBOutlet UIButton *dailButton;
+@property (strong, nonatomic) IBOutlet UIButton *evaluateButton;
+
 - (IBAction)dailButtonPressed:(id)sender;
+- (IBAction)evaluateButtonPressed:(id)sender;
 
 @end
 
@@ -77,6 +81,24 @@
 #pragma mark - Button Event
 - (IBAction)dailButtonPressed:(id)sender {
     //[[UIApplication sharedApplication] openURL:<#(NSURL *)#>]
+}
+
+- (IBAction)evaluateButtonPressed:(id)sender {
+    FEMicroMsgPopoverItem *item1 = [[FEMicroMsgPopoverItem alloc] initWithImage:[UIImage imageNamed:@"icon_favorite"] title:@"赞" clickedBlock:^(id sender) {
+        NSLog(@">>>xxx 1");
+    }];
+    FEMicroMsgPopoverItem *item2 = [[FEMicroMsgPopoverItem alloc] initWithImage:[UIImage imageNamed:@"icon_reply"] title:@"评论" clickedBlock:^(id sender) {
+        NSLog(@">>>xxx 2");
+    }];
+    FEMicroMsgPopoverItem *item3 = [[FEMicroMsgPopoverItem alloc] initWithImage:[UIImage imageNamed:@"icon_retweet"] title:@"收藏" clickedBlock:^(id sender) {
+        NSLog(@">>>xxx 3");
+    }];
+    FEMicroMsgPopoverItem *item4 = [[FEMicroMsgPopoverItem alloc] initWithImage:[UIImage imageNamed:@"icon_favorite"] title:@"分享" clickedBlock:^(id sender) {
+        NSLog(@">>>xxx 4");
+    }];
+    
+    FEMicroMsgPopoverView *popoverView = [[FEMicroMsgPopoverView alloc] initWithItems:@[item1, item2, item3, item4]];
+    [popoverView showAtPosition:CGPointMake(CGRectGetMinX(((UIButton*)sender).frame), CGRectGetMidY(((UIButton*)sender).frame)+44.0) ];
 }
 
 - (void)rightBarButtonPressed:(id)sender{
