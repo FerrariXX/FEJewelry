@@ -50,7 +50,10 @@
 }
 
 - (NSInteger)currentSelectedIndex{
-    return [self.contentArray indexOfObject:self.currentSelected];
+    if (self.currentSelected) {
+        return [self.contentArray indexOfObject:self.currentSelected];
+    }
+    return 0;
 }
 
 
