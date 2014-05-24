@@ -7,6 +7,7 @@
 //
 
 #import "JEHomePageTableViewCell.h"
+#import "NSObject+FENib.h"
 
 
 @implementation JEHomePageTableViewCellItemView

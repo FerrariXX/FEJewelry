@@ -8,6 +8,10 @@
 
 #import "JESecondTabbarVC.h"
 #import "JEJewelryCircleModel.h"
+#import "JEJewelryCircleTableViewCell.h"
+#import "UIImageView+WebCache.h"
+#import "FEScrollPageView.h"
+
 
 @interface JESecondTabbarVC ()
 @property(nonatomic, strong)JEJewelryCircleModel  *jewelryCircleModel;
@@ -30,6 +34,11 @@
 {
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.tableView.separatorColor = [UIColor clearColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"消息" style:UIBarButtonItemStyleBordered target:self action:@selector(leftBarButtonPressed:)];
+
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -45,14 +54,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 0;
     // Return the number of sections.
     return [self.jewelryCircleModel numberOfSection];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
     // Return the number of rows in the section.
     return [self.jewelryCircleModel numberOfRowsInSection:section];
 }
@@ -61,50 +68,28 @@
 {
     static NSString *CellIdentifier = @"Cell";
     
-    /*
-    JEHomePageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    JEJewelryCircleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil){
-        cell = [JEHomePageTableViewCell homePageTableViewCell];
+        cell = [JEJewelryCircleTableViewCell jewelryCircleTableViewCell];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    NSInteger index = indexPath.row *2 ;
-    
-    JEHomePageItem* item = [self.homePageModel contentAtIndexPath:index];
-    [cell.leftItemView.imageView setImageWithURL:[NSURL URLWithString:item.imgURL] placeholderImage:nil];
-    cell.leftItemView.descrption.text = item.desInfo;
-    cell.leftItemView.idLabel.text    = item.idNumber;
-    cell.leftItemView.priceLabel.text = item.price;
-    [cell.leftPlaceHolderView touchEndedBlock:^(NSSet *touches, UIEvent *event) {
-        cell.leftPlaceHolderView.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.5];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            cell.leftPlaceHolderView.backgroundColor = [UIColor clearColor];
-        });
-        NSLog(@">>>left id = %@", item.idNumber);
-        [self didSelectedWithId:item.idNumber];
-    }];
-    
-    item = [self.homePageModel contentAtIndexPath:index +1];
-    [cell.rightItemView.imageView setImageWithURL:[NSURL URLWithString:item.imgURL] placeholderImage:nil];
-    cell.rightItemView.descrption.text = item.desInfo;
-    cell.rightItemView.idLabel.text    = item.idNumber;
-    cell.rightItemView.priceLabel.text = item.price;
-    [cell.rightPlaceHolderView touchEndedBlock:^(NSSet *touches, UIEvent *event) {
-        cell.rightPlaceHolderView.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.5];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            cell.rightPlaceHolderView.backgroundColor = [UIColor clearColor];
-        });
-        NSLog(@">>>right id = %@", item.idNumber);
-        [self didSelectedWithId:item.idNumber];
-        
-    }];
-     return cell;
-     */
-    return nil;
+    NSInteger index = indexPath.row;
+    JEJewelryCircleItem* item = [self.jewelryCircleModel contentAtIndexPath:index];
+    //[cell.logoImage setImageWithURL:[NSURL URLWithString:item.logoURL] placeholderImage:nil];
+    cell.titleLabel.text = item.title;
+    cell.priceLabel.text = [NSString stringWithFormat:@"￥%@",item.price];
+    cell.nameLabel.text  = item.name;
+    cell.categoryLabel.text = item.category;
+    cell.idLabel.text       = item.idNumber;
+    cell.certificationIdLabel.text = item.certificationId;
+    [cell.detailScrollImagsView setImageItems:item.imagesURL selectedBlock:^(FEImageItem *sender) {
+    } isAutoPlay:NO];
+    return cell;    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    //return [JEHomePageTableViewCell height];
-    return 0.0;
+    return [JEJewelryCircleTableViewCell height];
 }
 
 
@@ -112,8 +97,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	//[self.category setSelectedPerson:isSelected indexpath:indexPath];
 }
 
+
+#pragma mark - NaviBar Button
+- (void)leftBarButtonPressed:(id)sender{
+    //TODO:
+}
 
 @end

@@ -17,9 +17,9 @@ EXTERNAL SOURCES:
     :path: ../../FEFramework
 
 SPEC CHECKSUMS:
-  AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
+  AFNetworking: 5f5b2a731d6fc2082b8abc63d40fcaed5482c42f
   FEFramework: 59e2eae89f80017fd72cc5c5797f7ecc725eeb02
-  ICViewPager: 98e012156809be7986832a1c75b2191fc4705707
-  SDWebImage: 7eb273e54ca8a2e506ad9bd5e80c35b2a4d7c95e
+  ICViewPager: 92bcec206b5eaf9623bb0b3f9e5bbfe5d2816def
+  SDWebImage: c6989652c1cdf27cbdf3f56957e2030f825af5bc
 
 COCOAPODS: 0.32.1
