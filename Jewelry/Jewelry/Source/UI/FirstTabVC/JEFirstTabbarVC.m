@@ -13,6 +13,8 @@
 #import "JEDetailVC.h"
 #import "FETabBarViewController.h"
 #import "JEDetailModel.h"
+#import "UIImageView+WebCache.h"
+#import "UIView+FETouchBlocks.h"
 
 @interface JEFirstTabbarVC ()
 

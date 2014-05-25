@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		6B4A0FC8E3F64B148EE1BE36 /* libPods-Jewelry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7BAA831549477B9B0AB83F /* libPods-Jewelry.a */; };
+		C30582DE1931D9CD00DE14E5 /* default_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = C30582DD1931D9CD00DE14E5 /* default_avatar.png */; };
+		C30582F219320F6100DE14E5 /* JEShopHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C30582F019320F6100DE14E5 /* JEShopHomeVC.m */; };
+		C30582F319320F6100DE14E5 /* JEShopHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C30582F119320F6100DE14E5 /* JEShopHomeVC.xib */; };
+		C30582F6193212C800DE14E5 /* cover.png in Resources */ = {isa = PBXBuildFile; fileRef = C30582F4193212C800DE14E5 /* cover.png */; };
+		C30582F7193212C800DE14E5 /* cover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C30582F5193212C800DE14E5 /* cover@2x.png */; };
+		C311C65F193215A200BB3660 /* JEJewelryShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C311C65E193215A200BB3660 /* JEJewelryShopModel.m */; };
+		C311C666193217F800BB3660 /* JEShopHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C311C664193217F800BB3660 /* JEShopHomeTableViewCell.m */; };
+		C311C667193217F800BB3660 /* JEShopHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C311C665193217F800BB3660 /* JEShopHomeTableViewCell.xib */; };
 		C32712E818FC2DA600971956 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32712E718FC2DA600971956 /* Foundation.framework */; };
 		C32712EA18FC2DA600971956 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32712E918FC2DA600971956 /* CoreGraphics.framework */; };
 		C32712EC18FC2DA600971956 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32712EB18FC2DA600971956 /* UIKit.framework */; };
@@ -83,6 +91,17 @@
 
 /* Begin PBXFileReference section */
 		4F7BAA831549477B9B0AB83F /* libPods-Jewelry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Jewelry.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C30582DD1931D9CD00DE14E5 /* default_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_avatar.png; sourceTree = "<group>"; };
+		C30582EF19320F6100DE14E5 /* JEShopHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEShopHomeVC.h; sourceTree = "<group>"; };
+		C30582F019320F6100DE14E5 /* JEShopHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEShopHomeVC.m; sourceTree = "<group>"; };
+		C30582F119320F6100DE14E5 /* JEShopHomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JEShopHomeVC.xib; sourceTree = "<group>"; };
+		C30582F4193212C800DE14E5 /* cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover.png; sourceTree = "<group>"; };
+		C30582F5193212C800DE14E5 /* cover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cover@2x.png"; sourceTree = "<group>"; };
+		C311C65D193215A200BB3660 /* JEJewelryShopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEJewelryShopModel.h; sourceTree = "<group>"; };
+		C311C65E193215A200BB3660 /* JEJewelryShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEJewelryShopModel.m; sourceTree = "<group>"; };
+		C311C663193217F800BB3660 /* JEShopHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEShopHomeTableViewCell.h; sourceTree = "<group>"; };
+		C311C664193217F800BB3660 /* JEShopHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEShopHomeTableViewCell.m; sourceTree = "<group>"; };
+		C311C665193217F800BB3660 /* JEShopHomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JEShopHomeTableViewCell.xib; sourceTree = "<group>"; };
 		C32712E418FC2DA600971956 /* Jewelry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jewelry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C32712E718FC2DA600971956 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C32712E918FC2DA600971956 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -333,6 +352,12 @@
 		C3D0056719056C8700FC4A64 /* SecondTabVC */ = {
 			isa = PBXGroup;
 			children = (
+				C30582EF19320F6100DE14E5 /* JEShopHomeVC.h */,
+				C30582F019320F6100DE14E5 /* JEShopHomeVC.m */,
+				C30582F119320F6100DE14E5 /* JEShopHomeVC.xib */,
+				C311C663193217F800BB3660 /* JEShopHomeTableViewCell.h */,
+				C311C664193217F800BB3660 /* JEShopHomeTableViewCell.m */,
+				C311C665193217F800BB3660 /* JEShopHomeTableViewCell.xib */,
 				C3CBDAEB1930E44E001B193A /* JEJewelryCircleTableViewCell.h */,
 				C3CBDAEC1930E44E001B193A /* JEJewelryCircleTableViewCell.m */,
 				C3CBDAED1930E44E001B193A /* JEJewelryCircleTableViewCell.xib */,
@@ -373,6 +398,8 @@
 				C3D00591190573A900FC4A64 /* JEHomePageModel.m */,
 				C3CDCF41192E4D74006E1BD8 /* JEJewelryCircleModel.h */,
 				C3CDCF42192E4D74006E1BD8 /* JEJewelryCircleModel.m */,
+				C311C65D193215A200BB3660 /* JEJewelryShopModel.h */,
+				C311C65E193215A200BB3660 /* JEJewelryShopModel.m */,
 				C3BBA82F1917E26C00FA9D07 /* JEDetailModel.h */,
 				C3BBA8301917E26C00FA9D07 /* JEDetailModel.m */,
 				C3D0058319056CB400FC4A64 /* JECategory.h */,
@@ -415,6 +442,9 @@
 		C3F72C5318FD8A78007FDB69 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C30582DD1931D9CD00DE14E5 /* default_avatar.png */,
+				C30582F4193212C800DE14E5 /* cover.png */,
+				C30582F5193212C800DE14E5 /* cover@2x.png */,
 				C3F72C5418FD8A78007FDB69 /* checked.png */,
 				C3F72C5518FD8A78007FDB69 /* checked@2x.png */,
 				C3F72C5618FD8A78007FDB69 /* ico_checkbox.png */,
@@ -519,6 +549,7 @@
 				C3F72CF118FD8A78007FDB69 /* ico_choose.png in Resources */,
 				C3D0057A19056C8700FC4A64 /* JERightSidePanelVC.xib in Resources */,
 				C3F72CEE18FD8A78007FDB69 /* checked.png in Resources */,
+				C30582DE1931D9CD00DE14E5 /* default_avatar.png in Resources */,
 				C3F72CF818FD8A78007FDB69 /* notchecked@2x.png in Resources */,
 				C3CDCF3C192E4A24006E1BD8 /* icon_favorite@2x.png in Resources */,
 				C3CDCF3B192E4A24006E1BD8 /* icon_favorite.png in Resources */,
@@ -529,13 +560,17 @@
 				C3F72D0618FD8A78007FDB69 /* tab_selected.png in Resources */,
 				C3E0589D19168E2C002E2770 /* JEDetailVC.xib in Resources */,
 				C3D0057C19056C8700FC4A64 /* JEFourthTabbarVC.xib in Resources */,
+				C30582F6193212C800DE14E5 /* cover.png in Resources */,
+				C30582F7193212C800DE14E5 /* cover@2x.png in Resources */,
 				C3F72CF418FD8A78007FDB69 /* login_gray_normal.png in Resources */,
+				C30582F319320F6100DE14E5 /* JEShopHomeVC.xib in Resources */,
 				C3D0058F190571FD00FC4A64 /* JEHomePageTableViewCell.xib in Resources */,
 				C3F72CF318FD8A78007FDB69 /* login_button_pressed.png in Resources */,
 				C3D0057819056C8700FC4A64 /* JELeftSidePanelVC.xib in Resources */,
 				C3CDCF3D192E4A24006E1BD8 /* icon_reply.png in Resources */,
 				C3F72CF018FD8A78007FDB69 /* ico_checkbox.png in Resources */,
 				C3F72CEF18FD8A78007FDB69 /* checked@2x.png in Resources */,
+				C311C667193217F800BB3660 /* JEShopHomeTableViewCell.xib in Resources */,
 				C3F72CF718FD8A78007FDB69 /* notchecked.png in Resources */,
 				C3D0058219056C8700FC4A64 /* JEThirdTabbarVC.xib in Resources */,
 				C32712F218FC2DA600971956 /* InfoPlist.strings in Resources */,
@@ -593,11 +628,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C311C666193217F800BB3660 /* JEShopHomeTableViewCell.m in Sources */,
 				C3D0057519056C8700FC4A64 /* JEFirstTabbarVC.m in Sources */,
 				C3CDCF43192E4D74006E1BD8 /* JEJewelryCircleModel.m in Sources */,
 				C3F72CE918FD8A78007FDB69 /* AppDelegate.m in Sources */,
 				C3E0589C19168E2C002E2770 /* JEDetailVC.m in Sources */,
 				C3D0058019056C8700FC4A64 /* FETabBarViewController.m in Sources */,
+				C30582F219320F6100DE14E5 /* JEShopHomeVC.m in Sources */,
 				C3D0057919056C8700FC4A64 /* JERightSidePanelVC.m in Sources */,
 				C3D00592190573A900FC4A64 /* JEHomePageModel.m in Sources */,
 				C3D0058819056CD000FC4A64 /* JEPriceRange.m in Sources */,
@@ -613,6 +650,7 @@
 				C32712F418FC2DA600971956 /* main.m in Sources */,
 				C3703BDF190EA89900DBE8C8 /* JEHomePageManager.m in Sources */,
 				C3CBDAEE1930E44E001B193A /* JEJewelryCircleTableViewCell.m in Sources */,
+				C311C65F193215A200BB3660 /* JEJewelryShopModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

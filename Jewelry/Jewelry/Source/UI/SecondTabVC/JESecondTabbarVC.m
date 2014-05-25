@@ -11,6 +11,7 @@
 #import "JEJewelryCircleTableViewCell.h"
 #import "UIImageView+WebCache.h"
 #import "FEScrollPageView.h"
+#import "JEShopHomeVC.h"
 
 
 @interface JESecondTabbarVC ()
@@ -76,7 +77,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     NSInteger index = indexPath.row;
     JEJewelryCircleItem* item = [self.jewelryCircleModel contentAtIndexPath:index];
-    //[cell.logoImage setImageWithURL:[NSURL URLWithString:item.logoURL] placeholderImage:nil];
+    [cell.logoImage setImageWithURL:[NSURL URLWithString:item.logoURL] placeholderImage:[UIImage imageNamed:@"default_avatar"]];
     cell.titleLabel.text = item.title;
     cell.priceLabel.text = [NSString stringWithFormat:@"￥%@",item.price];
     cell.nameLabel.text  = item.name;
@@ -85,6 +86,7 @@
     cell.certificationIdLabel.text = item.certificationId;
     [cell.detailScrollImagsView setImageItems:item.imagesURL selectedBlock:^(FEImageItem *sender) {
     } isAutoPlay:NO];
+    cell.detailScrollImagsView.itemWidth = 160.0;
     return cell;    
 }
 
@@ -97,6 +99,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    JEShopHomeVC *vc = [[JEShopHomeVC alloc] initWithNibName:@"JEShopHomeVC" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

@@ -37,7 +37,7 @@
         JEJewelryCircleTableViewCell *cell = obj;
         cell.contentView.backgroundColor = [UIColor whiteColor];
         //cell.contentView.backgroundColor = [UIColor colorWithRed:241/255.0 green:241/255.0 blue:241/255.0 alpha:1.0];
-        cell.logoImage.backgroundColor = [UIColor orangeColor];
+        cell.logoImage.backgroundColor = [UIColor clearColor];
         cell.seperateLine.backgroundColor = [UIColor grayColor];
         cell.seperateLine.frame = CGRectMake(0, cell.bounds.size.height-1, cell.bounds.size.width, 0.5);
         return cell;

@@ -56,6 +56,8 @@
     [self.imagesView setImageItems:self.model.images selectedBlock:^(FEImageItem *sender) {
         //do nothing here
     } isAutoPlay:YES];
+    //self.imagesView.itemWidth = 160.0;
+
     self.titleLabel.text = self.model.title;
     self.salePriceLabel.text = self.model.price;
     self.stateLabel.text     = self.model.status;

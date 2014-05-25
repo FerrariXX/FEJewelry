@@ -12,7 +12,7 @@
 #import "JEHomePageManager.h"
 #import "JECategory.h"
 #import "FESidePanelController.h"
-
+#import "ViewPagerController.h"
 
 
 @interface JEFirstTabbarWrapperPageVC ()<ViewPagerDataSource,ViewPagerDelegate>
@@ -38,7 +38,6 @@
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分类" style:UIBarButtonItemStyleBordered target:self action:@selector(leftBarButtonPressed:)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"筛选" style:UIBarButtonItemStyleBordered target:self action:@selector(rightBarButtonPressed:)];
-    
     
     self.dataSource = self;
     self.delegate = self;

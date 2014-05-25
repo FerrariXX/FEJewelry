@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="f0m-Or-e8x">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_avatar.png" id="f0m-Or-e8x">
                         <rect key="frame" x="9" y="8" width="51" height="56"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     </imageView>
@@ -99,4 +99,7 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="default_avatar.png" width="80" height="80"/>
+    </resources>
 </document>
