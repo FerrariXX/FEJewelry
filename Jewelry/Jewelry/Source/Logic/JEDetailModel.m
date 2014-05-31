@@ -22,7 +22,7 @@
         self.other    = @"总件重约3克,采用xxx";
         self.onlineDate= @"2014-05-21 14:34:55";
         self.contact   = @"李四";
-        self.phone     = @"18698083456";
+        self.phone     = @"18658199525";
         [self initImagesArray];
     }
     return self;

@@ -82,7 +82,10 @@
 }
 #pragma mark - Button Event
 - (IBAction)dailButtonPressed:(id)sender {
-    //[[UIApplication sharedApplication] openURL:<#(NSURL *)#>]
+    if ([self.phoneLabel.text length] >0) {
+        NSString *phoneNumber = [NSString stringWithFormat:@"tel://%@",self.phoneLabel.text];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
+    }
 }
 
 - (IBAction)evaluateButtonPressed:(id)sender {
