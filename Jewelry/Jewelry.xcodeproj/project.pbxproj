@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A17B5121938D22A0094F749 /* JEUserInfoSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A17B5101938D22A0094F749 /* JEUserInfoSettingViewController.m */; };
+		2A17B5131938D22A0094F749 /* JEUserInfoSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A17B5111938D22A0094F749 /* JEUserInfoSettingViewController.xib */; };
+		2A17B5171938E69A0094F749 /* JEUserInfoUpgradeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A17B5161938E69A0094F749 /* JEUserInfoUpgradeCell.m */; };
+		2A17B51B1938EBE70094F749 /* JEMyFollowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A17B5191938EBE70094F749 /* JEMyFollowVC.m */; };
+		2A17B51C1938EBE70094F749 /* JEMyFollowVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A17B51A1938EBE70094F749 /* JEMyFollowVC.xib */; };
+		2A17B51F1938EE3E0094F749 /* JEMyFollowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A17B51E1938EE3E0094F749 /* JEMyFollowCell.m */; };
+		2A17B5221938F2110094F749 /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A17B5201938F2110094F749 /* like.png */; };
+		2A17B5231938F2110094F749 /* like@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A17B5211938F2110094F749 /* like@2x.png */; };
+		2A17B5271938F66A0094F749 /* JECollectListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A17B5251938F66A0094F749 /* JECollectListVC.m */; };
+		2A17B5281938F66A0094F749 /* JECollectListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A17B5261938F66A0094F749 /* JECollectListVC.xib */; };
+		2A17B52B1938F7710094F749 /* JECollectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A17B52A1938F7710094F749 /* JECollectCell.m */; };
+		2ABBCAFE19395A2A00F1A5EB /* JEMyPointsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBCAFC19395A2A00F1A5EB /* JEMyPointsViewController.m */; };
+		2ABBCAFF19395A2A00F1A5EB /* JEMyPointsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ABBCAFD19395A2A00F1A5EB /* JEMyPointsViewController.xib */; };
+		2ABBCB0219395ADA00F1A5EB /* JEMyPointsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBCB0119395ADA00F1A5EB /* JEMyPointsCell.m */; };
+		2ABBCB0519395C2C00F1A5EB /* dashed.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ABBCB0319395C2C00F1A5EB /* dashed.png */; };
+		2ABBCB0619395C2C00F1A5EB /* dashed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ABBCB0419395C2C00F1A5EB /* dashed@2x.png */; };
+		2ABF1A00193637D600B2BA5E /* JESettingUserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABF19FF193637D600B2BA5E /* JESettingUserInfoCell.m */; };
+		2ABF1A0319363B3800B2BA5E /* hzw.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2ABF1A0119363B3800B2BA5E /* hzw.jpg */; };
+		2ABF1A0419363B3800B2BA5E /* hzw@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2ABF1A0219363B3800B2BA5E /* hzw@2x.jpg */; };
+		2ABF1A0619363DC700B2BA5E /* JESettingUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ABF1A0519363DC700B2BA5E /* JESettingUserInfoCell.xib */; };
 		6B4A0FC8E3F64B148EE1BE36 /* libPods-Jewelry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7BAA831549477B9B0AB83F /* libPods-Jewelry.a */; };
 		C30582DE1931D9CD00DE14E5 /* default_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = C30582DD1931D9CD00DE14E5 /* default_avatar.png */; };
 		C30582F219320F6100DE14E5 /* JEShopHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C30582F019320F6100DE14E5 /* JEShopHomeVC.m */; };
@@ -90,6 +110,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A17B50F1938D22A0094F749 /* JEUserInfoSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEUserInfoSettingViewController.h; sourceTree = "<group>"; };
+		2A17B5101938D22A0094F749 /* JEUserInfoSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEUserInfoSettingViewController.m; sourceTree = "<group>"; };
+		2A17B5111938D22A0094F749 /* JEUserInfoSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JEUserInfoSettingViewController.xib; sourceTree = "<group>"; };
+		2A17B5151938E69A0094F749 /* JEUserInfoUpgradeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEUserInfoUpgradeCell.h; sourceTree = "<group>"; };
+		2A17B5161938E69A0094F749 /* JEUserInfoUpgradeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEUserInfoUpgradeCell.m; sourceTree = "<group>"; };
+		2A17B5181938EBE70094F749 /* JEMyFollowVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEMyFollowVC.h; sourceTree = "<group>"; };
+		2A17B5191938EBE70094F749 /* JEMyFollowVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEMyFollowVC.m; sourceTree = "<group>"; };
+		2A17B51A1938EBE70094F749 /* JEMyFollowVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JEMyFollowVC.xib; sourceTree = "<group>"; };
+		2A17B51D1938EE3E0094F749 /* JEMyFollowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEMyFollowCell.h; sourceTree = "<group>"; };
+		2A17B51E1938EE3E0094F749 /* JEMyFollowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEMyFollowCell.m; sourceTree = "<group>"; };
+		2A17B5201938F2110094F749 /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
+		2A17B5211938F2110094F749 /* like@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "like@2x.png"; sourceTree = "<group>"; };
+		2A17B5241938F66A0094F749 /* JECollectListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JECollectListVC.h; sourceTree = "<group>"; };
+		2A17B5251938F66A0094F749 /* JECollectListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JECollectListVC.m; sourceTree = "<group>"; };
+		2A17B5261938F66A0094F749 /* JECollectListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JECollectListVC.xib; sourceTree = "<group>"; };
+		2A17B5291938F7710094F749 /* JECollectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JECollectCell.h; sourceTree = "<group>"; };
+		2A17B52A1938F7710094F749 /* JECollectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JECollectCell.m; sourceTree = "<group>"; };
+		2ABBCAFB19395A2A00F1A5EB /* JEMyPointsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEMyPointsViewController.h; sourceTree = "<group>"; };
+		2ABBCAFC19395A2A00F1A5EB /* JEMyPointsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEMyPointsViewController.m; sourceTree = "<group>"; };
+		2ABBCAFD19395A2A00F1A5EB /* JEMyPointsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JEMyPointsViewController.xib; sourceTree = "<group>"; };
+		2ABBCB0019395ADA00F1A5EB /* JEMyPointsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEMyPointsCell.h; sourceTree = "<group>"; };
+		2ABBCB0119395ADA00F1A5EB /* JEMyPointsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEMyPointsCell.m; sourceTree = "<group>"; };
+		2ABBCB0319395C2C00F1A5EB /* dashed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dashed.png; sourceTree = "<group>"; };
+		2ABBCB0419395C2C00F1A5EB /* dashed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dashed@2x.png"; sourceTree = "<group>"; };
+		2ABF19FE193637D600B2BA5E /* JESettingUserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JESettingUserInfoCell.h; sourceTree = "<group>"; };
+		2ABF19FF193637D600B2BA5E /* JESettingUserInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JESettingUserInfoCell.m; sourceTree = "<group>"; };
+		2ABF1A0119363B3800B2BA5E /* hzw.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hzw.jpg; sourceTree = "<group>"; };
+		2ABF1A0219363B3800B2BA5E /* hzw@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "hzw@2x.jpg"; sourceTree = "<group>"; };
+		2ABF1A0519363DC700B2BA5E /* JESettingUserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JESettingUserInfoCell.xib; sourceTree = "<group>"; };
 		4F7BAA831549477B9B0AB83F /* libPods-Jewelry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Jewelry.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C30582DD1931D9CD00DE14E5 /* default_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_avatar.png; sourceTree = "<group>"; };
 		C30582EF19320F6100DE14E5 /* JEShopHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEShopHomeVC.h; sourceTree = "<group>"; };
@@ -345,6 +394,29 @@
 				C3D0056419056C8700FC4A64 /* JEFourthTabbarVC.h */,
 				C3D0056519056C8700FC4A64 /* JEFourthTabbarVC.m */,
 				C3D0056619056C8700FC4A64 /* JEFourthTabbarVC.xib */,
+				2ABF19FE193637D600B2BA5E /* JESettingUserInfoCell.h */,
+				2ABF19FF193637D600B2BA5E /* JESettingUserInfoCell.m */,
+				2ABF1A0519363DC700B2BA5E /* JESettingUserInfoCell.xib */,
+				2A17B50F1938D22A0094F749 /* JEUserInfoSettingViewController.h */,
+				2A17B5101938D22A0094F749 /* JEUserInfoSettingViewController.m */,
+				2A17B5111938D22A0094F749 /* JEUserInfoSettingViewController.xib */,
+				2A17B5151938E69A0094F749 /* JEUserInfoUpgradeCell.h */,
+				2A17B5161938E69A0094F749 /* JEUserInfoUpgradeCell.m */,
+				2A17B5181938EBE70094F749 /* JEMyFollowVC.h */,
+				2A17B5191938EBE70094F749 /* JEMyFollowVC.m */,
+				2A17B51A1938EBE70094F749 /* JEMyFollowVC.xib */,
+				2A17B51D1938EE3E0094F749 /* JEMyFollowCell.h */,
+				2A17B51E1938EE3E0094F749 /* JEMyFollowCell.m */,
+				2A17B5241938F66A0094F749 /* JECollectListVC.h */,
+				2A17B5251938F66A0094F749 /* JECollectListVC.m */,
+				2A17B5261938F66A0094F749 /* JECollectListVC.xib */,
+				2A17B5291938F7710094F749 /* JECollectCell.h */,
+				2A17B52A1938F7710094F749 /* JECollectCell.m */,
+				2ABBCAFB19395A2A00F1A5EB /* JEMyPointsViewController.h */,
+				2ABBCAFC19395A2A00F1A5EB /* JEMyPointsViewController.m */,
+				2ABBCAFD19395A2A00F1A5EB /* JEMyPointsViewController.xib */,
+				2ABBCB0019395ADA00F1A5EB /* JEMyPointsCell.h */,
+				2ABBCB0119395ADA00F1A5EB /* JEMyPointsCell.m */,
 			);
 			path = FourthTabVC;
 			sourceTree = "<group>";
@@ -442,6 +514,12 @@
 		C3F72C5318FD8A78007FDB69 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				2ABBCB0319395C2C00F1A5EB /* dashed.png */,
+				2ABBCB0419395C2C00F1A5EB /* dashed@2x.png */,
+				2A17B5201938F2110094F749 /* like.png */,
+				2A17B5211938F2110094F749 /* like@2x.png */,
+				2ABF1A0119363B3800B2BA5E /* hzw.jpg */,
+				2ABF1A0219363B3800B2BA5E /* hzw@2x.jpg */,
 				C30582DD1931D9CD00DE14E5 /* default_avatar.png */,
 				C30582F4193212C800DE14E5 /* cover.png */,
 				C30582F5193212C800DE14E5 /* cover@2x.png */,
@@ -543,7 +621,9 @@
 			files = (
 				C3CDCF40192E4A24006E1BD8 /* icon_retweet@2x.png in Resources */,
 				C3F72D0818FD8A78007FDB69 /* tab_settingsH@2x.png in Resources */,
+				2ABBCAFF19395A2A00F1A5EB /* JEMyPointsViewController.xib in Resources */,
 				C3D0057E19056C8700FC4A64 /* JESecondTabbarVC.xib in Resources */,
+				2A17B51C1938EBE70094F749 /* JEMyFollowVC.xib in Resources */,
 				C3F72CF218FD8A78007FDB69 /* login_button_normal.png in Resources */,
 				C3CBDAEF1930E44E001B193A /* JEJewelryCircleTableViewCell.xib in Resources */,
 				C3F72CF118FD8A78007FDB69 /* ico_choose.png in Resources */,
@@ -551,8 +631,12 @@
 				C3F72CEE18FD8A78007FDB69 /* checked.png in Resources */,
 				C30582DE1931D9CD00DE14E5 /* default_avatar.png in Resources */,
 				C3F72CF818FD8A78007FDB69 /* notchecked@2x.png in Resources */,
+				2ABF1A0319363B3800B2BA5E /* hzw.jpg in Resources */,
 				C3CDCF3C192E4A24006E1BD8 /* icon_favorite@2x.png in Resources */,
+				2A17B5131938D22A0094F749 /* JEUserInfoSettingViewController.xib in Resources */,
+				2ABF1A0419363B3800B2BA5E /* hzw@2x.jpg in Resources */,
 				C3CDCF3B192E4A24006E1BD8 /* icon_favorite.png in Resources */,
+				2ABF1A0619363DC700B2BA5E /* JESettingUserInfoCell.xib in Resources */,
 				C3CDCF3F192E4A24006E1BD8 /* icon_retweet.png in Resources */,
 				C3F72D0518FD8A78007FDB69 /* tab_normal.png in Resources */,
 				C3CDCF3E192E4A24006E1BD8 /* icon_reply@2x.png in Resources */,
@@ -561,14 +645,18 @@
 				C3E0589D19168E2C002E2770 /* JEDetailVC.xib in Resources */,
 				C3D0057C19056C8700FC4A64 /* JEFourthTabbarVC.xib in Resources */,
 				C30582F6193212C800DE14E5 /* cover.png in Resources */,
+				2ABBCB0619395C2C00F1A5EB /* dashed@2x.png in Resources */,
 				C30582F7193212C800DE14E5 /* cover@2x.png in Resources */,
 				C3F72CF418FD8A78007FDB69 /* login_gray_normal.png in Resources */,
 				C30582F319320F6100DE14E5 /* JEShopHomeVC.xib in Resources */,
 				C3D0058F190571FD00FC4A64 /* JEHomePageTableViewCell.xib in Resources */,
 				C3F72CF318FD8A78007FDB69 /* login_button_pressed.png in Resources */,
 				C3D0057819056C8700FC4A64 /* JELeftSidePanelVC.xib in Resources */,
+				2A17B5221938F2110094F749 /* like.png in Resources */,
 				C3CDCF3D192E4A24006E1BD8 /* icon_reply.png in Resources */,
 				C3F72CF018FD8A78007FDB69 /* ico_checkbox.png in Resources */,
+				2A17B5281938F66A0094F749 /* JECollectListVC.xib in Resources */,
+				2A17B5231938F2110094F749 /* like@2x.png in Resources */,
 				C3F72CEF18FD8A78007FDB69 /* checked@2x.png in Resources */,
 				C311C667193217F800BB3660 /* JEShopHomeTableViewCell.xib in Resources */,
 				C3F72CF718FD8A78007FDB69 /* notchecked.png in Resources */,
@@ -577,6 +665,7 @@
 				C3F72D0A18FD8A78007FDB69 /* tab_settingsN@2x.png in Resources */,
 				C3D0057619056C8700FC4A64 /* JEFirstTabbarVC.xib in Resources */,
 				C3F72CF518FD8A78007FDB69 /* login_gray_pressed.png in Resources */,
+				2ABBCB0519395C2C00F1A5EB /* dashed.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,16 +717,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ABBCAFE19395A2A00F1A5EB /* JEMyPointsViewController.m in Sources */,
 				C311C666193217F800BB3660 /* JEShopHomeTableViewCell.m in Sources */,
+				2A17B52B1938F7710094F749 /* JECollectCell.m in Sources */,
 				C3D0057519056C8700FC4A64 /* JEFirstTabbarVC.m in Sources */,
 				C3CDCF43192E4D74006E1BD8 /* JEJewelryCircleModel.m in Sources */,
+				2A17B51B1938EBE70094F749 /* JEMyFollowVC.m in Sources */,
 				C3F72CE918FD8A78007FDB69 /* AppDelegate.m in Sources */,
 				C3E0589C19168E2C002E2770 /* JEDetailVC.m in Sources */,
 				C3D0058019056C8700FC4A64 /* FETabBarViewController.m in Sources */,
 				C30582F219320F6100DE14E5 /* JEShopHomeVC.m in Sources */,
+				2A17B5271938F66A0094F749 /* JECollectListVC.m in Sources */,
 				C3D0057919056C8700FC4A64 /* JERightSidePanelVC.m in Sources */,
 				C3D00592190573A900FC4A64 /* JEHomePageModel.m in Sources */,
 				C3D0058819056CD000FC4A64 /* JEPriceRange.m in Sources */,
+				2A17B51F1938EE3E0094F749 /* JEMyFollowCell.m in Sources */,
+				2A17B5171938E69A0094F749 /* JEUserInfoUpgradeCell.m in Sources */,
 				C3D0057F19056C8700FC4A64 /* FETabBarView.m in Sources */,
 				C3D0058119056C8700FC4A64 /* JEThirdTabbarVC.m in Sources */,
 				C3F13F1D192857A10024AEC3 /* JEFirstTabbarWrapperPageVC.m in Sources */,
@@ -646,11 +741,14 @@
 				C3D0058B1905719E00FC4A64 /* JEHomePageTableViewCell.m in Sources */,
 				C3BBA8311917E26C00FA9D07 /* JEDetailModel.m in Sources */,
 				C3D0057B19056C8700FC4A64 /* JEFourthTabbarVC.m in Sources */,
+				2ABF1A00193637D600B2BA5E /* JESettingUserInfoCell.m in Sources */,
 				C3D0057719056C8700FC4A64 /* JELeftSidePanelVC.m in Sources */,
 				C32712F418FC2DA600971956 /* main.m in Sources */,
 				C3703BDF190EA89900DBE8C8 /* JEHomePageManager.m in Sources */,
 				C3CBDAEE1930E44E001B193A /* JEJewelryCircleTableViewCell.m in Sources */,
+				2ABBCB0219395ADA00F1A5EB /* JEMyPointsCell.m in Sources */,
 				C311C65F193215A200BB3660 /* JEJewelryShopModel.m in Sources */,
+				2A17B5121938D22A0094F749 /* JEUserInfoSettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,14 +1,14 @@
 //
-//  JEFourthTabbarVC.h
+//  JECollectListVC.h
 //  Jewelry
 //
-//  Created by xxx on 14-4-16.
+//  Created by wuyj on 14-5-31.
 //  Copyright (c) 2014年 FE. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface JEFourthTabbarVC : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface JECollectListVC : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @end
