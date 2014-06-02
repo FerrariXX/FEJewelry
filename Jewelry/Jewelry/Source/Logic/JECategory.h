@@ -16,4 +16,7 @@
 
 - (NSString*)currentSelectedCategory;
 - (NSInteger)currentSelectedIndex;
+
+- (void)loadCategoryWithCompletionBlock:(JECompletionBlock)block;
+
 @end

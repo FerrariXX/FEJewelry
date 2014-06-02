@@ -15,6 +15,9 @@
 #import "JEDetailModel.h"
 #import "UIImageView+WebCache.h"
 #import "UIView+FETouchBlocks.h"
+#import "JEHomePageManager.h"
+#import "JECategory.h"
+#import "JEPriceRange.h"
 
 @interface JEFirstTabbarVC ()
 
@@ -27,8 +30,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        //TODO: 
-        self.homePageModel = [[JEHomePageModel alloc] init];
+        self.homePageModel = [[JEHomePageManager sharedHomePageManager] homePageModel];
     }
     return self;
 }
@@ -43,6 +45,11 @@
     self.tableView.separatorColor = [UIColor clearColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     // Do any additional setup after loading the view from its nib.
+    
+    //TODO:
+    NSString  *currentCategory  = [[[JEHomePageManager sharedHomePageManager] jewelryCategory] currentSelectedCategory];
+    NSString  *currentPriceRange= [[[JEHomePageManager sharedHomePageManager] jewelryPriceRange] currentSelectedPriceRange];
+    [self.homePageModel loadDataWithCategory:currentCategory priceRange:currentPriceRange];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,6 +58,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+}
 //#pragma mark - NaviBar Button 
 //- (void)leftBarButtonPressed:(id)sender{
 //    [self.sidePanelController showLeftPanelAnimated:YES];

@@ -16,6 +16,7 @@
 
 @interface JESecondTabbarVC ()
 @property(nonatomic, strong)JEJewelryCircleModel  *jewelryCircleModel;
+@property (strong, nonatomic) FEScrollPageView *bannerView;
 
 @end
 
@@ -27,6 +28,7 @@
     if (self) {
         // Custom initialization
         self.jewelryCircleModel = [[JEJewelryCircleModel alloc] init];
+        self.bannerView = [[FEScrollPageView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 160)];
     }
     return self;
 }
@@ -38,9 +40,16 @@
     self.tableView.separatorColor = [UIColor clearColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"消息" style:UIBarButtonItemStyleBordered target:self action:@selector(leftBarButtonPressed:)];
-
+    self.tableView.tableHeaderView = self.bannerView;
     
+    __weak  JESecondTabbarVC *weakSelf = self;
+    [self.jewelryCircleModel loadWithCompletionBlock:^(BOOL isSuccess) {
+        if (isSuccess) {
+            [weakSelf.bannerView setImageItems:self.jewelryCircleModel.bannerImages selectedBlock:^(FEImageItem *sender) {
+                //do nothing here
+            } isAutoPlay:YES];   
+        }
+    }];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -77,14 +86,14 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     NSInteger index = indexPath.row;
     JEJewelryCircleItem* item = [self.jewelryCircleModel contentAtIndexPath:index];
-    [cell.logoImage setImageWithURL:[NSURL URLWithString:item.logoURL] placeholderImage:[UIImage imageNamed:@"default_avatar"]];
-    cell.titleLabel.text = item.title;
-    cell.priceLabel.text = [NSString stringWithFormat:@"￥%@",item.price];
-    cell.nameLabel.text  = item.name;
-    cell.categoryLabel.text = item.category;
-    cell.idLabel.text       = item.idNumber;
-    cell.certificationIdLabel.text = item.certificationId;
-    [cell.detailScrollImagsView setImageItems:item.imagesURL selectedBlock:^(FEImageItem *sender) {
+    [cell.logoImage setImageWithURL:[NSURL URLWithString:item.shopImage] placeholderImage:[UIImage imageNamed:@"default_avatar"]];
+    cell.nameLabel.text  = item.shopName;
+    cell.idLabel.text    = item.shopID;
+    cell.addressLabel.text = item.shopAddress;
+    cell.phoneLabel.text   = item.shopPhone;
+   //cell.categoryLabel.text = item.shopc;
+   
+    [cell.detailScrollImagsView setImageItems:item.shopGoodsURL selectedBlock:^(FEImageItem *sender) {
     } isAutoPlay:NO];
     cell.detailScrollImagsView.itemWidth = 160.0;
     return cell;    
@@ -99,14 +108,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self.bannerView stopAutoPlay];
     JEShopHomeVC *vc = [[JEShopHomeVC alloc] initWithNibName:@"JEShopHomeVC" bundle:nil];
+    JEJewelryCircleItem* item = [self.jewelryCircleModel contentAtIndexPath:indexPath.row];
+    vc.shopID = item.shopID;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 
-#pragma mark - NaviBar Button
-- (void)leftBarButtonPressed:(id)sender{
-    //TODO:
-}
 
 @end

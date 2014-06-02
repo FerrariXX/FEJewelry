@@ -22,4 +22,7 @@
 
 #import "UIImageView+WebCache.h"
 #import "ViewPagerController.h"
+
+#import <AFNetworking/AFNetworking.h>
+
 #endif

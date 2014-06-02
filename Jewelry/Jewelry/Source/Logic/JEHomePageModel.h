@@ -13,6 +13,8 @@
 @property(nonatomic, strong)NSString* desInfo;
 @property(nonatomic, strong)NSString* idNumber;
 @property(nonatomic, strong)NSString* price;
+
+- (instancetype)initWithDictionary:(NSDictionary*)dict;
 @end
 
 @interface JEHomePageModel : NSObject
@@ -21,4 +23,5 @@
 - (JEHomePageItem*)contentAtIndexPath:(NSInteger)index;
 
 - (void)loadDataWithCategory:(NSString*)categroy priceRange:(NSString*)priceRange;
+- (void)loadDataWithCategory:(NSString*)categroy startPrice:(NSString*)startPrice endPrice:(NSString*)endPrice;
 @end

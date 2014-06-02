@@ -11,13 +11,16 @@
 #import "JEHomePageModel.h"
 #import "JEHomePageManager.h"
 #import "JECategory.h"
+#import "JEPriceRange.h"
 #import "FESidePanelController.h"
 #import "ViewPagerController.h"
 
 
 @interface JEFirstTabbarWrapperPageVC ()<ViewPagerDataSource,ViewPagerDelegate>
 @property(nonatomic, readonly)JECategory *jewelryCategory;
+@property(nonatomic, readonly)JEPriceRange *jewelryPriceRange;
 @property(nonatomic, assign)NSInteger currentTabIndex;
+@property(nonatomic, strong)NSString *currentPriceRange;
 @end
 
 @implementation JEFirstTabbarWrapperPageVC
@@ -36,19 +39,26 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分类" style:UIBarButtonItemStyleBordered target:self action:@selector(leftBarButtonPressed:)];
+    //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分类" style:UIBarButtonItemStyleBordered target:self action:@selector(leftBarButtonPressed:)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"筛选" style:UIBarButtonItemStyleBordered target:self action:@selector(rightBarButtonPressed:)];
     
     self.dataSource = self;
     self.delegate = self;
+    
+    __weak __typeof(self) weakSelf = self;//__typeof(&*self)
+    [self.jewelryCategory loadCategoryWithCompletionBlock:^(BOOL isSuccess) {
+        [weakSelf reloadData];
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     NSInteger index = [self.jewelryCategory currentSelectedIndex];
-    if (self.currentTabIndex != index) {
+    NSString *priceRange = [self.jewelryPriceRange currentSelectedPriceRange];
+    if (self.currentTabIndex != index || [self.currentPriceRange isEqualToString:priceRange]) {
         [self selectTabAtIndex:index];
         self.currentTabIndex = index;
+        self.currentPriceRange = priceRange;
     }
 }
 
@@ -84,6 +94,11 @@
 - (JECategory *)jewelryCategory{
     return  [[JEHomePageManager sharedHomePageManager] jewelryCategory];
 }
+
+- (JEPriceRange *)jewelryPriceRange{
+    return  [[JEHomePageManager sharedHomePageManager] jewelryPriceRange];
+}
+
 
 #pragma mark - ViewPagerDataSource
 - (NSUInteger)numberOfTabsForViewPager:(ViewPagerController *)viewPager {
@@ -155,6 +170,7 @@
     
     // TODO: something useful
     self.currentTabIndex = index;
+    [self.jewelryCategory didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
 }
 
 @end

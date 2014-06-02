@@ -9,18 +9,23 @@
 #import <Foundation/Foundation.h>
 
 @interface JEJewelryShopItem : NSObject
-@property(nonatomic, strong)NSString* imagesURL;
+@property(nonatomic, strong)NSString* imageURL;
 @property(nonatomic, strong)NSString* name;
 @property(nonatomic, strong)NSString* idNumber;
 @property(nonatomic, strong)NSString* price;
-@property(nonatomic, strong)NSString* date;
-
+- (instancetype)initWithDictionary:(NSDictionary*)dict;
 @end
 
 
 @interface JEJewelryShopModel : NSObject
 - (NSString*)jewelryShopTitle;
+- (NSString*)jewelryShopPhone;
+
 - (NSInteger)numberOfSection;
 - (NSInteger)numberOfRowsInSection:(NSInteger)section;
 - (JEJewelryShopItem*)contentAtIndexPath:(NSInteger)index;
+
+- (void)loadWithShopID:(NSString*)shopID completionBlock:(JECompletionBlock)block;
+- (void)loadWithShopID:(NSString*)shopID pageNumber:(NSInteger)pageNumber  completionBlock:(JECompletionBlock)block;
+
 @end

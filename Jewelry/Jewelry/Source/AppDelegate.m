@@ -44,17 +44,17 @@
 	UIViewController* vc = nil;
     UINavigationController* naviVC = nil;
 
-    JELeftSidePanelVC* leftVC   = [[JELeftSidePanelVC alloc] initWithNibName:@"JELeftSidePanelVC" bundle:nil];
+    //JELeftSidePanelVC* leftVC   = [[JELeftSidePanelVC alloc] initWithNibName:@"JELeftSidePanelVC" bundle:nil];
     JERightSidePanelVC* rightVC = [[JERightSidePanelVC alloc] initWithNibName:@"JERightSidePanelVC" bundle:nil];
     //TODO:JEFirstTabbarVC*centerVC = [[JEFirstTabbarVC alloc] initWithNibName:@"JEFirstTabbarVC" bundle:nil];
     JEFirstTabbarWrapperPageVC *centerVC = [[JEFirstTabbarWrapperPageVC alloc] init];
-    UINavigationController* leftNavi   = [[UINavigationController alloc] initWithRootViewController:leftVC];
+    //UINavigationController* leftNavi   = [[UINavigationController alloc] initWithRootViewController:leftVC];
     UINavigationController* rightNavi  = [[UINavigationController alloc] initWithRootViewController:rightVC];
     UINavigationController* centerNavi = [[UINavigationController alloc] initWithRootViewController:centerVC];
     centerNavi.delegate = self;
     FESidePanelController *sidePanel   = [[FESidePanelController alloc]
                                           initWithCenterViewController:centerNavi
-                                                    leftViewController:leftNavi
+                                                    leftViewController:nil
                                                    rightViewController:rightNavi];
     [sidePanel setDelegate:self];
     

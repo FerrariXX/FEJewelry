@@ -12,12 +12,12 @@
 
 @interface JEJewelryCircleTableViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *logoImage;
-@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
-@property (strong, nonatomic) IBOutlet UILabel *priceLabel;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (strong, nonatomic) IBOutlet UILabel *idLabel;
-@property (strong, nonatomic) IBOutlet UILabel *certificationIdLabel;
+@property (strong, nonatomic) IBOutlet UILabel *addressLabel;
+@property (strong, nonatomic) IBOutlet UILabel *phoneLabel;
+
 @property (strong, nonatomic) IBOutlet FEScrollPageView *detailScrollImagsView;
 
 @property (strong, nonatomic) IBOutlet UIView *seperateLine;

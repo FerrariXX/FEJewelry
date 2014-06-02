@@ -8,7 +8,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JEShopHomeVC">
             <connections>
                 <outlet property="aboveAvatarView" destination="ILh-Td-EWE" id="6i3-SH-8zD"/>
-                <outlet property="shopLabel" destination="O1S-BU-MUp" id="pZZ-xR-yTc"/>
+                <outlet property="shopNameLabel" destination="O1S-BU-MUp" id="j2o-Ya-ROs"/>
+                <outlet property="shopPhoneLabel" destination="u3I-nS-FGv" id="txU-6g-jux"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,18 +29,20 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_avatar.png" id="OMK-7w-kFR">
-                    <rect key="frame" x="10" y="10" width="67" height="64"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                </imageView>
-                <view alpha="0.44999999999999962" contentMode="scaleToFill" id="SS9-mL-vbS">
+                <view alpha="0.64999999999999969" contentMode="scaleToFill" id="SS9-mL-vbS">
                     <rect key="frame" x="0.0" y="40" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O1S-BU-MUp">
-                            <rect key="frame" x="101" y="12" width="172" height="20"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="店铺名称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O1S-BU-MUp">
+                            <rect key="frame" x="9" y="8" width="144" height="27"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13509983245" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u3I-nS-FGv">
+                            <rect key="frame" x="155" y="11" width="121" height="24"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -48,7 +51,4 @@
             </subviews>
         </view>
     </objects>
-    <resources>
-        <image name="default_avatar.png" width="80" height="80"/>
-    </resources>
 </document>

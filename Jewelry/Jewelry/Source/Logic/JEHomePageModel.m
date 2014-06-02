@@ -7,6 +7,7 @@
 //
 
 #import "JEHomePageModel.h"
+#import <AFNetworking/AFNetworking.h>
 
 
 @implementation JEHomePageItem
@@ -22,11 +23,24 @@
     }
     return self;
 }
+
+- (instancetype)initWithDictionary:(NSDictionary*)dict{
+    self = [super init];
+    if (self) {
+        //"http://gw2.alicdn.com/bao/uploaded/i3/T1QPnBFmleXXXXXXXX_!!0-item_pic.jpg",
+        self.imgURL = [dict objectForKey:@"imageURL"];
+        self.desInfo  = [dict objectForKey:@"name"];
+        self.idNumber = [dict objectForKey:@"numberID"];
+        self.price    = [dict objectForKey:@"price"];
+    }
+    return self;
+}
+
 @end
 
 
 @interface JEHomePageModel()
-@property(nonatomic, strong)NSArray *contentArray;
+@property(nonatomic, strong)NSMutableArray *contentArray;
 
 @end
 
@@ -54,14 +68,48 @@
 }
 
 - (void)loadDataWithCategory:(NSString*)categroy priceRange:(NSString*)priceRange{
+    NSArray *item = [priceRange componentsSeparatedByString:@"~"];
+    if ([item count]==2) {
+        [self loadDataWithCategory:categroy startPrice:[item objectAtIndex:0] endPrice:[item objectAtIndex:1]];
+    }
+}
+
+- (void)loadDataWithCategory:(NSString*)categroy startPrice:(NSString*)startPrice endPrice:(NSString*)endPrice{
+
     //TODO:
+    return;
+    
+    __weak __typeof(self) weakSelf = self;//__typeof(&*self)
+    NSString *urlStr = [NSString stringWithFormat:@"%@xxx", kBaseURLString];
+    NSURLRequest *request = [NSURLRequest requestWithURL: [NSURL URLWithString:urlStr]];
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSDictionary *jsonDict = (NSDictionary*)JSON;
+        [weakSelf parserResponseDict:jsonDict];
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        
+    }];
+    [operation start];
 }
 
 
 #pragma mark - Private Method
 - (void)baseInit{
+    self.contentArray = [NSMutableArray arrayWithCapacity:0];
     JEHomePageItem * item = [[JEHomePageItem alloc] init];
-    self.contentArray = @[item,[[JEHomePageItem alloc] init],[[JEHomePageItem alloc] init],[[JEHomePageItem alloc] init],[[JEHomePageItem alloc] init],[[JEHomePageItem alloc] init],[[JEHomePageItem alloc] init],[[JEHomePageItem alloc] init]];
+    NSArray * items = @[item,[[JEHomePageItem alloc] init],[[JEHomePageItem alloc] init],[[JEHomePageItem alloc] init],[[JEHomePageItem alloc] init],[[JEHomePageItem alloc] init],[[JEHomePageItem alloc] init],[[JEHomePageItem alloc] init]];
+    [self.contentArray addObjectsFromArray:items];
 }
 
+- (void)parserResponseDict:(NSDictionary*)dict{
+    if (dict && [dict isKindOfClass:[NSDictionary class]]) {
+        NSArray *itemArray = [dict objectForKey:@"categoryListArray"];
+        if (itemArray && [itemArray isKindOfClass:[NSArray class]]) {
+            for (NSDictionary * item in itemArray) {
+                JEHomePageItem *homePageItem = [[JEHomePageItem alloc] initWithDictionary:item];
+                [self.contentArray addObject:homePageItem];
+            }
+        }
+    }
+}
 @end

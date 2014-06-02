@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface JEShopHomeVC : UITableViewController
-
+@property(nonatomic, strong)NSString*shopID;
 @end

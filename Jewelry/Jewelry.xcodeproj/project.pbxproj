@@ -36,6 +36,8 @@
 		C311C65F193215A200BB3660 /* JEJewelryShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C311C65E193215A200BB3660 /* JEJewelryShopModel.m */; };
 		C311C666193217F800BB3660 /* JEShopHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C311C664193217F800BB3660 /* JEShopHomeTableViewCell.m */; };
 		C311C667193217F800BB3660 /* JEShopHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C311C665193217F800BB3660 /* JEShopHomeTableViewCell.xib */; };
+		C31BC343193C6A200045BB42 /* JEDetailVCListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C31BC341193C6A200045BB42 /* JEDetailVCListTableViewCell.m */; };
+		C31BC344193C6A200045BB42 /* JEDetailVCListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C31BC342193C6A200045BB42 /* JEDetailVCListTableViewCell.xib */; };
 		C32712E818FC2DA600971956 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32712E718FC2DA600971956 /* Foundation.framework */; };
 		C32712EA18FC2DA600971956 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32712E918FC2DA600971956 /* CoreGraphics.framework */; };
 		C32712EC18FC2DA600971956 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32712EB18FC2DA600971956 /* UIKit.framework */; };
@@ -151,6 +153,9 @@
 		C311C663193217F800BB3660 /* JEShopHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEShopHomeTableViewCell.h; sourceTree = "<group>"; };
 		C311C664193217F800BB3660 /* JEShopHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEShopHomeTableViewCell.m; sourceTree = "<group>"; };
 		C311C665193217F800BB3660 /* JEShopHomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JEShopHomeTableViewCell.xib; sourceTree = "<group>"; };
+		C31BC340193C6A200045BB42 /* JEDetailVCListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEDetailVCListTableViewCell.h; sourceTree = "<group>"; };
+		C31BC341193C6A200045BB42 /* JEDetailVCListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEDetailVCListTableViewCell.m; sourceTree = "<group>"; };
+		C31BC342193C6A200045BB42 /* JEDetailVCListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JEDetailVCListTableViewCell.xib; sourceTree = "<group>"; };
 		C32712E418FC2DA600971956 /* Jewelry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jewelry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C32712E718FC2DA600971956 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C32712E918FC2DA600971956 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -384,6 +389,9 @@
 				C3E0589919168E2C002E2770 /* JEDetailVC.h */,
 				C3E0589A19168E2C002E2770 /* JEDetailVC.m */,
 				C3E0589B19168E2C002E2770 /* JEDetailVC.xib */,
+				C31BC340193C6A200045BB42 /* JEDetailVCListTableViewCell.h */,
+				C31BC341193C6A200045BB42 /* JEDetailVCListTableViewCell.m */,
+				C31BC342193C6A200045BB42 /* JEDetailVCListTableViewCell.xib */,
 			);
 			path = FirstTabVC;
 			sourceTree = "<group>";
@@ -590,6 +598,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = FE;
 				TargetAttributes = {
+					C32712E318FC2DA600971956 = {
+						DevelopmentTeam = 86B9E4AN6L;
+					};
 					C327130718FC2DA600971956 = {
 						TestTargetID = C32712E318FC2DA600971956;
 					};
@@ -645,6 +656,7 @@
 				C3E0589D19168E2C002E2770 /* JEDetailVC.xib in Resources */,
 				C3D0057C19056C8700FC4A64 /* JEFourthTabbarVC.xib in Resources */,
 				C30582F6193212C800DE14E5 /* cover.png in Resources */,
+				C31BC344193C6A200045BB42 /* JEDetailVCListTableViewCell.xib in Resources */,
 				2ABBCB0619395C2C00F1A5EB /* dashed@2x.png in Resources */,
 				C30582F7193212C800DE14E5 /* cover@2x.png in Resources */,
 				C3F72CF418FD8A78007FDB69 /* login_gray_normal.png in Resources */,
@@ -742,6 +754,7 @@
 				C3BBA8311917E26C00FA9D07 /* JEDetailModel.m in Sources */,
 				C3D0057B19056C8700FC4A64 /* JEFourthTabbarVC.m in Sources */,
 				2ABF1A00193637D600B2BA5E /* JESettingUserInfoCell.m in Sources */,
+				C31BC343193C6A200045BB42 /* JEDetailVCListTableViewCell.m in Sources */,
 				C3D0057719056C8700FC4A64 /* JELeftSidePanelVC.m in Sources */,
 				C32712F418FC2DA600971956 /* main.m in Sources */,
 				C3703BDF190EA89900DBE8C8 /* JEHomePageManager.m in Sources */,
@@ -868,6 +881,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libstdc++";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Jewelry/Jewelry-Prefix.pch";
 				INFOPLIST_FILE = "Jewelry/Jewelry-Info.plist";
@@ -886,6 +900,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libstdc++";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Jewelry/Jewelry-Prefix.pch";
 				INFOPLIST_FILE = "Jewelry/Jewelry-Info.plist";

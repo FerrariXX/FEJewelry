@@ -56,6 +56,35 @@
     return 0;
 }
 
+- (void)loadCategoryWithCompletionBlock:(JECompletionBlock)block{
+    
+    //TODO:
+    return;
+    
+    __weak __typeof(self) weakSelf = self;//__typeof(&*self)
+    NSString *urlStr = [NSString stringWithFormat:@"%@xxx", kBaseURLString];
+    NSURLRequest *request = [NSURLRequest requestWithURL: [NSURL URLWithString:urlStr]];
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSDictionary *jsonDict = (NSDictionary*)JSON;
+        if ([[jsonDict objectForKey:@"categoryArray"] count] >0) {
+            weakSelf.contentArray = [jsonDict objectForKey:@"categoryArray"];
+            weakSelf.currentSelected = [weakSelf.contentArray objectAtIndex:0];
+            [[NSUserDefaults standardUserDefaults] setObject:weakSelf.currentSelected forKey:kJECurrentSelectedCategoryKey];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
+        if (block) {
+            block(YES);
+        }
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        if (block) {
+            block(NO);
+        }
+    }];
+    [operation start];
+}
+
+
 
 #pragma mark - Private Method
 - (void)baseInit{

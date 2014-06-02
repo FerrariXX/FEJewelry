@@ -15,11 +15,20 @@
 @interface JEShopHomeVC ()
 @property(nonatomic, strong)JEJewelryShopModel  *shopModel;
 @property(nonatomic, strong)IBOutlet UIView  *aboveAvatarView;
-@property(nonatomic, strong)IBOutlet UILabel *shopLabel;
-
+@property(nonatomic, strong)IBOutlet UILabel *shopNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *shopPhoneLabel;
+@property (assign, nonatomic) NSInteger listCount;
+@property (assign, nonatomic) NSInteger pageNumber;
 @end
 
 @implementation JEShopHomeVC
+
+- (JEJewelryShopModel *)shopModel{
+    if (_shopModel == nil) {
+        _shopModel = [[JEJewelryShopModel alloc] init];
+    }
+    return _shopModel;
+}
 
 - (void)viewDidLoad
 {
@@ -40,8 +49,11 @@
     //This tableHeaderView plays the placeholder role here.
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, FECoverViewHeight + 0)];
 
-    self.shopModel = [[JEJewelryShopModel alloc] init];
-    self.shopLabel.text = self.shopModel.jewelryShopTitle;
+    __weak  JEShopHomeVC *weakSelf = self;
+    self.pageNumber = 0;
+    [self.shopModel loadWithShopID:self.shopID completionBlock:^(BOOL isSuccess) {
+        [weakSelf updateData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,8 +72,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    self.listCount = [self.shopModel numberOfRowsInSection:section];
     // Return the number of rows in the section.
-    return [self.shopModel numberOfRowsInSection:section];
+    return self.listCount;
 }
 
 
@@ -76,11 +89,10 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     NSInteger index = indexPath.row;
     JEJewelryShopItem* item = [self.shopModel contentAtIndexPath:index];
-    [cell.itemImageView setImageWithURL:[NSURL URLWithString:item.imagesURL] placeholderImage:nil];
+    [cell.itemImageView setImageWithURL:[NSURL URLWithString:item.imageURL] placeholderImage:nil];
     cell.nameLabel.text  = item.name;
     cell.priceLabel.text = [NSString stringWithFormat:@"￥%@",item.price];
     cell.idLabel.text    = item.idNumber;
-    cell.dateLabel.text  = item.date;
     return cell;
 }
 
@@ -88,24 +100,30 @@
     return [JEShopHomeTableViewCell height];
 }
 
-/*
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    __weak  JEShopHomeVC *weakSelf = self;
+    if (indexPath.row > (self.listCount -5)) {
+        [self.shopModel loadWithShopID:self.shopID pageNumber:self.pageNumber completionBlock:^(BOOL isSuccess) {
+            [weakSelf updateData];
+        }];
+    }
+}
+
+
 #pragma mark - Table view delegate
 
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-    
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-*/
 
 #pragma mark - Private Method
+
+- (void)updateData{
+    self.shopNameLabel.text = self.shopModel.jewelryShopTitle;
+    self.shopPhoneLabel.text = self.shopModel.jewelryShopPhone;
+    [self.tableView reloadData];
+}
 //- (UIView*)aboveAvatarView{
 //    if (_aboveAvatarView == nil) {
 //        _aboveAvatarView = [JEShopHomeVC instanceWithNibName:@"JEShopHomeVC" bundle:nil owner:nil index:1];

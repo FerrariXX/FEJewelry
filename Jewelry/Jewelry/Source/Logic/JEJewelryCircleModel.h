@@ -9,19 +9,22 @@
 #import <Foundation/Foundation.h>
 
 @interface JEJewelryCircleItem : NSObject
-@property(nonatomic, strong)NSString* logoURL;
-@property(nonatomic, strong)NSString* title;
-@property(nonatomic, strong)NSString* name;
-@property(nonatomic, strong)NSString* category;
-@property(nonatomic, strong)NSString* idNumber;
-@property(nonatomic, strong)NSString* certificationId;//证书编号
-@property(nonatomic, strong)NSString* price;
-@property(nonatomic, strong)NSArray * imagesURL;
+@property(nonatomic, strong)NSString* shopID;
+@property(nonatomic, strong)NSString* shopName;
+@property(nonatomic, strong)NSString* shopImage;
+@property(nonatomic, strong)NSString* shopAddress;
+@property(nonatomic, strong)NSString* shopPhone;
+@property(nonatomic, strong)NSArray * shopGoodsURL;
+
+- (instancetype)initWithDictionary:(NSDictionary*)dict;
 
 @end
 
 @interface JEJewelryCircleModel : NSObject
+@property(nonatomic, strong)NSArray *bannerImages;
 - (NSInteger)numberOfSection;
 - (NSInteger)numberOfRowsInSection:(NSInteger)section;
 - (JEJewelryCircleItem*)contentAtIndexPath:(NSInteger)index;
+
+- (void)loadWithCompletionBlock:(JECompletionBlock)block;
 @end
