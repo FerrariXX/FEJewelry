@@ -62,15 +62,17 @@
     sidePanel.title = FEObjectAtIndex(titlesArr, 0);
 	[controllerArr addObject:sidePanel];
     
-    vc = [[JESecondTabbarVC alloc] init];
-	vc.title = FEObjectAtIndex(titlesArr, 1);
-    naviVC = [[UINavigationController alloc] initWithRootViewController:vc];
-	[controllerArr addObject:naviVC];
 
     vc = [[JEThirdTabbarVC alloc] init];
 	vc.title = FEObjectAtIndex(titlesArr, 2);
     naviVC = [[UINavigationController alloc] initWithRootViewController:vc];
 	[controllerArr addObject:naviVC];
+    
+    vc = [[JESecondTabbarVC alloc] init];
+	vc.title = FEObjectAtIndex(titlesArr, 1);
+    naviVC = [[UINavigationController alloc] initWithRootViewController:vc];
+	[controllerArr addObject:naviVC];
+    
     
     vc = [[JEFourthTabbarVC alloc] init];
 	vc.title = FEObjectAtIndex(titlesArr, 3);

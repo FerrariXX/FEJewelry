@@ -38,6 +38,7 @@
 		C311C667193217F800BB3660 /* JEShopHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C311C665193217F800BB3660 /* JEShopHomeTableViewCell.xib */; };
 		C31BC343193C6A200045BB42 /* JEDetailVCListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C31BC341193C6A200045BB42 /* JEDetailVCListTableViewCell.m */; };
 		C31BC344193C6A200045BB42 /* JEDetailVCListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C31BC342193C6A200045BB42 /* JEDetailVCListTableViewCell.xib */; };
+		C31BC347193C949F0045BB42 /* JEWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C31BC346193C949F0045BB42 /* JEWebViewController.m */; };
 		C32712E818FC2DA600971956 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32712E718FC2DA600971956 /* Foundation.framework */; };
 		C32712EA18FC2DA600971956 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32712E918FC2DA600971956 /* CoreGraphics.framework */; };
 		C32712EC18FC2DA600971956 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C32712EB18FC2DA600971956 /* UIKit.framework */; };
@@ -156,6 +157,8 @@
 		C31BC340193C6A200045BB42 /* JEDetailVCListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEDetailVCListTableViewCell.h; sourceTree = "<group>"; };
 		C31BC341193C6A200045BB42 /* JEDetailVCListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEDetailVCListTableViewCell.m; sourceTree = "<group>"; };
 		C31BC342193C6A200045BB42 /* JEDetailVCListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JEDetailVCListTableViewCell.xib; sourceTree = "<group>"; };
+		C31BC345193C949F0045BB42 /* JEWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEWebViewController.h; sourceTree = "<group>"; };
+		C31BC346193C949F0045BB42 /* JEWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEWebViewController.m; sourceTree = "<group>"; };
 		C32712E418FC2DA600971956 /* Jewelry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jewelry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C32712E718FC2DA600971956 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C32712E918FC2DA600971956 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -432,6 +435,9 @@
 		C3D0056719056C8700FC4A64 /* SecondTabVC */ = {
 			isa = PBXGroup;
 			children = (
+				C3D0056819056C8700FC4A64 /* JESecondTabbarVC.h */,
+				C3D0056919056C8700FC4A64 /* JESecondTabbarVC.m */,
+				C3D0056A19056C8700FC4A64 /* JESecondTabbarVC.xib */,
 				C30582EF19320F6100DE14E5 /* JEShopHomeVC.h */,
 				C30582F019320F6100DE14E5 /* JEShopHomeVC.m */,
 				C30582F119320F6100DE14E5 /* JEShopHomeVC.xib */,
@@ -441,9 +447,8 @@
 				C3CBDAEB1930E44E001B193A /* JEJewelryCircleTableViewCell.h */,
 				C3CBDAEC1930E44E001B193A /* JEJewelryCircleTableViewCell.m */,
 				C3CBDAED1930E44E001B193A /* JEJewelryCircleTableViewCell.xib */,
-				C3D0056819056C8700FC4A64 /* JESecondTabbarVC.h */,
-				C3D0056919056C8700FC4A64 /* JESecondTabbarVC.m */,
-				C3D0056A19056C8700FC4A64 /* JESecondTabbarVC.xib */,
+				C31BC345193C949F0045BB42 /* JEWebViewController.h */,
+				C31BC346193C949F0045BB42 /* JEWebViewController.m */,
 			);
 			path = SecondTabVC;
 			sourceTree = "<group>";
@@ -749,6 +754,7 @@
 				C3D0058119056C8700FC4A64 /* JEThirdTabbarVC.m in Sources */,
 				C3F13F1D192857A10024AEC3 /* JEFirstTabbarWrapperPageVC.m in Sources */,
 				C3D0057D19056C8700FC4A64 /* JESecondTabbarVC.m in Sources */,
+				C31BC347193C949F0045BB42 /* JEWebViewController.m in Sources */,
 				C3D0058519056CB400FC4A64 /* JECategory.m in Sources */,
 				C3D0058B1905719E00FC4A64 /* JEHomePageTableViewCell.m in Sources */,
 				C3BBA8311917E26C00FA9D07 /* JEDetailModel.m in Sources */,

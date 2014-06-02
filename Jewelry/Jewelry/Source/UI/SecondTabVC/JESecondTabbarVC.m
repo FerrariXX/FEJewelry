@@ -12,7 +12,7 @@
 #import "UIImageView+WebCache.h"
 #import "FEScrollPageView.h"
 #import "JEShopHomeVC.h"
-
+#import "JEWebViewController.h"
 
 @interface JESecondTabbarVC ()
 @property(nonatomic, strong)JEJewelryCircleModel  *jewelryCircleModel;
@@ -47,7 +47,11 @@
         if (isSuccess) {
             [weakSelf.bannerView setImageItems:self.jewelryCircleModel.bannerImages selectedBlock:^(FEImageItem *sender) {
                 //do nothing here
-            } isAutoPlay:YES];   
+                if ([sender.imageURL length] >0) {
+                    JEWebViewController *webVC = [[JEWebViewController alloc] initWithURL:sender.imageURL];
+                    [weakSelf.navigationController pushViewController:webVC animated:YES];
+                }
+            } isAutoPlay:YES];
         }
     }];
     // Do any additional setup after loading the view from its nib.
