@@ -1,0 +1,17 @@
+//
+//  JEGoldQuotationCell.h
+//  Jewelry
+//
+//  Created by wuyj on 14-6-3.
+//  Copyright (c) 2014年 FE. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface JEGoldQuotationCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UILabel *productNameValue;
+@property (strong, nonatomic) IBOutlet UILabel *priceValueLable;
+
+@property (strong, nonatomic) IBOutlet UILabel *dateValueLable;
++ (JEGoldQuotationCell*)goldQuotationCell;
+@end

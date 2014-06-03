@@ -23,6 +23,9 @@
 		2ABBCB0219395ADA00F1A5EB /* JEMyPointsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBCB0119395ADA00F1A5EB /* JEMyPointsCell.m */; };
 		2ABBCB0519395C2C00F1A5EB /* dashed.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ABBCB0319395C2C00F1A5EB /* dashed.png */; };
 		2ABBCB0619395C2C00F1A5EB /* dashed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ABBCB0419395C2C00F1A5EB /* dashed@2x.png */; };
+		2ABC72CD193E1BA50080D274 /* JEGoldQuotationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABC72CB193E1BA50080D274 /* JEGoldQuotationVC.m */; };
+		2ABC72CE193E1BA50080D274 /* JEGoldQuotationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ABC72CC193E1BA50080D274 /* JEGoldQuotationVC.xib */; };
+		2ABC72D2193E223D0080D274 /* JEGoldQuotationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABC72D1193E223D0080D274 /* JEGoldQuotationCell.m */; };
 		2ABF1A00193637D600B2BA5E /* JESettingUserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABF19FF193637D600B2BA5E /* JESettingUserInfoCell.m */; };
 		2ABF1A0319363B3800B2BA5E /* hzw.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2ABF1A0119363B3800B2BA5E /* hzw.jpg */; };
 		2ABF1A0419363B3800B2BA5E /* hzw@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2ABF1A0219363B3800B2BA5E /* hzw@2x.jpg */; };
@@ -137,6 +140,11 @@
 		2ABBCB0119395ADA00F1A5EB /* JEMyPointsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEMyPointsCell.m; sourceTree = "<group>"; };
 		2ABBCB0319395C2C00F1A5EB /* dashed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dashed.png; sourceTree = "<group>"; };
 		2ABBCB0419395C2C00F1A5EB /* dashed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dashed@2x.png"; sourceTree = "<group>"; };
+		2ABC72CA193E1BA50080D274 /* JEGoldQuotationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEGoldQuotationVC.h; sourceTree = "<group>"; };
+		2ABC72CB193E1BA50080D274 /* JEGoldQuotationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEGoldQuotationVC.m; sourceTree = "<group>"; };
+		2ABC72CC193E1BA50080D274 /* JEGoldQuotationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JEGoldQuotationVC.xib; sourceTree = "<group>"; };
+		2ABC72D0193E223D0080D274 /* JEGoldQuotationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEGoldQuotationCell.h; sourceTree = "<group>"; };
+		2ABC72D1193E223D0080D274 /* JEGoldQuotationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEGoldQuotationCell.m; sourceTree = "<group>"; };
 		2ABF19FE193637D600B2BA5E /* JESettingUserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JESettingUserInfoCell.h; sourceTree = "<group>"; };
 		2ABF19FF193637D600B2BA5E /* JESettingUserInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JESettingUserInfoCell.m; sourceTree = "<group>"; };
 		2ABF1A0119363B3800B2BA5E /* hzw.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hzw.jpg; sourceTree = "<group>"; };
@@ -428,6 +436,11 @@
 				2ABBCAFD19395A2A00F1A5EB /* JEMyPointsViewController.xib */,
 				2ABBCB0019395ADA00F1A5EB /* JEMyPointsCell.h */,
 				2ABBCB0119395ADA00F1A5EB /* JEMyPointsCell.m */,
+				2ABC72CA193E1BA50080D274 /* JEGoldQuotationVC.h */,
+				2ABC72CB193E1BA50080D274 /* JEGoldQuotationVC.m */,
+				2ABC72CC193E1BA50080D274 /* JEGoldQuotationVC.xib */,
+				2ABC72D0193E223D0080D274 /* JEGoldQuotationCell.h */,
+				2ABC72D1193E223D0080D274 /* JEGoldQuotationCell.m */,
 			);
 			path = FourthTabVC;
 			sourceTree = "<group>";
@@ -663,6 +676,7 @@
 				C30582F6193212C800DE14E5 /* cover.png in Resources */,
 				C31BC344193C6A200045BB42 /* JEDetailVCListTableViewCell.xib in Resources */,
 				2ABBCB0619395C2C00F1A5EB /* dashed@2x.png in Resources */,
+				2ABC72CE193E1BA50080D274 /* JEGoldQuotationVC.xib in Resources */,
 				C30582F7193212C800DE14E5 /* cover@2x.png in Resources */,
 				C3F72CF418FD8A78007FDB69 /* login_gray_normal.png in Resources */,
 				C30582F319320F6100DE14E5 /* JEShopHomeVC.xib in Resources */,
@@ -749,6 +763,7 @@
 				C3D00592190573A900FC4A64 /* JEHomePageModel.m in Sources */,
 				C3D0058819056CD000FC4A64 /* JEPriceRange.m in Sources */,
 				2A17B51F1938EE3E0094F749 /* JEMyFollowCell.m in Sources */,
+				2ABC72CD193E1BA50080D274 /* JEGoldQuotationVC.m in Sources */,
 				2A17B5171938E69A0094F749 /* JEUserInfoUpgradeCell.m in Sources */,
 				C3D0057F19056C8700FC4A64 /* FETabBarView.m in Sources */,
 				C3D0058119056C8700FC4A64 /* JEThirdTabbarVC.m in Sources */,
@@ -758,6 +773,7 @@
 				C3D0058519056CB400FC4A64 /* JECategory.m in Sources */,
 				C3D0058B1905719E00FC4A64 /* JEHomePageTableViewCell.m in Sources */,
 				C3BBA8311917E26C00FA9D07 /* JEDetailModel.m in Sources */,
+				2ABC72D2193E223D0080D274 /* JEGoldQuotationCell.m in Sources */,
 				C3D0057B19056C8700FC4A64 /* JEFourthTabbarVC.m in Sources */,
 				2ABF1A00193637D600B2BA5E /* JESettingUserInfoCell.m in Sources */,
 				C31BC343193C6A200045BB42 /* JEDetailVCListTableViewCell.m in Sources */,

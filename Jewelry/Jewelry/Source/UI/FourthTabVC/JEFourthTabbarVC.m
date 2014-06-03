@@ -12,6 +12,7 @@
 #import "JEMyFollowVC.h"
 #import "JECollectListVC.h"
 #import "JEMyPointsViewController.h"
+#import "JEGoldQuotationVC.h"
 
 @interface JEFourthTabbarVC ()
 
@@ -46,16 +47,14 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     //返回（向系统发送）分区个数,在这里有多少键就会有多少分区。
-    return  5;
+    return  3;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
+    if (section == 0 || section == 2) {
         return 1;
-    }else if (section == 4) {
-        return 2;
     }
-    return 3;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -86,34 +85,16 @@
         NSString *cellText;
         if (section == 1) {
             if (row==0) {
-                cellText = @"我的商品";
-            }else if(row == 1){
-                cellText = @"我的关注";
-            }else if(row == 2){
                 cellText = @"我的收藏";
+            }else if (row==1) {
+                cellText = @"摇一摇抽奖";
+            }else if(row == 2){
+                cellText = @"每日金价";
+            }else if(row == 3){
+                cellText = @"我的积分";
             }
         }else if(section == 2){
-            if (row==0) {
-                cellText = @"摇一摇抽奖";
-            }else if(row == 1){
-                cellText = @"每日金价";
-            }else if(row == 2){
-                cellText = @"促销活动";
-            }
-        }else if(section == 3){
-            if (row==0) {
-                cellText = @"我的二维码";
-            }else if(row == 1){
-                cellText = @"我的积分";
-            }else if(row == 2){
-                cellText = @"系统消息";
-            }
-        }else if(section == 4){
-            if (row==0) {
-                cellText = @"关联企业";
-            }else if(row == 1){
-                cellText = @"功能设置";
-            }
+           cellText = @"关于我们";
         }
         cell.textLabel.text = cellText;
         return cell;
@@ -140,18 +121,18 @@
         JEUserInfoSettingViewController *userInfoVC = [[JEUserInfoSettingViewController alloc] init];
         [self.navigationController pushViewController:userInfoVC animated:YES];
     }else if(section==1){
-        if (indexPath.row == 1) {
-            JEMyFollowVC  *myFollowVC = [[JEMyFollowVC alloc] init];
-            [self.navigationController pushViewController:myFollowVC animated:YES];
-        }else if (indexPath.row == 2){
+        if (indexPath.row == 0){
             JECollectListVC  *collectListVC = [[JECollectListVC alloc] init];
             [self.navigationController pushViewController:collectListVC animated:YES];
-        }
-    }else if(section == 3){
-        if (indexPath.row == 1) {
+        }else if(indexPath.row == 2){
+            JEGoldQuotationVC *goldVC = [[JEGoldQuotationVC alloc] init];
+            [self.navigationController pushViewController:goldVC animated:YES];
+        }else if (indexPath.row == 3) {
             JEMyPointsViewController *pointsVC = [[JEMyPointsViewController alloc] init];
             [self.navigationController pushViewController:pointsVC animated:YES];
         }
+    }else if(section == 2){
+        
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
