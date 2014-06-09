@@ -47,9 +47,9 @@
     // Do any additional setup after loading the view from its nib.
     
     //TODO:
-    NSString  *currentCategory  = [[[JEHomePageManager sharedHomePageManager] jewelryCategory] currentSelectedCategory];
-    NSString  *currentPriceRange= [[[JEHomePageManager sharedHomePageManager] jewelryPriceRange] currentSelectedPriceRange];
-    [self.homePageModel loadDataWithCategory:currentCategory priceRange:currentPriceRange];
+    //NSString  *currentCategory  = [[[JEHomePageManager sharedHomePageManager] jewelryCategory] currentSelectedCategory];
+    //NSString  *currentPriceRange= [[[JEHomePageManager sharedHomePageManager] jewelryPriceRange] currentSelectedPriceRange];
+    //[self.homePageModel loadDataWithCategory:currentCategory priceRange:currentPriceRange];
 }
 
 - (void)didReceiveMemoryWarning

@@ -67,7 +67,28 @@
     return FEObjectAtIndex(self.contentArray,index);
 }
 
+- (void)loadDataWithCategory:(NSString*)categroy pageNumber:(NSInteger)pageNumber  completionBlock:(JECompletionBlock)block{
+    NSString *urlStr = [NSString stringWithFormat:@"%@GetStyleByCategory/%@/%d", kBaseURLString,categroy,pageNumber];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:urlStr]];
+    request.timeoutInterval = kTimeoutInterval;
+    
+    AFJSONRequestOperation *operation1 = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+       // NSDictionary *jsonDict = (NSDictionary*)JSON;
+        //TODO:
+        if (block) {
+            block(YES);
+        }
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        if (block) {
+            block(NO);
+        }
+    }];
+    [operation1 start];
+}
+
 - (void)loadDataWithCategory:(NSString*)categroy priceRange:(NSString*)priceRange{
+    
     NSArray *item = [priceRange componentsSeparatedByString:@"~"];
     if ([item count]==2) {
         [self loadDataWithCategory:categroy startPrice:[item objectAtIndex:0] endPrice:[item objectAtIndex:1]];
@@ -80,7 +101,7 @@
     return;
     
     __weak __typeof(self) weakSelf = self;//__typeof(&*self)
-    NSString *urlStr = [NSString stringWithFormat:@"%@xxx", kBaseURLString];
+    NSString *urlStr = [NSString stringWithFormat:@"%@GetStyleByCategoryPrice/{categoryID:01,startPrice:0,endPrice:10000}", kBaseURLString];
     NSURLRequest *request = [NSURLRequest requestWithURL: [NSURL URLWithString:urlStr]];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSDictionary *jsonDict = (NSDictionary*)JSON;

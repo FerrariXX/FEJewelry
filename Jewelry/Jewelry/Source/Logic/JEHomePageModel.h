@@ -22,6 +22,7 @@
 - (NSInteger)numberOfRowsInSection:(NSInteger)section;
 - (JEHomePageItem*)contentAtIndexPath:(NSInteger)index;
 
+- (void)loadDataWithCategory:(NSString*)categroy pageNumber:(NSInteger)pageNumber  completionBlock:(JECompletionBlock)block;
 - (void)loadDataWithCategory:(NSString*)categroy priceRange:(NSString*)priceRange;
 - (void)loadDataWithCategory:(NSString*)categroy startPrice:(NSString*)startPrice endPrice:(NSString*)endPrice;
 @end

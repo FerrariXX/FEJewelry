@@ -23,7 +23,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedManager = [[JEHomePageManager alloc] init];
-        [_sharedManager.homePageModel loadDataWithCategory:[_sharedManager.jewelryCategory currentSelectedCategory] priceRange:[_sharedManager.jewelryPriceRange currentSelectedPriceRange]];
+        //[_sharedManager.homePageModel loadDataWithCategory:[_sharedManager.jewelryCategory currentSelectedCategory] priceRange:[_sharedManager.jewelryPriceRange currentSelectedPriceRange]];
     });
     return _sharedManager;
 }
