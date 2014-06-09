@@ -14,13 +14,14 @@
 #import "JEPriceRange.h"
 #import "FESidePanelController.h"
 #import "ViewPagerController.h"
+#import "FEToastView.h"
 
-
-@interface JEFirstTabbarWrapperPageVC ()<ViewPagerDataSource,ViewPagerDelegate>
+@interface JEFirstTabbarWrapperPageVC ()<FEScrollPageViewControllerDataSource,FEScrollPageViewControllerDelegate>
 @property(nonatomic, readonly)JECategory *jewelryCategory;
 @property(nonatomic, readonly)JEPriceRange *jewelryPriceRange;
 @property(nonatomic, assign)NSInteger currentTabIndex;
-@property(nonatomic, strong)NSString *currentPriceRange;
+@property(nonatomic, strong)NSString    *currentPriceRange;
+@property(nonatomic, strong)FEToastView *toastView;
 @end
 
 @implementation JEFirstTabbarWrapperPageVC
@@ -30,33 +31,44 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.dataSource = self;
+        self.delegate   = self;
     }
     return self;
 }
 
 - (void)viewDidLoad
 {
+    self.tabItemWidth = 60.0;
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
-    
     //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分类" style:UIBarButtonItemStyleBordered target:self action:@selector(leftBarButtonPressed:)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"筛选" style:UIBarButtonItemStyleBordered target:self action:@selector(rightBarButtonPressed:)];
-    
-    self.dataSource = self;
-    self.delegate = self;
-    
-    __weak __typeof(self) weakSelf = self;//__typeof(&*self)
-    [self.jewelryCategory loadCategoryWithCompletionBlock:^(BOOL isSuccess) {
-        [weakSelf reloadData];
-    }];
+    //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"筛选" style:UIBarButtonItemStyleBordered target:self action:@selector(rightBarButtonPressed:)];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [FEToastView showWithTitle:@"正在加载中..." animation:YES];
+        __weak __typeof(self) weakSelf = self;//__typeof(&*self)
+        [self.jewelryCategory loadCategoryWithCompletionBlock:^(BOOL isSuccess) {
+            //首次加载第一个分类的第一页
+            [[JEHomePageManager sharedHomePageManager].homePageModel loadDataWithCategory:@"01" pageNumber:1 completionBlock:^(BOOL isSuccess) {
+                [weakSelf reloadData];
+                [FEToastView dismissWithAnimation:YES];
+            }];
+        }];
+    });
+    
     NSInteger index = [self.jewelryCategory currentSelectedIndex];
     NSString *priceRange = [self.jewelryPriceRange currentSelectedPriceRange];
     if (self.currentTabIndex != index || [self.currentPriceRange isEqualToString:priceRange]) {
-        [self selectTabAtIndex:index];
+        //[self selectTabAtIndex:index];
         self.currentTabIndex = index;
         self.currentPriceRange = priceRange;
     }
@@ -100,6 +112,42 @@
 }
 
 
+#pragma mark - FEScrollPageViewControllerDataSource
+- (NSUInteger)numberOfSections{
+    return 1;
+}
+- (NSUInteger)numberOfTabsInSection:(NSUInteger)section{
+    return [self.jewelryCategory numberOfRowsInSection:0];
+
+}
+- (UIView *)tabViewAtSection:(NSUInteger)section tabIndex:(NSUInteger)index{
+    UILabel *label = [UILabel new];
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont systemFontOfSize:13.0];
+    label.text = [NSString stringWithFormat:@"%@", [self.jewelryCategory contentAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]]];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.textColor = [UIColor blackColor];
+    [label sizeToFit];
+    
+    return label;
+}
+
+- (UIViewController *)contentViewControllerForTabAtSection:(NSUInteger)section index:(NSUInteger)index{
+    JEFirstTabbarVC *vc = [[JEFirstTabbarVC alloc] initWithNibName:@"JEFirstTabbarVC" bundle:nil];
+    vc.homePageModel = [[JEHomePageModel alloc] init];//TODO:
+    return vc;
+}
+
+#pragma mark - FEScrollPageViewControllerDelegate
+
+- (void)viewPage:(FEScrollPageViewController *)viewPager didChangeTabToSection:(NSUInteger)section index:(NSUInteger)index contentVC:(UIViewController*)contentVC{
+    // TODO: something useful
+    self.currentTabIndex = index;
+    [self.jewelryCategory didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
 #pragma mark - ViewPagerDataSource
 - (NSUInteger)numberOfTabsForViewPager:(ViewPagerController *)viewPager {
     return [self.jewelryCategory numberOfRowsInSection:0];
@@ -172,5 +220,7 @@
     self.currentTabIndex = index;
     [self.jewelryCategory didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
 }
+ */
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 @end

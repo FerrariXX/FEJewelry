@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FEScrollPageViewController.h"
 
-@interface JEFirstTabbarWrapperPageVC : ViewPagerController
+@interface JEFirstTabbarWrapperPageVC : FEScrollPageViewController
 
 @end
