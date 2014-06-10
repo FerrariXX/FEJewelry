@@ -73,6 +73,10 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [self.imagesView stopAutoPlay];
@@ -189,7 +193,7 @@
     }];
     
     FEMicroMsgPopoverView *popoverView = [[FEMicroMsgPopoverView alloc] initWithItems:@[item1, item3, item4]];
-    [popoverView showAtPosition:CGPointMake(CGRectGetMinX(((UIButton*)sender).frame), CGRectGetMidY(((UIButton*)sender).frame)+44.0) ];
+    [popoverView showAtPosition:CGPointMake(CGRectGetMinX(((UIButton*)sender).frame), -self.contentScrollView.contentOffset.y + CGRectGetMidY(((UIButton*)sender).frame)+44.0) ];
 }
 
 

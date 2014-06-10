@@ -57,14 +57,26 @@
         [FEToastView showWithTitle:@"正在加载中..." animation:YES];
         __weak __typeof(self) weakSelf = self;//__typeof(&*self)
         [self.jewelryCategory loadCategoryWithCompletionBlock:^(BOOL isSuccess) {
-            //首次加载第一个分类的第一页
-            [[JEHomePageManager sharedHomePageManager].homePageModel loadDataWithCategory:@"01" pageNumber:1 completionBlock:^(BOOL isSuccess) {
-                [weakSelf reloadData];
-                [FEToastView dismissWithAnimation:YES];
-            }];
+            if (isSuccess) {
+                //首次加载第一个分类的第一页
+                [[JEHomePageManager sharedHomePageManager].homePageModel loadDataWithCategory:@"01" pageNumber:1 completionBlock:^(BOOL isSuccess) {
+                    if (isSuccess) {
+                        [weakSelf reloadData];
+                        [FEToastView dismissWithAnimation:YES];
+                    }
+                    else {
+                        [FEToastView dismissWithAnimation:NO];
+                        TBShowErrorToast
+                    }
+                }];
+            }
+            else {
+                    [FEToastView dismissWithAnimation:NO];
+                    TBShowErrorToast
+            }
         }];
     });
-    
+
     NSInteger index = [self.jewelryCategory currentSelectedIndex];
     NSString *priceRange = [self.jewelryPriceRange currentSelectedPriceRange];
     if (self.currentTabIndex != index || [self.currentPriceRange isEqualToString:priceRange]) {

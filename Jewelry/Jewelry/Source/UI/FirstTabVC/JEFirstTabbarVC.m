@@ -46,7 +46,6 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     // Do any additional setup after loading the view from its nib.
     
-    //TODO:
     //NSString  *currentCategory  = [[[JEHomePageManager sharedHomePageManager] jewelryCategory] currentSelectedCategory];
     //NSString  *currentPriceRange= [[[JEHomePageManager sharedHomePageManager] jewelryPriceRange] currentSelectedPriceRange];
     //[self.homePageModel loadDataWithCategory:currentCategory priceRange:currentPriceRange];
@@ -60,6 +59,8 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated{

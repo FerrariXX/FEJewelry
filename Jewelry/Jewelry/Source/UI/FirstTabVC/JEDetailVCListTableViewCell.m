@@ -28,7 +28,7 @@
     id obj =  [self instanceWithNibName:@"JEDetailVCListTableViewCell" bundle:nil owner:nil];
     if ([obj isKindOfClass:[JEDetailVCListTableViewCell class]]) {
         JEDetailVCListTableViewCell *cell = obj;
-        cell.contentView.backgroundColor = [UIColor colorWithRed:241/255.0 green:241/255.0 blue:241/255.0 alpha:1.0];
+        cell.contentView.backgroundColor = [UIColor whiteColor];//[UIColor colorWithRed:241/255.0 green:241/255.0 blue:241/255.0 alpha:1.0];
         return cell;
     }
     return nil;

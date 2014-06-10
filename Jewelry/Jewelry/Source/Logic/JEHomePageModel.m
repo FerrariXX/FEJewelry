@@ -72,9 +72,19 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:urlStr]];
     request.timeoutInterval = kTimeoutInterval;
     
+    __weak __typeof(self) weakSelf = self;//__typeof(&*self)
     AFJSONRequestOperation *operation1 = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-       // NSDictionary *jsonDict = (NSDictionary*)JSON;
-        //TODO:
+        if (JSON && [JSON isKindOfClass:[NSArray class]]) {
+            NSArray *jsonArr = (NSArray*)JSON;
+            NSMutableArray *items = [NSMutableArray arrayWithCapacity:0];
+            for (NSDictionary *item in jsonArr) {
+                JEHomePageItem * pageItem = [[JEHomePageItem alloc] initWithDictionary:item];
+                [items addObject:pageItem];
+            }
+            
+            weakSelf.contentArray = [items copy];
+        }
+
         if (block) {
             block(YES);
         }

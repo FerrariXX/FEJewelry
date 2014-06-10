@@ -16,3 +16,7 @@
 
 #define kTimeoutInterval                6.0
 typedef void(^JECompletionBlock)(BOOL isSuccess);
+
+#define TBShowErrorToast     [FEToastView showWithTitle:@"出错了，请稍后再试。" animation:YES interval:4.0];
+
+
