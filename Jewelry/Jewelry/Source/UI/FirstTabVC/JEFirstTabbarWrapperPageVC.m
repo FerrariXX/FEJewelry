@@ -66,13 +66,13 @@
                     }
                     else {
                         [FEToastView dismissWithAnimation:NO];
-                        TBShowErrorToast
+//                        TBShowErrorToast
                     }
                 }];
             }
             else {
                     [FEToastView dismissWithAnimation:NO];
-                    TBShowErrorToast
+//                    TBShowErrorToast
             }
         }];
     });
