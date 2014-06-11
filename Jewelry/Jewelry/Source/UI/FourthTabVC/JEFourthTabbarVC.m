@@ -13,6 +13,7 @@
 #import "JECollectListVC.h"
 #import "JEMyPointsViewController.h"
 #import "JEGoldQuotationVC.h"
+#import "JEShakeVC.h"
 
 @interface JEFourthTabbarVC ()
 
@@ -124,6 +125,9 @@
         if (indexPath.row == 0){
             JECollectListVC  *collectListVC = [[JECollectListVC alloc] init];
             [self.navigationController pushViewController:collectListVC animated:YES];
+        }else if (indexPath.row == 1){
+            JEShakeVC  *shakeVC = [[JEShakeVC alloc] init];
+            [self.navigationController pushViewController:shakeVC animated:YES];
         }else if(indexPath.row == 2){
             JEGoldQuotationVC *goldVC = [[JEGoldQuotationVC alloc] init];
             [self.navigationController pushViewController:goldVC animated:YES];

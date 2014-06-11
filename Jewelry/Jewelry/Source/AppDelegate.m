@@ -27,16 +27,16 @@
 - (void)initTabBarController
 {
     //TODO:
-	NSArray* titlesArr = [NSArray arrayWithObjects:@"商城",@"珠宝圈",@"学苑",@"我", nil];
-	UIImage* image1 = [UIImage imageNamed:@"tab_settingsN.png"];
-	UIImage* image2 = [UIImage imageNamed:@"tab_settingsN.png"];
-	UIImage* image3 = [UIImage imageNamed:@"tab_settingsN.png"];
-	UIImage* image4 = [UIImage imageNamed:@"tab_settingsN.png"];
+	NSArray* titlesArr = [NSArray arrayWithObjects:@"商城",@"裸钻",@"珠宝圈",@"我", nil];
+	UIImage* image1 = [UIImage imageNamed:@"tab_homeH.png"];
+	UIImage* image2 = [UIImage imageNamed:@"tab_bareDiamondH.png"];
+	UIImage* image3 = [UIImage imageNamed:@"tab_jewelryCircle.png"];
+	UIImage* image4 = [UIImage imageNamed:@"tab_mySettingH.png"];
 	NSArray* imageNArr = [NSArray arrayWithObjects:image1,image2,image3,image4, nil];
-	UIImage* imageH1 = [UIImage imageNamed:@"tab_settingsH.png"];
-	UIImage* imageH2 = [UIImage imageNamed:@"tab_settingsH.png"];
-	UIImage* imageH3 = [UIImage imageNamed:@"tab_settingsH.png"];
-	UIImage* imageH4 = [UIImage imageNamed:@"tab_settingsH.png"];
+	UIImage* imageH1 = [UIImage imageNamed:@"tab_homeH.png"];
+	UIImage* imageH2 = [UIImage imageNamed:@"tab_bareDiamondH.png"];
+	UIImage* imageH3 = [UIImage imageNamed:@"tab_jewelryCircle.png"];
+	UIImage* imageH4 = [UIImage imageNamed:@"tab_mySettingH.png"];
 	NSArray* imageHArr = [NSArray arrayWithObjects:imageH1,imageH2,imageH3,imageH4, nil];
     
 	
@@ -99,6 +99,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
+    application.applicationSupportsShakeToEdit=YES;
     return YES;
 }
 							

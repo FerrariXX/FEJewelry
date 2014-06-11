@@ -30,6 +30,16 @@
 		2ABF1A0319363B3800B2BA5E /* hzw.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2ABF1A0119363B3800B2BA5E /* hzw.jpg */; };
 		2ABF1A0419363B3800B2BA5E /* hzw@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2ABF1A0219363B3800B2BA5E /* hzw@2x.jpg */; };
 		2ABF1A0619363DC700B2BA5E /* JESettingUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ABF1A0519363DC700B2BA5E /* JESettingUserInfoCell.xib */; };
+		2AE97ED81947F37D00C973E6 /* JEShakeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE97ED61947F37D00C973E6 /* JEShakeVC.m */; };
+		2AE97ED91947F37D00C973E6 /* JEShakeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AE97ED71947F37D00C973E6 /* JEShakeVC.xib */; };
+		2AE97EDC1947F55900C973E6 /* ico_deco_shake.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AE97EDA1947F55900C973E6 /* ico_deco_shake.png */; };
+		2AE97EDD1947F55900C973E6 /* shake.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2AE97EDB1947F55900C973E6 /* shake.wav */; };
+		2AE97EDF1947F6BB00C973E6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE97EDE1947F6BB00C973E6 /* QuartzCore.framework */; };
+		2AE97EE11947F6CB00C973E6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE97EE01947F6CB00C973E6 /* AudioToolbox.framework */; };
+		2AE97EEB1948443300C973E6 /* tab_bareDiamondH.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AE97EE71948443300C973E6 /* tab_bareDiamondH.png */; };
+		2AE97EEC1948443300C973E6 /* tab_homeH.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AE97EE81948443300C973E6 /* tab_homeH.png */; };
+		2AE97EED1948443300C973E6 /* tab_jewelryCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AE97EE91948443300C973E6 /* tab_jewelryCircle.png */; };
+		2AE97EEE1948443300C973E6 /* tab_mySettingH.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AE97EEA1948443300C973E6 /* tab_mySettingH.png */; };
 		6B4A0FC8E3F64B148EE1BE36 /* libPods-Jewelry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7BAA831549477B9B0AB83F /* libPods-Jewelry.a */; };
 		C30582DE1931D9CD00DE14E5 /* default_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = C30582DD1931D9CD00DE14E5 /* default_avatar.png */; };
 		C30582F219320F6100DE14E5 /* JEShopHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C30582F019320F6100DE14E5 /* JEShopHomeVC.m */; };
@@ -150,6 +160,17 @@
 		2ABF1A0119363B3800B2BA5E /* hzw.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hzw.jpg; sourceTree = "<group>"; };
 		2ABF1A0219363B3800B2BA5E /* hzw@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "hzw@2x.jpg"; sourceTree = "<group>"; };
 		2ABF1A0519363DC700B2BA5E /* JESettingUserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JESettingUserInfoCell.xib; sourceTree = "<group>"; };
+		2AE97ED51947F37D00C973E6 /* JEShakeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEShakeVC.h; sourceTree = "<group>"; };
+		2AE97ED61947F37D00C973E6 /* JEShakeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEShakeVC.m; sourceTree = "<group>"; };
+		2AE97ED71947F37D00C973E6 /* JEShakeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JEShakeVC.xib; sourceTree = "<group>"; };
+		2AE97EDA1947F55900C973E6 /* ico_deco_shake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_deco_shake.png; sourceTree = "<group>"; };
+		2AE97EDB1947F55900C973E6 /* shake.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shake.wav; sourceTree = "<group>"; };
+		2AE97EDE1947F6BB00C973E6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2AE97EE01947F6CB00C973E6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		2AE97EE71948443300C973E6 /* tab_bareDiamondH.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_bareDiamondH.png; sourceTree = "<group>"; };
+		2AE97EE81948443300C973E6 /* tab_homeH.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_homeH.png; sourceTree = "<group>"; };
+		2AE97EE91948443300C973E6 /* tab_jewelryCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_jewelryCircle.png; sourceTree = "<group>"; };
+		2AE97EEA1948443300C973E6 /* tab_mySettingH.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_mySettingH.png; sourceTree = "<group>"; };
 		4F7BAA831549477B9B0AB83F /* libPods-Jewelry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Jewelry.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C30582DD1931D9CD00DE14E5 /* default_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_avatar.png; sourceTree = "<group>"; };
 		C30582EF19320F6100DE14E5 /* JEShopHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEShopHomeVC.h; sourceTree = "<group>"; };
@@ -259,6 +280,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AE97EE11947F6CB00C973E6 /* AudioToolbox.framework in Frameworks */,
+				2AE97EDF1947F6BB00C973E6 /* QuartzCore.framework in Frameworks */,
 				C3A44D0718FC34AD00E9B254 /* libz.dylib in Frameworks */,
 				C3A44D0518FC34A600E9B254 /* AVFoundation.framework in Frameworks */,
 				C32712EA18FC2DA600971956 /* CoreGraphics.framework in Frameworks */,
@@ -304,6 +327,8 @@
 		C32712E618FC2DA600971956 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2AE97EE01947F6CB00C973E6 /* AudioToolbox.framework */,
+				2AE97EDE1947F6BB00C973E6 /* QuartzCore.framework */,
 				C3A44D0618FC34AD00E9B254 /* libz.dylib */,
 				C3A44D0418FC34A600E9B254 /* AVFoundation.framework */,
 				C32712E718FC2DA600971956 /* Foundation.framework */,
@@ -329,6 +354,8 @@
 		C32712EE18FC2DA600971956 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2AE97EDA1947F55900C973E6 /* ico_deco_shake.png */,
+				2AE97EDB1947F55900C973E6 /* shake.wav */,
 				C32712EF18FC2DA600971956 /* Jewelry-Info.plist */,
 				C32712F018FC2DA600971956 /* InfoPlist.strings */,
 				C32712F318FC2DA600971956 /* main.m */,
@@ -441,6 +468,9 @@
 				2ABC72CC193E1BA50080D274 /* JEGoldQuotationVC.xib */,
 				2ABC72D0193E223D0080D274 /* JEGoldQuotationCell.h */,
 				2ABC72D1193E223D0080D274 /* JEGoldQuotationCell.m */,
+				2AE97ED51947F37D00C973E6 /* JEShakeVC.h */,
+				2AE97ED61947F37D00C973E6 /* JEShakeVC.m */,
+				2AE97ED71947F37D00C973E6 /* JEShakeVC.xib */,
 			);
 			path = FourthTabVC;
 			sourceTree = "<group>";
@@ -540,6 +570,10 @@
 		C3F72C5318FD8A78007FDB69 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				2AE97EE71948443300C973E6 /* tab_bareDiamondH.png */,
+				2AE97EE81948443300C973E6 /* tab_homeH.png */,
+				2AE97EE91948443300C973E6 /* tab_jewelryCircle.png */,
+				2AE97EEA1948443300C973E6 /* tab_mySettingH.png */,
 				2ABBCB0319395C2C00F1A5EB /* dashed.png */,
 				2ABBCB0419395C2C00F1A5EB /* dashed@2x.png */,
 				2A17B5201938F2110094F749 /* like.png */,
@@ -653,6 +687,7 @@
 				2ABBCAFF19395A2A00F1A5EB /* JEMyPointsViewController.xib in Resources */,
 				C3D0057E19056C8700FC4A64 /* JESecondTabbarVC.xib in Resources */,
 				2A17B51C1938EBE70094F749 /* JEMyFollowVC.xib in Resources */,
+				2AE97EEB1948443300C973E6 /* tab_bareDiamondH.png in Resources */,
 				C3F72CF218FD8A78007FDB69 /* login_button_normal.png in Resources */,
 				C3CBDAEF1930E44E001B193A /* JEJewelryCircleTableViewCell.xib in Resources */,
 				C3F72CF118FD8A78007FDB69 /* ico_choose.png in Resources */,
@@ -662,7 +697,9 @@
 				C3F72CF818FD8A78007FDB69 /* notchecked@2x.png in Resources */,
 				2ABF1A0319363B3800B2BA5E /* hzw.jpg in Resources */,
 				C3CDCF3C192E4A24006E1BD8 /* icon_favorite@2x.png in Resources */,
+				2AE97EEE1948443300C973E6 /* tab_mySettingH.png in Resources */,
 				2A17B5131938D22A0094F749 /* JEUserInfoSettingViewController.xib in Resources */,
+				2AE97EDC1947F55900C973E6 /* ico_deco_shake.png in Resources */,
 				2ABF1A0419363B3800B2BA5E /* hzw@2x.jpg in Resources */,
 				C3CDCF3B192E4A24006E1BD8 /* icon_favorite.png in Resources */,
 				2ABF1A0619363DC700B2BA5E /* JESettingUserInfoCell.xib in Resources */,
@@ -671,6 +708,7 @@
 				C3CDCF3E192E4A24006E1BD8 /* icon_reply@2x.png in Resources */,
 				C327130318FC2DA600971956 /* Images.xcassets in Resources */,
 				C3F72D0618FD8A78007FDB69 /* tab_selected.png in Resources */,
+				2AE97EEC1948443300C973E6 /* tab_homeH.png in Resources */,
 				C3E0589D19168E2C002E2770 /* JEDetailVC.xib in Resources */,
 				C3D0057C19056C8700FC4A64 /* JEFourthTabbarVC.xib in Resources */,
 				C30582F6193212C800DE14E5 /* cover.png in Resources */,
@@ -680,6 +718,8 @@
 				C30582F7193212C800DE14E5 /* cover@2x.png in Resources */,
 				C3F72CF418FD8A78007FDB69 /* login_gray_normal.png in Resources */,
 				C30582F319320F6100DE14E5 /* JEShopHomeVC.xib in Resources */,
+				2AE97ED91947F37D00C973E6 /* JEShakeVC.xib in Resources */,
+				2AE97EED1948443300C973E6 /* tab_jewelryCircle.png in Resources */,
 				C3D0058F190571FD00FC4A64 /* JEHomePageTableViewCell.xib in Resources */,
 				C3F72CF318FD8A78007FDB69 /* login_button_pressed.png in Resources */,
 				C3D0057819056C8700FC4A64 /* JELeftSidePanelVC.xib in Resources */,
@@ -695,6 +735,7 @@
 				C32712F218FC2DA600971956 /* InfoPlist.strings in Resources */,
 				C3F72D0A18FD8A78007FDB69 /* tab_settingsN@2x.png in Resources */,
 				C3D0057619056C8700FC4A64 /* JEFirstTabbarVC.xib in Resources */,
+				2AE97EDD1947F55900C973E6 /* shake.wav in Resources */,
 				C3F72CF518FD8A78007FDB69 /* login_gray_pressed.png in Resources */,
 				2ABBCB0519395C2C00F1A5EB /* dashed.png in Resources */,
 			);
@@ -758,6 +799,7 @@
 				C3E0589C19168E2C002E2770 /* JEDetailVC.m in Sources */,
 				C3D0058019056C8700FC4A64 /* FETabBarViewController.m in Sources */,
 				C30582F219320F6100DE14E5 /* JEShopHomeVC.m in Sources */,
+				2AE97ED81947F37D00C973E6 /* JEShakeVC.m in Sources */,
 				2A17B5271938F66A0094F749 /* JECollectListVC.m in Sources */,
 				C3D0057919056C8700FC4A64 /* JERightSidePanelVC.m in Sources */,
 				C3D00592190573A900FC4A64 /* JEHomePageModel.m in Sources */,
