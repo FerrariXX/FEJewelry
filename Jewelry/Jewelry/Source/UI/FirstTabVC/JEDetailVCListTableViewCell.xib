@@ -14,10 +14,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="编号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ylR-0T-Htx">
-                        <rect key="frame" x="13" y="11" width="40" height="21"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="编号" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ylR-0T-Htx">
+                        <rect key="frame" x="6" y="7" width="39" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" id="aVV-Pz-hpE">
@@ -26,34 +26,34 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     </view>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手寸" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3DD-s5-JCJ">
-                        <rect key="frame" x="62" y="12" width="36" height="21"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手寸" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3DD-s5-JCJ">
+                        <rect key="frame" x="54" y="7" width="36" height="31"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" id="cCJ-Ya-5DN">
-                        <rect key="frame" x="106" y="0.0" width="1" height="45"/>
+                        <rect key="frame" x="100" y="0.0" width="1" height="45"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     </view>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="材质" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sFC-uT-xYL">
-                        <rect key="frame" x="115" y="12" width="37" height="21"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="材质" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sFC-uT-xYL">
+                        <rect key="frame" x="101" y="9" width="60" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" id="cAn-Fn-cox">
-                        <rect key="frame" x="159" y="0.0" width="1" height="44"/>
+                        <rect key="frame" x="160" y="0.0" width="1" height="44"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     </view>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总重量" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="McO-5C-t99">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总重量" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="McO-5C-t99">
                         <rect key="frame" x="168" y="11" width="42" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" id="dBq-m9-UmQ">
@@ -62,10 +62,10 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     </view>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="克拉重" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vx4-sa-SJS">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="克拉重" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vx4-sa-SJS">
                         <rect key="frame" x="218" y="12" width="42" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" id="vAs-8H-5qE">
@@ -74,10 +74,10 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     </view>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="价格" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UHR-mG-D3D">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="价格" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UHR-mG-D3D">
                         <rect key="frame" x="273" y="12" width="42" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>

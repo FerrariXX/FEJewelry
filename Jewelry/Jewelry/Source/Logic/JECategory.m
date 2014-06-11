@@ -55,8 +55,11 @@
 }
 
 - (NSString*)contentAtIndexPath:(NSIndexPath *)indexPath{
-    //return FEObjectAtIndex(self.contentArray, indexPath.row);
     return [FEObjectAtIndex(self.contentArray, indexPath.row) categoryName];
+}
+
+- (NSString*)categoryIDAtIndexPath:(NSIndexPath *)indexPath{
+    return [FEObjectAtIndex(self.contentArray, indexPath.row) categoryID];
 }
 
 - (void)didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

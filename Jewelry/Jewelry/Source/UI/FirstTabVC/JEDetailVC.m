@@ -63,11 +63,14 @@
     self.contentScrollView.scrollEnabled = YES;
     self.detailTableView.scrollEnabled   = NO;
     //self.detailTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [FEToastView showWithTitle:@"正在加载中..." animation:YES];
     __weak  JEDetailVC *weakSelf = self;
     [self.model loadWithID:self.model.idNumber goodID:self.model.goodID completion:^(BOOL isSuccess) {
-        
+        [FEToastView dismissWithAnimation:YES];
         if (isSuccess) {
             [weakSelf updateDetailData];
+        }else {
+            TBShowErrorToast;
         }
     }];
     

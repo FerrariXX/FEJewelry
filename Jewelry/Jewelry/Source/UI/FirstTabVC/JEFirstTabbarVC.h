@@ -11,6 +11,6 @@
 @class JEHomePageModel;
 
 @interface JEFirstTabbarVC : UITableViewController
-@property(nonatomic, strong)JEHomePageModel  *homePageModel;
-
+@property(nonatomic, strong)NSString *categoryID;
+- (void)reloadData;
 @end

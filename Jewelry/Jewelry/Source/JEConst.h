@@ -1,6 +1,5 @@
 //
-//  PKConst.h
-//  Pumpkin
+//  JEConst.h
 //
 //  Created by xxx on 3/3/12.
 //  Copyright 2012 XXXXX. All rights reserved.

@@ -18,8 +18,10 @@
 #import "JEHomePageManager.h"
 #import "JECategory.h"
 #import "JEPriceRange.h"
+#import "JEConst.h"
 
 @interface JEFirstTabbarVC ()
+@property(nonatomic, strong)JEHomePageModel  *homePageModel;
 
 @end
 
@@ -41,7 +43,10 @@
     
 //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分类" style:UIBarButtonItemStyleBordered target:self action:@selector(leftBarButtonPressed:)];
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"筛选" style:UIBarButtonItemStyleBordered target:self action:@selector(rightBarButtonPressed:)];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
+    CGFloat height = [[[UIDevice currentDevice] systemVersion] floatValue] <7.0 ? kScreenHeight- 88 - 50 : kScreenHeight - 20 - 88 - 50;
+    self.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, height);
     self.tableView.separatorColor = [UIColor clearColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     // Do any additional setup after loading the view from its nib.
@@ -49,6 +54,26 @@
     //NSString  *currentCategory  = [[[JEHomePageManager sharedHomePageManager] jewelryCategory] currentSelectedCategory];
     //NSString  *currentPriceRange= [[[JEHomePageManager sharedHomePageManager] jewelryPriceRange] currentSelectedPriceRange];
     //[self.homePageModel loadDataWithCategory:currentCategory priceRange:currentPriceRange];
+    
+    //InfiniteScrolling
+    self.tableView.infiniteScrollingView.backgroundColor = [UIColor orangeColor];
+    __weak __typeof(self) weakSelf = self;
+    [self.tableView addInfiniteScrollingWithActionHandler:^{
+        if ([weakSelf.homePageModel isHaveMore]) {
+            [weakSelf.homePageModel loadMoreDataWithCategoryID:weakSelf.categoryID completionBlock:^(BOOL isSuccess) {
+                [weakSelf.tableView.infiniteScrollingView stopAnimating];
+                if (isSuccess) {
+                    [weakSelf.tableView reloadData];
+                } else {
+                    TBShowErrorToast;
+                }
+            }];
+        }else {
+            [weakSelf.tableView.infiniteScrollingView stopAnimating];
+            [weakSelf.tableView setShowsInfiniteScrolling:NO];
+            [FEToastView showWithTitle:@" 没有更多了 " animation:YES interval:2.0];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,8 +84,6 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
-    [self.tableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -74,6 +97,11 @@
 //- (void)rightBarButtonPressed:(id)sender{
 //    [self.sidePanelController showRightPanelAnimated:YES];
 //}
+
+#pragma mark - Public  Method
+- (void)reloadData{
+    [self.tableView reloadData];
+}
 
 
 #pragma mark - Table view data source
@@ -134,6 +162,11 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return [JEHomePageTableViewCell height];
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    //indexPath.row * 2 > [self.homePageModel numberOfRowsInSection:section]
+    //[self.homePageModel numberOfRowsInSection:section] / 2 + [self.homePageModel numberOfRowsInSection:section] % 2;
 }
 
 

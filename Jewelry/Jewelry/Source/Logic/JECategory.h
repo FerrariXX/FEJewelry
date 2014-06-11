@@ -12,6 +12,8 @@
 - (NSInteger)numberOfSection;
 - (NSInteger)numberOfRowsInSection:(NSInteger)section;
 - (NSString*)contentAtIndexPath:(NSIndexPath *)indexPath;
+- (NSString*)categoryIDAtIndexPath:(NSIndexPath *)indexPath;
+
 - (void)didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 
 - (NSString*)currentSelectedCategory;

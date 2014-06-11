@@ -13,7 +13,6 @@
 #import "JECategory.h"
 #import "JEPriceRange.h"
 #import "FESidePanelController.h"
-#import "ViewPagerController.h"
 #import "FEToastView.h"
 
 @interface JEFirstTabbarWrapperPageVC ()<FEScrollPageViewControllerDataSource,FEScrollPageViewControllerDelegate>
@@ -40,7 +39,7 @@
 - (void)viewDidLoad
 {
     self.tabItemWidth = 60.0;
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithRed:241/255.0 green:241/255.0 blue:241/255.0 alpha:1.0];
     
     [super viewDidLoad];
     
@@ -55,13 +54,16 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         [FEToastView showWithTitle:@"正在加载中..." animation:YES];
-        __weak __typeof(self) weakSelf = self;//__typeof(&*self)
+        __weak __typeof(self) weakSelf = self;
         [self.jewelryCategory loadCategoryWithCompletionBlock:^(BOOL isSuccess) {
             if (isSuccess) {
                 //首次加载第一个分类的第一页
-                [[JEHomePageManager sharedHomePageManager].homePageModel loadDataWithCategory:@"01" pageNumber:1 completionBlock:^(BOOL isSuccess) {
+                NSString *categoryID = [weakSelf.jewelryCategory categoryIDAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+                categoryID = [categoryID length] >0 ? categoryID : @"01";
+                [[JEHomePageManager sharedHomePageManager].homePageModel loadFirstDataWithCategoryID:categoryID  completionBlock:^(BOOL isSuccess) {
                     if (isSuccess) {
                         [weakSelf reloadData];
+                        [(JEFirstTabbarVC*)weakSelf.visibleViewController reloadData];
                         [FEToastView dismissWithAnimation:YES];
                     }
                     else {
@@ -123,6 +125,23 @@
     return  [[JEHomePageManager sharedHomePageManager] jewelryPriceRange];
 }
 
+- (void)loadCategoryWithID:(NSString*)categoryID{
+    
+    [[JEHomePageManager sharedHomePageManager].homePageModel resetData];
+    [FEToastView showWithTitle:@"正在加载中..." animation:YES];
+    [[JEHomePageManager sharedHomePageManager].homePageModel loadFirstDataWithCategoryID:categoryID  completionBlock:^(BOOL isSuccess) {
+        if (isSuccess) {
+            [(JEFirstTabbarVC*)self.visibleViewController reloadData];
+            [FEToastView dismissWithAnimation:YES];
+        }
+        else {
+            [FEToastView dismissWithAnimation:NO];
+            TBShowErrorToast
+        }
+    }];
+    
+}
+
 
 #pragma mark - FEScrollPageViewControllerDataSource
 - (NSUInteger)numberOfSections{
@@ -146,16 +165,21 @@
 
 - (UIViewController *)contentViewControllerForTabAtSection:(NSUInteger)section index:(NSUInteger)index{
     JEFirstTabbarVC *vc = [[JEFirstTabbarVC alloc] initWithNibName:@"JEFirstTabbarVC" bundle:nil];
-    vc.homePageModel = [[JEHomePageModel alloc] init];//TODO:
+    vc.categoryID = [self.jewelryCategory categoryIDAtIndexPath:[NSIndexPath indexPathForRow:index inSection:section]];
     return vc;
 }
 
 #pragma mark - FEScrollPageViewControllerDelegate
 
 - (void)viewPage:(FEScrollPageViewController *)viewPager didChangeTabToSection:(NSUInteger)section index:(NSUInteger)index contentVC:(UIViewController*)contentVC{
-    // TODO: something useful
+    
+    //NSLog(@">>>didChangeTabToSection %@ ",contentVC);
     self.currentTabIndex = index;
-    [self.jewelryCategory didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
+    [self.jewelryCategory didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:section]];
+    
+    NSString *categoryID = [self.jewelryCategory categoryIDAtIndexPath:[NSIndexPath indexPathForRow:index inSection:section]];
+    categoryID = [categoryID length] >0 ? categoryID : @"01";
+    [self loadCategoryWithID:categoryID];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
