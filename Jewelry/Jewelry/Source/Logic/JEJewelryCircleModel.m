@@ -85,18 +85,10 @@
 }
 
 - (void)loadWithCompletionBlock:(JECompletionBlock)block{
-    
-    //TODO:
-    if (block) {
-        block(YES);
-    }
-    return;
-    
-    
-    
     __weak __typeof(self) weakSelf = self;//__typeof(&*self)
-    NSString *urlStr = [NSString stringWithFormat:@"%@xxx", kBaseURLString];
-    NSURLRequest *request = [NSURLRequest requestWithURL: [NSURL URLWithString:urlStr]];
+    NSString *urlStr = [NSString stringWithFormat:@"%@GetJewelryRing", kBaseURLString];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:urlStr]];
+    request.timeoutInterval = kTimeoutInterval;
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSDictionary *jsonDict = (NSDictionary*)JSON;

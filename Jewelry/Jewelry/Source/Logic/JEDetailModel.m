@@ -65,7 +65,11 @@
 //- (void)loadWithID:(NSString*)idNumber goodID:(NSString*)goodID deviceID:(NSString*)deviceID completion:(JECompletionBlock)block{
 - (void)loadWithID:(NSString*)idNumber goodID:(NSString*)goodID completion:(JECompletionBlock)block{
 
-#warning lv 
+    if ([idNumber length] ==0) {
+        return;
+    }
+    
+#warning lv
     idNumber = @"RTR40004W";
     // http://60.191.108.245:33681/brosapiservice.svc/GetStyleDetail/RTR40004W/0000/1/ 格式里的?goodID={goodID} 是商品编码 可以不选择
     NSString * deviceID = [self deviceID];
@@ -74,6 +78,7 @@
     if ([goodID length] >0) {
         [urlStr appendFormat:@"?goodID=%@",goodID];
     }
+    NSLog(@">>>loadWithID = %@",urlStr);
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:urlStr]];
     request.timeoutInterval = kTimeoutInterval;
 
@@ -95,7 +100,8 @@
         weakSelf.slaveWeight    = [NSString stringWithFormat:@"%.2f", [[jsonDict objectForKey:@"slaveWeight"] floatValue]];
         weakSelf.address     = [jsonDict objectForKey:@"address"];
         weakSelf.phone       = [jsonDict objectForKey:@"servicePhone"];
-        weakSelf.praiseCount = [NSString stringWithFormat:@"%d", [[jsonDict objectForKey:@"praiseCount"] integerValue]];
+        NSInteger praiseCount = [[jsonDict objectForKey:@"praiseCount"] integerValue];
+        weakSelf.praiseCount = praiseCount > 0 ?  [NSString stringWithFormat:@"%d", praiseCount] : @"";
         weakSelf.price       = [NSString stringWithFormat:@"%.2f", [[jsonDict objectForKey:@"price"] floatValue]];
         NSArray *detailListArray = [jsonDict objectForKey:@"detailListArray"];
         for (NSDictionary * item  in detailListArray) {

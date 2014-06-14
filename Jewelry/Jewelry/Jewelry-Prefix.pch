@@ -26,4 +26,6 @@
 #import <AFNetworking/AFNetworking.h>
 #import <UIScrollView+SVInfiniteScrolling.h>
 
+#import <ShareSDK/ShareSDK.h>
+
 #endif
