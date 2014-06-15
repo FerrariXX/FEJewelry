@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MKHorizMenu.h"
+#import "JEDiamondModel.h"
 
-@interface JEThirdTabbarVC : UIViewController
+@interface JEThirdTabbarVC : UIViewController <MKHorizMenuDataSource, MKHorizMenuDelegate,UITableViewDataSource,UITableViewDelegate>
 
+@property (strong, nonatomic) JEDiamondModel *model;
+@property (strong, nonatomic) IBOutlet MKHorizMenu *priceMenu;
+@property (strong, nonatomic) IBOutlet MKHorizMenu *stoneMenu;
+@property (strong, nonatomic) IBOutlet MKHorizMenu *searchFieldMenu;
+@property (strong, nonatomic) IBOutlet MKHorizMenu *colorMenu;
+@property (strong, nonatomic) IBOutlet MKHorizMenu *neatnessMenu;
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @end
