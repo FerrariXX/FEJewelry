@@ -24,10 +24,6 @@
 
 - (void)loadMoreDataWithCategoryID:(NSString*)categroyID completionBlock:(JECompletionBlock)block;
 - (void)loadFirstDataWithCategoryID:(NSString*)categroyID completionBlock:(JECompletionBlock)block;
-
-- (void)loadDataWithCategory:(NSString*)categroy priceRange:(NSString*)priceRange;
-- (void)loadDataWithCategory:(NSString*)categroy startPrice:(NSString*)startPrice endPrice:(NSString*)endPrice;
-
 - (BOOL)isHaveMore;
 //清空数据
 - (void)resetData;

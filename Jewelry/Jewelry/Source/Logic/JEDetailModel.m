@@ -69,7 +69,7 @@
         return;
     }
     
-#warning lv
+#warning xxxx
     idNumber = @"RTR40004W";
     // http://60.191.108.245:33681/brosapiservice.svc/GetStyleDetail/RTR40004W/0000/1/ 格式里的?goodID={goodID} 是商品编码 可以不选择
     NSString * deviceID = [self deviceID];
@@ -121,14 +121,52 @@
     [operation start];
 }
 
-- (NSInteger)praiseWithNumberID:(NSString*)numberID{
-    //TODO:
-    return 0;
+- (void)praiseWithNumberID:(NSString*)idNumber completion:(JECompletionBlock)block{
+    //http://60.191.108.245:33681/brosapiservice.svc/SetPraise/APE0002/dfd
+    NSString * deviceID = [self deviceID];
+    __weak __typeof(self) weakSelf = self;
+    NSMutableString *urlStr = [NSMutableString stringWithFormat:@"%@SetPraise/%@/%@", kBaseURLString,idNumber,deviceID];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:urlStr]];
+    request.timeoutInterval = kTimeoutInterval;
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if ([responseObject isKindOfClass:[NSData class]]) {
+            NSData   *aData = (NSData*)responseObject;
+            NSString *aStr = [[NSString alloc] initWithData:aData encoding:NSUTF8StringEncoding];
+            weakSelf.praiseCount = [aStr stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+        }
+        if (block) {
+            block(YES);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (block) {
+            block(NO);
+        }
+    }];
+    [operation start];
 }
 
-- (BOOL)favoriteWithUserID:(NSString*)userID numberID:(NSString*)numberID{
-    //TODO:
-    return YES;
+- (void)favoriteWithUserID:(NSString*)userID numberID:(NSString*)numberID  completion:(JECompletionBlock)block{
+    __weak __typeof(self) weakSelf = self;
+    NSMutableString *urlStr = [NSMutableString stringWithFormat:@"%@SetCollect/%@/%@", kBaseURLString,numberID,userID];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:urlStr]];
+    request.timeoutInterval = kTimeoutInterval;
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if ([responseObject isKindOfClass:[NSData class]]) {
+            NSData   *aData = (NSData*)responseObject;
+            NSString *aStr = [[NSString alloc] initWithData:aData encoding:NSUTF8StringEncoding];
+            
+        }
+        if (block) {
+            block(YES);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (block) {
+            block(NO);
+        }
+    }];
+    [operation start];
 }
 
 #pragma mark - Private Method

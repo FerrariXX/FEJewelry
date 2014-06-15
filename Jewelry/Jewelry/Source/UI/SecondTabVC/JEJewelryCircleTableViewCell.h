@@ -17,9 +17,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *idLabel;
 @property (strong, nonatomic) IBOutlet UILabel *addressLabel;
 @property (strong, nonatomic) IBOutlet UILabel *phoneLabel;
+@property (strong, nonatomic) IBOutlet UILabel *phonePromptLabel;
 
 @property (strong, nonatomic) IBOutlet FEScrollPageView *detailScrollImagsView;
-
+@property (strong, nonatomic) IBOutlet UIView *topSeperateLine;
 @property (strong, nonatomic) IBOutlet UIView *seperateLine;
 + (JEJewelryCircleTableViewCell*)jewelryCircleTableViewCell;
 + (CGFloat)height;

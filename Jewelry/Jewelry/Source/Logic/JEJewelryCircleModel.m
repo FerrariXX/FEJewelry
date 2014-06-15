@@ -9,6 +9,7 @@
 #import "JEJewelryCircleModel.h"
 #import "FEMacroDefine.h"
 #import "FEScrollPageView.h"
+#import "JEHomePageModel.h"
 
 @implementation JEJewelryCircleItem
 - (id)init
@@ -35,11 +36,17 @@
         self.shopAddress = [dict objectForKey:@"shopAddress"];
         self.shopPhone = [dict objectForKey:@"shopPhone"];
         NSInteger index = 0;
-        NSArray *imageURLs = [dict objectForKey:@"shopGoods"];
-        NSMutableArray *imageItems = [NSMutableArray arrayWithCapacity:[imageURLs count]];
-        for (NSString *url in imageURLs) {
-            FEImageItem *item = [[FEImageItem alloc] initWithTitle:nil imageURL:url tag:index++];
-            [imageItems addObject:item];
+        NSArray *goodsArray = [dict objectForKey:@"shopGoods"];
+        NSMutableArray *imageItems = [NSMutableArray arrayWithCapacity:[goodsArray count]];
+        for (id goodsItem in goodsArray) {
+            //goodsItem 其实是JEHomePageItem,
+            if (goodsItem && [goodsItem isKindOfClass:[NSDictionary class]]) {
+                NSString * url = [goodsItem objectForKey:@"imageArray"];
+                if (url && [url isKindOfClass:[NSString class]]) {
+                    FEImageItem *item = [[FEImageItem alloc] initWithTitle:nil imageURL:url tag:index++];
+                    [imageItems addObject:item];
+                }
+            }
         }
         self.shopGoodsURL =[imageItems copy];
     }
@@ -59,6 +66,8 @@
 
 @interface JEJewelryCircleModel()
 @property(nonatomic, strong)NSMutableArray *contentArray;
+@property(nonatomic, assign)BOOL            isHaveMore;
+
 @end
 
 @implementation JEJewelryCircleModel
@@ -91,20 +100,26 @@
     request.timeoutInterval = kTimeoutInterval;
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        NSDictionary *jsonDict = (NSDictionary*)JSON;
-        NSArray *imageURLs = [jsonDict objectForKey:@"salesPromotionArray"];
-        NSInteger index = 0;
-        NSMutableArray *imageItems = [NSMutableArray arrayWithCapacity:[imageURLs count]];
-        for (NSString *url in imageURLs) {
-            FEImageItem *item = [[FEImageItem alloc] initWithTitle:nil imageURL:url tag:index++];
-            [imageItems addObject:item];
-        }
-        weakSelf.bannerImages = [imageItems copy];
-        
-        NSArray *shopArray = [jsonDict objectForKey:@"shopArray"];
-        for (NSDictionary *dict in shopArray) {
-            JEJewelryCircleItem *item = [[JEJewelryCircleItem alloc] initWithDictionary:dict];
-            [weakSelf.contentArray addObject:item];
+        if (JSON && [JSON isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *jsonDict = (NSDictionary*)JSON;
+            NSArray *imageURLs = [jsonDict objectForKey:@"salesPromotionArray"];
+            NSInteger index = 0;
+            NSMutableArray *imageItems = [NSMutableArray arrayWithCapacity:[imageURLs count]];
+            for (NSString *url in imageURLs) {
+                FEImageItem *item = [[FEImageItem alloc] initWithTitle:nil imageURL:url tag:index++];
+                [imageItems addObject:item];
+            }
+            weakSelf.bannerImages = [imageItems copy];
+            
+            NSArray *shopArray = [jsonDict objectForKey:@"shopArray"];
+            if ([shopArray count] >0) {
+                for (NSDictionary *dict in shopArray) {
+                    JEJewelryCircleItem *item = [[JEJewelryCircleItem alloc] initWithDictionary:dict];
+                    [weakSelf.contentArray addObject:item];
+                }
+            } else {
+                self.isHaveMore = YES;
+            }
         }
         if (block) {
             block(YES);
@@ -124,12 +139,15 @@
 - (void)baseInit{
     
     self.contentArray = [NSMutableArray arrayWithCapacity:0];
+#if 0
     JEJewelryCircleItem * item = [[JEJewelryCircleItem alloc] init];
     self.contentArray = @[item,[[JEJewelryCircleItem alloc] init],[[JEJewelryCircleItem alloc] init],[[JEJewelryCircleItem alloc] init],[[JEJewelryCircleItem alloc] init],[[JEJewelryCircleItem alloc] init],[[JEJewelryCircleItem alloc] init],[[JEJewelryCircleItem alloc] init]];
     FEImageItem *item1 = [[FEImageItem alloc] initWithTitle:nil imageURL:@"http://gw2.alicdn.com/bao/uploaded/i3/T1QPnBFmleXXXXXXXX_!!0-item_pic.jpg" tag:0];
     FEImageItem *item2 = [[FEImageItem alloc] initWithTitle:nil imageURL:@"http://gw2.alicdn.com/bao/uploaded/i3/T1QPnBFmleXXXXXXXX_!!0-item_pic.jpg" tag:1];
     FEImageItem *item3 = [[FEImageItem alloc] initWithTitle:nil imageURL:@"http://gw2.alicdn.com/bao/uploaded/i3/T1QPnBFmleXXXXXXXX_!!0-item_pic.jpg" tag:2];
     self.bannerImages = @[item1,item2,item3];
+#endif
+    
 }
 
 @end

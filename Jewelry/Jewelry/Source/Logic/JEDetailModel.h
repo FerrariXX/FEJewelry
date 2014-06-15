@@ -37,8 +37,7 @@
 
 - (instancetype)initWithId:(NSString*)idNumber;
 - (void)loadWithID:(NSString*)idNumber goodID:(NSString*)goodID completion:(JECompletionBlock)block;
-- (NSInteger)praiseWithNumberID:(NSString*)numberID;
-- (BOOL)favoriteWithUserID:(NSString*)userID numberID:(NSString*)numberID;
-
+- (void)praiseWithNumberID:(NSString*)idNumber completion:(JECompletionBlock)block;
+- (void)favoriteWithUserID:(NSString*)userID numberID:(NSString*)numberID completion:(JECompletionBlock)block;
 
 @end

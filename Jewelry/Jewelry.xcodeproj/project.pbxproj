@@ -134,6 +134,7 @@
 		C3938081194AA0630068945A /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3938080194AA0630068945A /* MediaPlayer.framework */; };
 		C3A44D0518FC34A600E9B254 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A44D0418FC34A600E9B254 /* AVFoundation.framework */; };
 		C3A44D0718FC34AD00E9B254 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A44D0618FC34AD00E9B254 /* libz.dylib */; };
+		C3B96A7E194C81DC00DFA998 /* defaultJEwelry.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B96A7D194C81DC00DFA998 /* defaultJEwelry.png */; };
 		C3BBA8311917E26C00FA9D07 /* JEDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BBA8301917E26C00FA9D07 /* JEDetailModel.m */; };
 		C3CBDAEE1930E44E001B193A /* JEJewelryCircleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3CBDAEC1930E44E001B193A /* JEJewelryCircleTableViewCell.m */; };
 		C3CBDAEF1930E44E001B193A /* JEJewelryCircleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CBDAED1930E44E001B193A /* JEJewelryCircleTableViewCell.xib */; };
@@ -353,6 +354,7 @@
 		C3938080194AA0630068945A /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		C3A44D0418FC34A600E9B254 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C3A44D0618FC34AD00E9B254 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		C3B96A7D194C81DC00DFA998 /* defaultJEwelry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultJEwelry.png; sourceTree = "<group>"; };
 		C3BBA82F1917E26C00FA9D07 /* JEDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEDetailModel.h; sourceTree = "<group>"; };
 		C3BBA8301917E26C00FA9D07 /* JEDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEDetailModel.m; sourceTree = "<group>"; };
 		C3CBDAEB1930E44E001B193A /* JEJewelryCircleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEJewelryCircleTableViewCell.h; sourceTree = "<group>"; };
@@ -963,6 +965,7 @@
 		C3F72C5318FD8A78007FDB69 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C3B96A7D194C81DC00DFA998 /* defaultJEwelry.png */,
 				C36062591949FB4C00ED0CA6 /* tab_bareDiamondH@2x.png */,
 				C360625A1949FB4C00ED0CA6 /* tab_homeH@2x.png */,
 				C360625B1949FB4C00ED0CA6 /* tab_jewelryCircle@2x.png */,
@@ -1143,6 +1146,7 @@
 				C3D0057619056C8700FC4A64 /* JEFirstTabbarVC.xib in Resources */,
 				2AE97EDD1947F55900C973E6 /* shake.wav in Resources */,
 				C3F72CF518FD8A78007FDB69 /* login_gray_pressed.png in Resources */,
+				C3B96A7E194C81DC00DFA998 /* defaultJEwelry.png in Resources */,
 				2ABBCB0519395C2C00F1A5EB /* dashed.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

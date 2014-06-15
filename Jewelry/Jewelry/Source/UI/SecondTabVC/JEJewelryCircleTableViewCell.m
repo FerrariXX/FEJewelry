@@ -40,6 +40,11 @@
         cell.logoImage.backgroundColor = [UIColor clearColor];
         cell.seperateLine.backgroundColor = [UIColor grayColor];
         cell.seperateLine.frame = CGRectMake(0, cell.bounds.size.height-1, cell.bounds.size.width, 0.5);
+        CGRect  rect = cell.topSeperateLine.frame;
+        rect.size.height = 0.5;
+        cell.topSeperateLine.frame =  rect;
+        cell.topSeperateLine.backgroundColor = [UIColor grayColor];
+        cell.topSeperateLine.hidden = YES;
         return cell;
     }
     return nil;

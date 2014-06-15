@@ -39,22 +39,27 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.tableView.separatorColor = [UIColor clearColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
     self.tableView.tableHeaderView = self.bannerView;
     
+    self.bannerView.palceHoldImage = @"defaultJEwelry";//默认图片
+    
+    [FEToastView showWithTitle:@"正在加载中..." animation:YES];
     __weak  JESecondTabbarVC *weakSelf = self;
     [self.jewelryCircleModel loadWithCompletionBlock:^(BOOL isSuccess) {
         if (isSuccess) {
-            [weakSelf.bannerView setImageItems:self.jewelryCircleModel.bannerImages selectedBlock:^(FEImageItem *sender) {
+            [FEToastView dismissWithAnimation:NO];
+            [weakSelf.bannerView setImageItems:weakSelf.jewelryCircleModel.bannerImages selectedBlock:^(FEImageItem *sender) {
                 //do nothing here
                 if ([sender.imageURL length] >0) {
                     JEWebViewController *webVC = [[JEWebViewController alloc] initWithURL:sender.imageURL];
                     [weakSelf.navigationController pushViewController:webVC animated:YES];
                 }
             } isAutoPlay:YES];
+            [weakSelf.tableView reloadData];
+        } else {
+            TBShowErrorToast;
         }
     }];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,10 +98,14 @@
     [cell.logoImage setImageWithURL:[NSURL URLWithString:item.shopImage] placeholderImage:[UIImage imageNamed:@"default_avatar"]];
     cell.nameLabel.text  = item.shopName;
     cell.idLabel.text    = item.shopID;
+    CGSize fontSize = [item.shopAddress sizeWithFont:cell.addressLabel.font];
+    if (fontSize.width > cell.addressLabel.frame.size.width) {
+        cell.addressLabel.height = cell.addressLabel.height + 8.0;
+        [cell.phoneLabel setOriginY:cell.phoneLabel.origin.y + 8.0];
+        [cell.phonePromptLabel setOriginY:cell.phonePromptLabel.origin.y + 8.0];
+    }
     cell.addressLabel.text = item.shopAddress;
     cell.phoneLabel.text   = item.shopPhone;
-   //cell.categoryLabel.text = item.shopc;
-   
     [cell.detailScrollImagsView setImageItems:item.shopGoodsURL selectedBlock:^(FEImageItem *sender) {
     } isAutoPlay:NO];
     cell.detailScrollImagsView.itemWidth = 160.0;
@@ -118,7 +127,4 @@
     vc.shopID = item.shopID;
     [self.navigationController pushViewController:vc animated:YES];
 }
-
-
-
 @end

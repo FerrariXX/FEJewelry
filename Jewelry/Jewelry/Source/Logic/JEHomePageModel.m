@@ -84,32 +84,6 @@
 }
 
 
-- (void)loadDataWithCategory:(NSString*)categroy priceRange:(NSString*)priceRange{
-    
-    NSArray *item = [priceRange componentsSeparatedByString:@"~"];
-    if ([item count]==2) {
-        [self loadDataWithCategory:categroy startPrice:[item objectAtIndex:0] endPrice:[item objectAtIndex:1]];
-    }
-}
-
-- (void)loadDataWithCategory:(NSString*)categroy startPrice:(NSString*)startPrice endPrice:(NSString*)endPrice{
-
-    //TODO:
-    return;
-    
-    __weak __typeof(self) weakSelf = self;//__typeof(&*self)
-    NSString *urlStr = [NSString stringWithFormat:@"%@GetStyleByCategoryPrice/{categoryID:01,startPrice:0,endPrice:10000}", kBaseURLString];
-    NSURLRequest *request = [NSURLRequest requestWithURL: [NSURL URLWithString:urlStr]];
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        NSDictionary *jsonDict = (NSDictionary*)JSON;
-        [weakSelf parserResponseDict:jsonDict];
-        
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        
-    }];
-    [operation start];
-}
-
 - (BOOL)isHaveMore{
     return _isHaveMore;
 }

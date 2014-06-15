@@ -25,7 +25,8 @@
 - (NSInteger)numberOfRowsInSection:(NSInteger)section;
 - (JEJewelryShopItem*)contentAtIndexPath:(NSInteger)index;
 
+- (BOOL)isHaveMore;
 - (void)loadWithShopID:(NSString*)shopID completionBlock:(JECompletionBlock)block;
-- (void)loadWithShopID:(NSString*)shopID pageNumber:(NSInteger)pageNumber  completionBlock:(JECompletionBlock)block;
+- (void)loadMoreWithShopID:(NSString*)shopID completionBlock:(JECompletionBlock)block;
 
 @end

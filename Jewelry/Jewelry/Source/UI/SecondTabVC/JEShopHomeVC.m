@@ -11,14 +11,18 @@
 #import "NSObject+FENib.h"
 #import "JEJewelryShopModel.h"
 #import "JEShopHomeTableViewCell.h"
+#import "JEDetailModel.h"
+#import "JEDetailVC.h"
 
 @interface JEShopHomeVC ()
 @property(nonatomic, strong)JEJewelryShopModel  *shopModel;
 @property(nonatomic, strong)IBOutlet UIView  *aboveAvatarView;
 @property(nonatomic, strong)IBOutlet UILabel *shopNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *shopPhoneLabel;
+@property (strong, nonatomic) IBOutlet UIButton *phoneButton;
 @property (assign, nonatomic) NSInteger listCount;
 @property (assign, nonatomic) NSInteger pageNumber;
+- (IBAction)phoneButtonPressed:(id)sender;
 @end
 
 @implementation JEShopHomeVC
@@ -33,12 +37,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
-//        [self setEdgesForExtendedLayout:UIRectEdgeNone];
-//    }
-//    if ([self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)]) {
-//        [self setAutomaticallyAdjustsScrollViewInsets:NO];
-//    }
+    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
+        [self setEdgesForExtendedLayout:UIRectEdgeNone];
+    }
+    if ([self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)]) {
+        [self setAutomaticallyAdjustsScrollViewInsets:NO];
+    }
     self.title = @"店铺首页";
     self.tableView.separatorColor = [UIColor clearColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -52,14 +56,52 @@
     __weak  JEShopHomeVC *weakSelf = self;
     self.pageNumber = 0;
     [self.shopModel loadWithShopID:self.shopID completionBlock:^(BOOL isSuccess) {
-        [weakSelf updateData];
+        if (isSuccess) {
+            [weakSelf updateData];
+        } else {
+            TBShowErrorToast;
+        }
     }];
+    
+    [self.tableView addInfiniteScrollingWithActionHandler:^{
+        if ([weakSelf.shopModel isHaveMore]) {
+            [weakSelf.shopModel loadMoreWithShopID:weakSelf.shopID completionBlock:^(BOOL isSuccess) {
+                [weakSelf.tableView.infiniteScrollingView stopAnimating];
+                if (isSuccess) {
+                    if ([weakSelf.shopModel isHaveMore]) {
+                        [weakSelf.tableView reloadData];
+                    } else {
+                        [weakSelf.tableView setShowsInfiniteScrolling:NO];
+                        //[weakSelf.tableView setContentInset:UIEdgeInsetsMake(0, 0, 50.0, 0)];
+                        [FEToastView showWithTitle:@" 没有更多了 " animation:YES interval:2.0];
+                    }
+                } else {
+                    TBShowErrorToast;
+                }
+            }];
+        }else {
+            [weakSelf.tableView.infiniteScrollingView stopAnimating];
+            [weakSelf.tableView setShowsInfiniteScrolling:NO];
+            //[weakSelf.tableView setContentInset:UIEdgeInsetsMake(0, 0, 50.0, 0)];
+            [FEToastView showWithTitle:@" 没有更多了 " animation:YES interval:2.0];
+        }
+    }];
+
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [FEToastView dismissWithAnimation:NO];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc{
+    [self.tableView removeCoverView];
 }
 
 #pragma mark - Table view data source
@@ -100,14 +142,14 @@
     return [JEShopHomeTableViewCell height];
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    __weak  JEShopHomeVC *weakSelf = self;
-    if (indexPath.row > (self.listCount -5)) {
-        [self.shopModel loadWithShopID:self.shopID pageNumber:self.pageNumber completionBlock:^(BOOL isSuccess) {
-            [weakSelf updateData];
-        }];
-    }
-}
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+//    __weak  JEShopHomeVC *weakSelf = self;
+//    if (indexPath.row > (self.listCount -5)) {
+//        [self.shopModel loadWithShopID:self.shopID pageNumber:self.pageNumber completionBlock:^(BOOL isSuccess) {
+//            [weakSelf updateData];
+//        }];
+//    }
+//}
 
 
 #pragma mark - Table view delegate
@@ -115,20 +157,27 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    JEJewelryShopItem* item = [self.shopModel contentAtIndexPath:indexPath.row];
+    JEDetailModel *model = [[JEDetailModel alloc] initWithId:item.idNumber];
+    JEDetailVC *detailVC = [[JEDetailVC alloc] initWithNibName:@"JEDetailVC" bundle:nil];
+    [detailVC setModel:model];
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 #pragma mark - Private Method
 
 - (void)updateData{
     self.shopNameLabel.text = self.shopModel.jewelryShopTitle;
-    self.shopPhoneLabel.text = self.shopModel.jewelryShopPhone;
+    [self.phoneButton setTitle:self.shopModel.jewelryShopPhone forState:UIControlStateNormal];
+    //self.shopPhoneLabel.text = self.shopModel.jewelryShopPhone;
     [self.tableView reloadData];
 }
-//- (UIView*)aboveAvatarView{
-//    if (_aboveAvatarView == nil) {
-//        _aboveAvatarView = [JEShopHomeVC instanceWithNibName:@"JEShopHomeVC" bundle:nil owner:nil index:1];
-//    }
-//    return _aboveAvatarView;
-//}
 
+- (IBAction)phoneButtonPressed:(id)sender {
+    if ([self.phoneButton.titleLabel.text length] >0) {
+        NSString *phoneNumber = [NSString stringWithFormat:@"tel://%@",self.phoneButton.titleLabel.text];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
+    }
+    
+}
 @end

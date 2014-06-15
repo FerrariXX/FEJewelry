@@ -154,7 +154,7 @@
 - (UIView *)tabViewAtSection:(NSUInteger)section tabIndex:(NSUInteger)index{
     UILabel *label = [UILabel new];
     label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont systemFontOfSize:13.0];
+    label.font = [UIFont systemFontOfSize:17.0];
     label.text = [NSString stringWithFormat:@"%@", [self.jewelryCategory contentAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]]];
     label.textAlignment = NSTextAlignmentCenter;
     label.textColor = [UIColor blackColor];

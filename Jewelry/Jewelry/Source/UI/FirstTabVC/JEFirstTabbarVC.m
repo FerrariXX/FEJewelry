@@ -179,12 +179,10 @@
 
 #pragma mark - Private Method
 - (void)didSelectedWithId:(NSString*)idString{
-
     JEDetailModel *model = [[JEDetailModel alloc] initWithId:idString];
     JEDetailVC *detailVC = [[JEDetailVC alloc] initWithNibName:@"JEDetailVC" bundle:nil];
     [detailVC setModel:model];
     [self.navigationController pushViewController:detailVC animated:YES];
-
 }
 
 

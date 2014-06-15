@@ -35,7 +35,6 @@
 #pragma mark - Private Method
 - (void)initTabBarController
 {
-    //TODO:
 	NSArray* titlesArr = [NSArray arrayWithObjects:@"商城",@"珠宝圈",@"裸钻",@"我", nil];
 	UIImage* image1 = [UIImage imageNamed:@"tab_homeH.png"];
 	UIImage* image2 = [UIImage imageNamed:@"tab_bareDiamondH.png"];
@@ -55,7 +54,7 @@
 
     //JELeftSidePanelVC* leftVC   = [[JELeftSidePanelVC alloc] initWithNibName:@"JELeftSidePanelVC" bundle:nil];
     JERightSidePanelVC* rightVC = [[JERightSidePanelVC alloc] initWithNibName:@"JERightSidePanelVC" bundle:nil];
-    //TODO:JEFirstTabbarVC*centerVC = [[JEFirstTabbarVC alloc] initWithNibName:@"JEFirstTabbarVC" bundle:nil];
+    //JEFirstTabbarVC*centerVC = [[JEFirstTabbarVC alloc] initWithNibName:@"JEFirstTabbarVC" bundle:nil];
     JEFirstTabbarWrapperPageVC *centerVC = [[JEFirstTabbarWrapperPageVC alloc] init];
     //UINavigationController* leftNavi   = [[UINavigationController alloc] initWithRootViewController:leftVC];
     UINavigationController* rightNavi  = [[UINavigationController alloc] initWithRootViewController:rightVC];

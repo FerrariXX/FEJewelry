@@ -191,13 +191,17 @@
 - (IBAction)evaluateButtonPressed:(id)sender {
     __weak __typeof(self) weakSelf = self;
     FEMicroMsgPopoverItem *item1 = [[FEMicroMsgPopoverItem alloc] initWithImage:[UIImage imageNamed:@"icon_favorite"] title:@"赞" clickedBlock:^(id sender) {
-        [weakSelf.model praiseWithNumberID:weakSelf.model.idNumber];
+        [weakSelf.model praiseWithNumberID:weakSelf.model.idNumber completion:^(BOOL isSuccess) {
+            weakSelf.zanLabel.text = weakSelf.model.praiseCount;
+        }];
     }];
 //    FEMicroMsgPopoverItem *item2 = [[FEMicroMsgPopoverItem alloc] initWithImage:[UIImage imageNamed:@"icon_reply"] title:@"评论" clickedBlock:^(id sender) {
 //        NSLog(@">>>xxx 2");
 //    }];
     FEMicroMsgPopoverItem *item3 = [[FEMicroMsgPopoverItem alloc] initWithImage:[UIImage imageNamed:@"icon_retweet"] title:@"收藏" clickedBlock:^(id sender) {
-        [weakSelf.model favoriteWithUserID:@"" numberID:weakSelf.model.idNumber];
+        [weakSelf.model favoriteWithUserID:@"" numberID:weakSelf.model.idNumber completion:^(BOOL isSuccess) {
+            
+        }];
     }];
     FEMicroMsgPopoverItem *item4 = [[FEMicroMsgPopoverItem alloc] initWithImage:[UIImage imageNamed:@"icon_favorite"] title:@"分享" clickedBlock:^(id sender) {
         

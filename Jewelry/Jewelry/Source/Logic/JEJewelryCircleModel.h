@@ -27,4 +27,7 @@
 - (JEJewelryCircleItem*)contentAtIndexPath:(NSInteger)index;
 
 - (void)loadWithCompletionBlock:(JECompletionBlock)block;
+
+- (BOOL)isHaveMore;
+
 @end
