@@ -25,6 +25,9 @@
 		2A1C708D194DFC14003EE0E2 /* MenuBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A1C7085194DFC14003EE0E2 /* MenuBar.png */; };
 		2A1C708E194DFC14003EE0E2 /* MenuBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A1C7086194DFC14003EE0E2 /* MenuBar@2x.png */; };
 		2A1C708F194DFC14003EE0E2 /* MKHorizMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1C7088194DFC14003EE0E2 /* MKHorizMenu.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2A2D98A719508C3300594325 /* JECollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D98A219508C3300594325 /* JECollectionModel.m */; };
+		2A2D98A819508C3300594325 /* JEGoalPriceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D98A419508C3300594325 /* JEGoalPriceModel.m */; };
+		2A2D98A919508C3300594325 /* JEMyPointsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D98A619508C3300594325 /* JEMyPointsModel.m */; };
 		2ABBCAFE19395A2A00F1A5EB /* JEMyPointsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBCAFC19395A2A00F1A5EB /* JEMyPointsViewController.m */; };
 		2ABBCAFF19395A2A00F1A5EB /* JEMyPointsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ABBCAFD19395A2A00F1A5EB /* JEMyPointsViewController.xib */; };
 		2ABBCB0219395ADA00F1A5EB /* JEMyPointsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBCB0119395ADA00F1A5EB /* JEMyPointsCell.m */; };
@@ -229,6 +232,12 @@
 		2A1C7086194DFC14003EE0E2 /* MenuBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MenuBar@2x.png"; sourceTree = "<group>"; };
 		2A1C7087194DFC14003EE0E2 /* MKHorizMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKHorizMenu.h; sourceTree = "<group>"; };
 		2A1C7088194DFC14003EE0E2 /* MKHorizMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKHorizMenu.m; sourceTree = "<group>"; };
+		2A2D98A119508C3300594325 /* JECollectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JECollectionModel.h; sourceTree = "<group>"; };
+		2A2D98A219508C3300594325 /* JECollectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JECollectionModel.m; sourceTree = "<group>"; };
+		2A2D98A319508C3300594325 /* JEGoalPriceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEGoalPriceModel.h; sourceTree = "<group>"; };
+		2A2D98A419508C3300594325 /* JEGoalPriceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEGoalPriceModel.m; sourceTree = "<group>"; };
+		2A2D98A519508C3300594325 /* JEMyPointsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEMyPointsModel.h; sourceTree = "<group>"; };
+		2A2D98A619508C3300594325 /* JEMyPointsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEMyPointsModel.m; sourceTree = "<group>"; };
 		2ABBCAFB19395A2A00F1A5EB /* JEMyPointsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEMyPointsViewController.h; sourceTree = "<group>"; };
 		2ABBCAFC19395A2A00F1A5EB /* JEMyPointsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEMyPointsViewController.m; sourceTree = "<group>"; };
 		2ABBCAFD19395A2A00F1A5EB /* JEMyPointsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JEMyPointsViewController.xib; sourceTree = "<group>"; };
@@ -555,6 +564,19 @@
 			path = MKHorizMenu;
 			sourceTree = "<group>";
 		};
+		2A2D98A019508B2C00594325 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2A2D98A119508C3300594325 /* JECollectionModel.h */,
+				2A2D98A219508C3300594325 /* JECollectionModel.m */,
+				2A2D98A319508C3300594325 /* JEGoalPriceModel.h */,
+				2A2D98A419508C3300594325 /* JEGoalPriceModel.m */,
+				2A2D98A519508C3300594325 /* JEMyPointsModel.h */,
+				2A2D98A619508C3300594325 /* JEMyPointsModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C32712DB18FC2DA600971956 = {
 			isa = PBXGroup;
 			children = (
@@ -878,6 +900,7 @@
 		C3D0056319056C8700FC4A64 /* FourthTabVC */ = {
 			isa = PBXGroup;
 			children = (
+				2A2D98A019508B2C00594325 /* Model */,
 				C3D0056419056C8700FC4A64 /* JEFourthTabbarVC.h */,
 				C3D0056519056C8700FC4A64 /* JEFourthTabbarVC.m */,
 				C3D0056619056C8700FC4A64 /* JEFourthTabbarVC.xib */,
@@ -1261,6 +1284,7 @@
 				2A1C708B194DFC14003EE0E2 /* JEDiamondModel.m in Sources */,
 				C3CDCF43192E4D74006E1BD8 /* JEJewelryCircleModel.m in Sources */,
 				2A17B51B1938EBE70094F749 /* JEMyFollowVC.m in Sources */,
+				2A2D98A819508C3300594325 /* JEGoalPriceModel.m in Sources */,
 				C3F72CE918FD8A78007FDB69 /* AppDelegate.m in Sources */,
 				C3E0589C19168E2C002E2770 /* JEDetailVC.m in Sources */,
 				C3D0058019056C8700FC4A64 /* FETabBarViewController.m in Sources */,
@@ -1274,11 +1298,13 @@
 				2A17B51F1938EE3E0094F749 /* JEMyFollowCell.m in Sources */,
 				2ABC72CD193E1BA50080D274 /* JEGoldQuotationVC.m in Sources */,
 				2A17B5171938E69A0094F749 /* JEUserInfoUpgradeCell.m in Sources */,
+				2A2D98A919508C3300594325 /* JEMyPointsModel.m in Sources */,
 				C3D0057F19056C8700FC4A64 /* FETabBarView.m in Sources */,
 				C3D0058119056C8700FC4A64 /* JEThirdTabbarVC.m in Sources */,
 				C3F13F1D192857A10024AEC3 /* JEFirstTabbarWrapperPageVC.m in Sources */,
 				C3D0057D19056C8700FC4A64 /* JESecondTabbarVC.m in Sources */,
 				C31BC347193C949F0045BB42 /* JEWebViewController.m in Sources */,
+				2A2D98A719508C3300594325 /* JECollectionModel.m in Sources */,
 				2A1C708F194DFC14003EE0E2 /* MKHorizMenu.m in Sources */,
 				C3D0058519056CB400FC4A64 /* JECategory.m in Sources */,
 				C3D0058B1905719E00FC4A64 /* JEHomePageTableViewCell.m in Sources */,
