@@ -10,6 +10,29 @@
 #import "MKHorizMenu.h"
 #import "JEDiamondModel.h"
 
+typedef NS_OPTIONS (NSUInteger, JEDiamondSearchNeatness) {
+    JEDiamondSearchNeatnessFL = 1,
+    JEDiamondSearchNeatnessIF = 2,
+    JEDiamondSearchNeatnessVVS1 = 3,
+    JEDiamondSearchNeatnessVVS2 = 4,
+    JEDiamondSearchNeatnessVS1 = 5,
+    JEDiamondSearchNeatnessVS2 = 6,
+    JEDiamondSearchNeatnessSI1 = 7,
+    JEDiamondSearchNeatnessSI2 = 8
+};
+
+typedef NS_OPTIONS (NSUInteger, JEDiamondSearchColor) {
+    JEDiamondSearchColorD = 1,
+    JEDiamondSearchColorE = 2,
+    JEDiamondSearchColorF = 3,
+    JEDiamondSearchColorH = 4,
+    JEDiamondSearchColorG = 5,
+    JEDiamondSearchColorI = 6,
+    JEDiamondSearchColorJ = 7,
+    JEDiamondSearchColorK = 8
+};
+
+
 @interface JEThirdTabbarVC : UIViewController <MKHorizMenuDataSource, MKHorizMenuDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property (strong, nonatomic) JEDiamondModel *model;

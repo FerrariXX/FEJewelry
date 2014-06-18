@@ -52,7 +52,7 @@
     // http://60.191.108.245:33681/brosapiservice.svc/GetDiamonds/{neatness}/{color}/{weightID}/{priceID}/{pageNumber}
 //    NSString * deviceID = [self deviceID];
     __weak __typeof(self) weakSelf = self;
-    NSMutableString *urlStr = [NSMutableString stringWithFormat:@"%@GetDiamonds/%@/%@/%@/%@/%@", kBaseURLString,neatness,color,weightID,priceID,pageNumber];
+    NSMutableString *urlStr = [NSMutableString stringWithFormat:@"%@GetDiamonds/%@/?neatness=%@&color=%@&weightID=%@&priceID=%@", kBaseURLString,pageNumber,neatness,color,weightID,priceID];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:urlStr]];
     request.timeoutInterval = kTimeoutInterval;
 

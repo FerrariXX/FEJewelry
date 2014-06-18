@@ -8,6 +8,7 @@
 
 #import "JEThirdTabbarVC.h"
 #import "JEDiamondListCell.h"
+#import "JEWebViewController.h"
 
 @interface JEThirdTabbarVC ()
 @property (nonatomic, strong) NSMutableArray *neatness;
@@ -15,7 +16,11 @@
 @property (nonatomic, strong) NSMutableArray *stones;
 @property (nonatomic, strong) NSMutableArray *prices;
 @property (nonatomic, assign) NSInteger pageNumber;
-@end
+@property (nonatomic, strong) NSString       *neatnessStr;
+@property (nonatomic, strong) NSString       *stonesStr;
+@property (nonatomic, strong) NSString       *colorStr;
+@property (nonatomic, strong) NSString       *priceStr;
+ @end
 
 @implementation JEThirdTabbarVC
 
@@ -30,14 +35,18 @@
 
 - (void)viewDidLoad
 {
-
+    _neatnessStr = @"0";
+    _stonesStr = @"0";
+    _colorStr = @"0";
+    _priceStr = @"0";
+    
     _pageNumber = 1;
     _model = [[JEDiamondModel alloc] init];
     // Do any additional setup after loading the view from its nib.
-    _neatness = [NSMutableArray arrayWithObjects:@"FL",@"IF",@"VVS1",@"VVS2",@"VS1",@"VS2",@"SI1",@"SI2", nil];
-    _colors = [NSMutableArray arrayWithObjects:@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K", nil];
-    _stones = [NSMutableArray arrayWithObjects:@"30-40ct",@"40-50ct",@"50-60ct",@"60-80ct",@"80-100ct",@"100ct", nil];
-    _prices = [NSMutableArray arrayWithObjects:@"0~5000",@"5000~8000",@"8000~12000",@"12000~20000",@" 20000~30000",@"30000~50000",@"50000以上",nil];
+    _neatness = [NSMutableArray arrayWithObjects:@"全部",@"FL",@"IF",@"VVS1",@"VVS2",@"VS1",@"VS2",@"SI1",@"SI2", nil];
+    _colors = [NSMutableArray arrayWithObjects:@"全部",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K", nil];
+    _stones = [NSMutableArray arrayWithObjects:@"全部",@"30-40ct",@"40-50ct",@"50-60ct",@"60-80ct",@"80-100ct",@"100ct", nil];
+    _prices = [NSMutableArray arrayWithObjects:@"全部",@"0~5000",@"5000~8000",@"8000~12000",@"12000~20000",@" 20000~30000",@"30000~50000",@"50000以上",nil];
     
     [_neatnessMenu reloadData];
     [_colorMenu reloadData];
@@ -138,12 +147,26 @@
 -(void) horizMenu:(MKHorizMenu *)horizMenu itemSelectedAtIndex:(NSUInteger)index
 {
     if (horizMenu.tag == 11) {
-//        self.selectionItemLabel.text = [self.items objectAtIndex:index];
+        _neatnessStr = [NSString stringWithFormat:@"%d", index];
     }else if(horizMenu.tag == 21) {
-//        self.selectionItemLabel.text = [self.stones objectAtIndex:index];
+         _stonesStr = [NSString stringWithFormat:@"%d", index];
     }else if(horizMenu.tag == 31) {
-//        self.selectionItemLabel.text = [self.prices objectAtIndex:index];
+        _colorStr = [NSString stringWithFormat:@"%d", index];
+    }else if(horizMenu.tag == 41) {
+        _priceStr = [NSString stringWithFormat:@"%d", index];
     }
+    
+    [_model.diamondList removeAllObjects];
+    __weak __typeof(self) weakSelf = self;
+    [FEToastView showWithTitle:@"正在加载中..." animation:YES];
+    [weakSelf.model loadDiamondList:@"1" neatness:_neatnessStr color:_colorStr weightID:_stonesStr priceID:_priceStr completion:^(BOOL isSuccess) {
+        [FEToastView dismissWithAnimation:YES];
+        if (isSuccess) {
+            [weakSelf.tableView reloadData];
+        }else {
+            TBShowErrorToast;
+        }
+    }];
 }
 
 #pragma mark - Table view data source
@@ -190,6 +213,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    JEDiamondListItem *diamondItem = FEObjectAtIndex(self.model.diamondList,indexPath.row);
+    if ([diamondItem.detailURL length] >0) {
+        JEWebViewController *webVC = [[JEWebViewController alloc] initWithURL:diamondItem.detailURL];
+        [self.navigationController pushViewController:webVC animated:YES];
+    }
 }
 
 @end
