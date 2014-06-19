@@ -28,7 +28,10 @@
     self = [super init];
     if (self) {
         //"http://gw2.alicdn.com/bao/uploaded/i3/T1QPnBFmleXXXXXXXX_!!0-item_pic.jpg",
-        self.imgURL = [dict objectForKey:@"imageArray"];
+        id imagesURL = [dict objectForKey:@"imageArray"];
+        if (imagesURL && [imagesURL isKindOfClass:[NSString class]]) {
+            self.imgURL = [dict objectForKey:@"imageArray"];
+        }
         self.desInfo  = [dict objectForKey:@"styleName"];
         self.idNumber = [dict objectForKey:@"styleID"];
         self.price    = [NSString stringWithFormat:@"%f",[[dict objectForKey:@"price"] floatValue]];
