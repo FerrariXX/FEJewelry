@@ -69,8 +69,8 @@
         return;
     }
     
-#warning xxxx
-    idNumber = @"RTR40004W";
+//#warning xxxx
+    //idNumber = @"RTR40004W";
     // http://60.191.108.245:33681/brosapiservice.svc/GetStyleDetail/RTR40004W/0000/1/ 格式里的?goodID={goodID} 是商品编码 可以不选择
     NSString * deviceID = [self deviceID];
     __weak __typeof(self) weakSelf = self;
