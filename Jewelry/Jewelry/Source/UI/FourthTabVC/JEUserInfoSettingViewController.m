@@ -46,14 +46,11 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     //返回（向系统发送）分区个数,在这里有多少键就会有多少分区。
-    return  2;
+    return  1;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
-        return 4;
-    }
-    return 3;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -96,18 +93,19 @@
             cellText = @"我的微信号";
             rightLable.text = @"我是大笨钟";
         }
-    }else if(section == 1){
-        if (row==0) {
-            cellText = @"性别";
-            rightLable.text = @"男";
-        }else if(row == 1){
-            cellText = @"地区";
-            rightLable.text = @"西湖区";
-        }else if(row == 2){
-            cellText = @"个性签名";
-            rightLable.text = @"我有一个答案，我等世界来问我";
-        }
     }
+//    else if(section == 1){
+//        if (row==0) {
+//            cellText = @"性别";
+//            rightLable.text = @"男";
+//        }else if(row == 1){
+//            cellText = @"地区";
+//            rightLable.text = @"西湖区";
+//        }else if(row == 2){
+//            cellText = @"个性签名";
+//            rightLable.text = @"我有一个答案，我等世界来问我";
+//        }
+//    }
     if (rightLable.text) {
         CGSize titleSize = [rightLable.text sizeWithFont:rightLable.font];
         rightLable.frame = CGRectMake(kScreenWith - 29 - titleSize.width, 7, titleSize.width, 30);

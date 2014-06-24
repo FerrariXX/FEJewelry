@@ -14,6 +14,7 @@
 #import "JEMyPointsViewController.h"
 #import "JEGoldQuotationVC.h"
 #import "JEShakeVC.h"
+#import "FEToastView.h"
 
 @interface JEFourthTabbarVC ()
 
@@ -37,7 +38,17 @@
     
     _tableView.dataSource = self;
     _tableView.delegate = self;
-    [_tableView reloadData];
+    _userModel = [[JEUserInfoModel alloc] init];
+    __weak __typeof(self) weakSelf = self;
+    [FEToastView showWithTitle:@"正在加载中..." animation:YES];
+    [weakSelf.userModel loadUserInfo:@"0001" completion:^(BOOL isSuccess) {
+        [FEToastView dismissWithAnimation:YES];
+        if (isSuccess) {
+            [weakSelf.tableView reloadData];
+        }else {
+            TBShowErrorToast;
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,6 +78,9 @@
         JESettingUserInfoCell *infoCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (infoCell == nil) {
             infoCell = [JESettingUserInfoCell settingUserInfoCell];
+            infoCell.nameLable.text = _userModel.userInfo.nickName;
+            infoCell.orzLable.text = [NSString stringWithFormat:@"微信号:%@",_userModel.userInfo.microMessageID];
+            infoCell.accountLable.text = [NSString stringWithFormat:@"我的账号:%@",_userModel.userInfo.userID];
             infoCell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
             infoCell.textLabel.textColor = [UIColor blackColor];
         }

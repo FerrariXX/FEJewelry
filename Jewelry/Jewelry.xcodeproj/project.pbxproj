@@ -28,6 +28,7 @@
 		2A2D98A719508C3300594325 /* JECollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D98A219508C3300594325 /* JECollectionModel.m */; };
 		2A2D98A819508C3300594325 /* JEGoalPriceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D98A419508C3300594325 /* JEGoalPriceModel.m */; };
 		2A2D98A919508C3300594325 /* JEMyPointsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D98A619508C3300594325 /* JEMyPointsModel.m */; };
+		2A6817C21959CE0500E3838B /* JEUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6817C11959CE0500E3838B /* JEUserInfoModel.m */; };
 		2ABBCAFE19395A2A00F1A5EB /* JEMyPointsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBCAFC19395A2A00F1A5EB /* JEMyPointsViewController.m */; };
 		2ABBCAFF19395A2A00F1A5EB /* JEMyPointsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ABBCAFD19395A2A00F1A5EB /* JEMyPointsViewController.xib */; };
 		2ABBCB0219395ADA00F1A5EB /* JEMyPointsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBCB0119395ADA00F1A5EB /* JEMyPointsCell.m */; };
@@ -238,6 +239,8 @@
 		2A2D98A419508C3300594325 /* JEGoalPriceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEGoalPriceModel.m; sourceTree = "<group>"; };
 		2A2D98A519508C3300594325 /* JEMyPointsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEMyPointsModel.h; sourceTree = "<group>"; };
 		2A2D98A619508C3300594325 /* JEMyPointsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEMyPointsModel.m; sourceTree = "<group>"; };
+		2A6817C01959CE0500E3838B /* JEUserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEUserInfoModel.h; sourceTree = "<group>"; };
+		2A6817C11959CE0500E3838B /* JEUserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEUserInfoModel.m; sourceTree = "<group>"; };
 		2ABBCAFB19395A2A00F1A5EB /* JEMyPointsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEMyPointsViewController.h; sourceTree = "<group>"; };
 		2ABBCAFC19395A2A00F1A5EB /* JEMyPointsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEMyPointsViewController.m; sourceTree = "<group>"; };
 		2ABBCAFD19395A2A00F1A5EB /* JEMyPointsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JEMyPointsViewController.xib; sourceTree = "<group>"; };
@@ -567,6 +570,8 @@
 		2A2D98A019508B2C00594325 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2A6817C01959CE0500E3838B /* JEUserInfoModel.h */,
+				2A6817C11959CE0500E3838B /* JEUserInfoModel.m */,
 				2A2D98A119508C3300594325 /* JECollectionModel.h */,
 				2A2D98A219508C3300594325 /* JECollectionModel.m */,
 				2A2D98A319508C3300594325 /* JEGoalPriceModel.h */,
@@ -1288,6 +1293,7 @@
 				C3F72CE918FD8A78007FDB69 /* AppDelegate.m in Sources */,
 				C3E0589C19168E2C002E2770 /* JEDetailVC.m in Sources */,
 				C3D0058019056C8700FC4A64 /* FETabBarViewController.m in Sources */,
+				2A6817C21959CE0500E3838B /* JEUserInfoModel.m in Sources */,
 				2A1C7089194DFC14003EE0E2 /* JEDiamondListCell.m in Sources */,
 				C30582F219320F6100DE14E5 /* JEShopHomeVC.m in Sources */,
 				2AE97ED81947F37D00C973E6 /* JEShakeVC.m in Sources */,
