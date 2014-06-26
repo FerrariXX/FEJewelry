@@ -14,7 +14,7 @@
     self = [super init];
     if (self) {
         if (dict && [dict isKindOfClass:[NSDictionary class]]) {
-            self.name     = [dict objectForKey:@"name"];
+            self.goldName     = [dict objectForKey:@"goldName"];
             self.price         = [NSString stringWithFormat:@"%.2f", [[dict objectForKey:@"price"] floatValue]];
         }
     }

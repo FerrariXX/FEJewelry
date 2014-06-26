@@ -34,7 +34,7 @@
 {
     self = [super init];
     if (self) {
-        
+        _myPointList = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -47,7 +47,9 @@
     request.timeoutInterval = kTimeoutInterval;
 
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        NSArray *jsonArray = (NSArray*)JSON;
+        NSDictionary   *jsonResult = (NSDictionary*)JSON;
+        weakSelf.integration = [[jsonResult objectForKey:@"integration"] intValue];
+        NSArray *jsonArray = [jsonResult objectForKey:@"infoArray"];
         for (NSDictionary * dict  in jsonArray) {
             JEMyPointItem * listItem = [[JEMyPointItem alloc] initWithDictionary:dict];
             [weakSelf.myPointList addObject:listItem];

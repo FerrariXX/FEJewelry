@@ -19,6 +19,7 @@
 
 @interface JEMyPointsModel : NSObject
 @property(nonatomic, strong)NSMutableArray *myPointList;
+@property(nonatomic, assign)NSInteger      integration;
 - (void)loadMyPointList:(NSString*)userID completion:(JECompletionBlock)block;
 
 @end

@@ -30,7 +30,16 @@
     self.title = @"我的积分";
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _myPointsModel = [[JEMyPointsModel alloc] init];
     // Do any additional setup after loading the view from its nib.
+    __weak __typeof(self) weakSelf = self;
+    [FEToastView showWithTitle:@"正在加载中..." animation:YES];
+    [_myPointsModel loadMyPointList:@"0001" completion:^(BOOL isSuccess) {
+        [FEToastView dismissWithAnimation:YES];
+        if (isSuccess) {
+            [weakSelf.tableView reloadData];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,7 +54,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return _myPointsModel.myPointList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -55,9 +64,12 @@
     JEMyPointsCell *infoCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (infoCell == nil) {
         infoCell = [JEMyPointsCell myPointsCell];
-        infoCell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+        infoCell.accessoryType=UITableViewCellAccessoryNone;
         infoCell.textLabel.textColor = [UIColor blackColor];
     }
+    
+    [infoCell refreshCell:[_myPointsModel.myPointList objectAtIndex:indexPath.row]];
+    
     return infoCell;
     
 }

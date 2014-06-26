@@ -163,7 +163,7 @@
                 <outlet property="productNO" destination="Fku-Mq-pfG" id="nhw-VW-qRS"/>
             </connections>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="yuD-Ey-GjH" customClass="JEMyPointsCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="80" id="yuD-Ey-GjH" customClass="JEMyPointsCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yuD-Ey-GjH" id="c3b-TM-kfm">
@@ -207,6 +207,12 @@
                     </imageView>
                 </subviews>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="categoryLabel" destination="fx3-qM-ajg" id="eEL-uZ-NZN"/>
+                <outlet property="dateLabel" destination="Yaa-Vr-d8S" id="MYP-Cq-Vmd"/>
+                <outlet property="pointLabel" destination="tzg-5y-5pu" id="mOc-sK-2Zy"/>
+                <outlet property="sourceLabel" destination="UPi-s4-d4P" id="1Yz-iZ-tZM"/>
+            </connections>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="goldCell" id="vYw-5n-GlD" customClass="JEGoldQuotationCell">
             <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>

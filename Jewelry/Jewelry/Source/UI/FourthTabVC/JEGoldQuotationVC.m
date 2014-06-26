@@ -32,7 +32,16 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.tableFooterView = [[UIView alloc ] initWithFrame:CGRectZero];
-//    _tableView.frame = CGRectMake(10, 0, CGRectGetWidth(_tableView.frame), 44*5);
+    _goalPriceModel = [[JEGoalPriceModel alloc] init];
+    
+    __weak __typeof(self) weakSelf = self;
+    [FEToastView showWithTitle:@"正在加载中..." animation:YES];
+    [_goalPriceModel loadGoldListArray:^(BOOL isSuccess) {
+        [FEToastView dismissWithAnimation:YES];
+        if (isSuccess) {
+            [weakSelf.tableView reloadData];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -94,7 +103,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return _goalPriceModel.goldListArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -105,6 +114,8 @@
     if (goldQuotationCell == nil) {
         goldQuotationCell = [JEGoldQuotationCell goldQuotationCell];
     }
+    
+    [goldQuotationCell refreshCell:[_goalPriceModel.goldListArray objectAtIndex:indexPath.row]];
     return goldQuotationCell;
     
 }

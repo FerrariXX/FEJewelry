@@ -31,6 +31,13 @@
     // Configure the view for the selected state
 }
 
+- (void)refreshCell:(JEMyPointItem*)myPointItem {
+    _categoryLabel.text = [NSString stringWithFormat:@"类别:%@",myPointItem.category];
+    _pointLabel.text = [NSString stringWithFormat:@"积分值:+%@",myPointItem.value];
+    _sourceLabel.text = [NSString stringWithFormat:@"来源:%@",myPointItem.sourceID];
+    _dateLabel.text = [NSString stringWithFormat:@"%@",myPointItem.time];
+}
+
 + (JEMyPointsCell*)myPointsCell {
     id obj =  [self instanceWithNibName:@"JESettingUserInfoCell" bundle:nil owner:nil index:4];
     if ([obj isKindOfClass:[JEMyPointsCell class]]) {

@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JEGoalPriceModel.h"
 
 @interface JEGoldQuotationVC : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) JEGoalPriceModel  *goalPriceModel;
 
 @end

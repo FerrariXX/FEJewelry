@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface JEGoalPriceItem : NSObject
-@property(nonatomic, strong)NSString* name;
+@property(nonatomic, strong)NSString* goldName;
 @property(nonatomic, strong)NSString* price;
 - (instancetype)initWithDictionary:(NSDictionary*)dict;
 @end

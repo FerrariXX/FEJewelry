@@ -31,6 +31,10 @@
     // Configure the view for the selected state
 }
 
+- (void)refreshCell:(JEGoalPriceItem*)priceItem {
+    _productNameValue.text = priceItem.goldName;
+    _priceValueLable.text = priceItem.price;
+}
 + (JEGoldQuotationCell*)goldQuotationCell{
     
     id obj =  [self instanceWithNibName:@"JESettingUserInfoCell" bundle:nil owner:nil index:5];
