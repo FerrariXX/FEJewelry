@@ -28,6 +28,7 @@
 		2A2D98A719508C3300594325 /* JECollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D98A219508C3300594325 /* JECollectionModel.m */; };
 		2A2D98A819508C3300594325 /* JEGoalPriceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D98A419508C3300594325 /* JEGoalPriceModel.m */; };
 		2A2D98A919508C3300594325 /* JEMyPointsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D98A619508C3300594325 /* JEMyPointsModel.m */; };
+		2A5EB8CD195C6392007BA142 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A5EB8CC195C6392007BA142 /* Crashlytics.framework */; };
 		2A6817C21959CE0500E3838B /* JEUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6817C11959CE0500E3838B /* JEUserInfoModel.m */; };
 		2ABBCAFE19395A2A00F1A5EB /* JEMyPointsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBCAFC19395A2A00F1A5EB /* JEMyPointsViewController.m */; };
 		2ABBCAFF19395A2A00F1A5EB /* JEMyPointsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ABBCAFD19395A2A00F1A5EB /* JEMyPointsViewController.xib */; };
@@ -239,6 +240,7 @@
 		2A2D98A419508C3300594325 /* JEGoalPriceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEGoalPriceModel.m; sourceTree = "<group>"; };
 		2A2D98A519508C3300594325 /* JEMyPointsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEMyPointsModel.h; sourceTree = "<group>"; };
 		2A2D98A619508C3300594325 /* JEMyPointsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEMyPointsModel.m; sourceTree = "<group>"; };
+		2A5EB8CC195C6392007BA142 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		2A6817C01959CE0500E3838B /* JEUserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEUserInfoModel.h; sourceTree = "<group>"; };
 		2A6817C11959CE0500E3838B /* JEUserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEUserInfoModel.m; sourceTree = "<group>"; };
 		2ABBCAFB19395A2A00F1A5EB /* JEMyPointsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEMyPointsViewController.h; sourceTree = "<group>"; };
@@ -499,6 +501,7 @@
 				C393803E194A9EFF0068945A /* PocketConnection.framework in Frameworks */,
 				C393806D194A9F000068945A /* ShareSDKShareActionSheet.framework in Frameworks */,
 				C32712EC18FC2DA600971956 /* UIKit.framework in Frameworks */,
+				2A5EB8CD195C6392007BA142 /* Crashlytics.framework in Frameworks */,
 				C3938033194A9EFF0068945A /* EverNoteConnection.framework in Frameworks */,
 				C393805C194A9F000068945A /* libSinaWeiboSDK.a in Frameworks */,
 				C393803B194A9EFF0068945A /* LinkedInConnection.framework in Frameworks */,
@@ -605,6 +608,7 @@
 		C32712E618FC2DA600971956 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2A5EB8CC195C6392007BA142 /* Crashlytics.framework */,
 				C3938080194AA0630068945A /* MediaPlayer.framework */,
 				C393807E194AA01B0068945A /* CoreMotion.framework */,
 				C393807C194AA0010068945A /* CoreLocation.framework */,
@@ -1088,6 +1092,7 @@
 				C32712E118FC2DA600971956 /* Frameworks */,
 				C32712E218FC2DA600971956 /* Resources */,
 				2163E8BA94BC4D94BE743ED5 /* Copy Pods Resources */,
+				2A5EB8CB195C6379007BA142 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1259,6 +1264,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-Jewelry-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		2A5EB8CB195C6379007BA142 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 10797bd1166be26204f7f84b2e8e72cda4d1af1a 2b14f3d92883722786b244760d397872a82d1d5f5e7a49ed8ded1c340ee49e0d";
 		};
 		FEFA7C41CFC54858AE4F3CAC /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1465,6 +1483,7 @@
 					"$(PROJECT_DIR)/Jewelry/ShareSDK/Extend/RenRenSDK",
 					"$(PROJECT_DIR)/Jewelry/ShareSDK",
 					"$(PROJECT_DIR)/Jewelry/ShareSDK/UI",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Jewelry/Jewelry-Prefix.pch";
@@ -1502,6 +1521,7 @@
 					"$(PROJECT_DIR)/Jewelry/ShareSDK/Extend/RenRenSDK",
 					"$(PROJECT_DIR)/Jewelry/ShareSDK",
 					"$(PROJECT_DIR)/Jewelry/ShareSDK/UI",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Jewelry/Jewelry-Prefix.pch";

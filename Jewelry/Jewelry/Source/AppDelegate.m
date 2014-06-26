@@ -16,6 +16,7 @@
 #import "JERightSidePanelVC.h"
 #import "FESidePanelController.h"
 #import "JEFirstTabbarWrapperPageVC.h"
+#import <Crashlytics/Crashlytics.h>
 
 //share
 #import <ShareSDK/ShareSDK.h>
@@ -104,6 +105,7 @@
 {
     //share========================
     [ShareSDK registerApp:@"204fca2ad607"];
+    [Crashlytics startWithAPIKey:@"10797bd1166be26204f7f84b2e8e72cda4d1af1a"];
     [self initializePlat];
     //share========================
 
