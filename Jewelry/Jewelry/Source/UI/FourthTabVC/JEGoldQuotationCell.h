@@ -15,5 +15,6 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *dateValueLable;
 + (JEGoldQuotationCell*)goldQuotationCell;
++ (NSDateFormatter*)sharedDateFormatter;
 - (void)refreshCell:(JEGoalPriceItem*)priceItem;
 @end

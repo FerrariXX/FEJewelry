@@ -10,6 +10,16 @@
 
 @implementation JEMyPointsCell
 
+
+- (NSDateFormatter*)sharedDateFormatter {
+    static NSDateFormatter * sharedDateFormatterInstance = nil;
+    static dispatch_once_t        onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedDateFormatterInstance = [[NSDateFormatter alloc] init];
+    });
+    return sharedDateFormatterInstance;
+}
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
