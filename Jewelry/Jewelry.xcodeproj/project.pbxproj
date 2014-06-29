@@ -49,6 +49,13 @@
 		2AE97EDF1947F6BB00C973E6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE97EDE1947F6BB00C973E6 /* QuartzCore.framework */; };
 		2AE97EE11947F6CB00C973E6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE97EE01947F6CB00C973E6 /* AudioToolbox.framework */; };
 		6B4A0FC8E3F64B148EE1BE36 /* libPods-Jewelry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7BAA831549477B9B0AB83F /* libPods-Jewelry.a */; };
+		84BBAD811960049700BBBD6F /* FEAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBAD7A1960049700BBBD6F /* FEAccountManager.m */; };
+		84BBAD821960049700BBBD6F /* FELogInOrRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBAD7C1960049700BBBD6F /* FELogInOrRegisterViewController.m */; };
+		84BBAD831960049700BBBD6F /* FELogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBAD7E1960049700BBBD6F /* FELogInViewController.m */; };
+		84BBAD841960049700BBBD6F /* FERegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBAD801960049700BBBD6F /* FERegisterViewController.m */; };
+		84BBAD8619600CC400BBBD6F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84BBAD8519600CC400BBBD6F /* Localizable.strings */; };
+		84BBAD8819600E0A00BBBD6F /* login_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BBAD8719600E0A00BBBD6F /* login_logo.png */; };
+		84F5966E195FBC2500827C01 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F5966D195FBC2500827C01 /* Crashlytics.framework */; };
 		C30582DE1931D9CD00DE14E5 /* default_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = C30582DD1931D9CD00DE14E5 /* default_avatar.png */; };
 		C30582F219320F6100DE14E5 /* JEShopHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C30582F019320F6100DE14E5 /* JEShopHomeVC.m */; };
 		C30582F319320F6100DE14E5 /* JEShopHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C30582F119320F6100DE14E5 /* JEShopHomeVC.xib */; };
@@ -268,6 +275,17 @@
 		2AE97EDE1947F6BB00C973E6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2AE97EE01947F6CB00C973E6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4F7BAA831549477B9B0AB83F /* libPods-Jewelry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Jewelry.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84BBAD791960049700BBBD6F /* FEAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FEAccountManager.h; sourceTree = "<group>"; };
+		84BBAD7A1960049700BBBD6F /* FEAccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FEAccountManager.m; sourceTree = "<group>"; };
+		84BBAD7B1960049700BBBD6F /* FELogInOrRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FELogInOrRegisterViewController.h; sourceTree = "<group>"; };
+		84BBAD7C1960049700BBBD6F /* FELogInOrRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FELogInOrRegisterViewController.m; sourceTree = "<group>"; };
+		84BBAD7D1960049700BBBD6F /* FELogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FELogInViewController.h; sourceTree = "<group>"; };
+		84BBAD7E1960049700BBBD6F /* FELogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FELogInViewController.m; sourceTree = "<group>"; };
+		84BBAD7F1960049700BBBD6F /* FERegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FERegisterViewController.h; sourceTree = "<group>"; };
+		84BBAD801960049700BBBD6F /* FERegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FERegisterViewController.m; sourceTree = "<group>"; };
+		84BBAD8519600CC400BBBD6F /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		84BBAD8719600E0A00BBBD6F /* login_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_logo.png; sourceTree = "<group>"; };
+		84F5966D195FBC2500827C01 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		C30582DD1931D9CD00DE14E5 /* default_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_avatar.png; sourceTree = "<group>"; };
 		C30582EF19320F6100DE14E5 /* JEShopHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEShopHomeVC.h; sourceTree = "<group>"; };
 		C30582F019320F6100DE14E5 /* JEShopHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEShopHomeVC.m; sourceTree = "<group>"; };
@@ -470,6 +488,7 @@
 				C3938077194A9FB70068945A /* Security.framework in Frameworks */,
 				C3938075194A9FB00068945A /* libicucore.dylib in Frameworks */,
 				C3A44D0718FC34AD00E9B254 /* libz.dylib in Frameworks */,
+				84F5966E195FBC2500827C01 /* Crashlytics.framework in Frameworks */,
 				C3938071194A9F920068945A /* CoreTelephony.framework in Frameworks */,
 				C393806F194A9F890068945A /* SystemConfiguration.framework in Frameworks */,
 				C3938052194A9EFF0068945A /* ShareSDKCoreService.framework in Frameworks */,
@@ -585,9 +604,25 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		84BBAD781960049700BBBD6F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				84BBAD791960049700BBBD6F /* FEAccountManager.h */,
+				84BBAD7A1960049700BBBD6F /* FEAccountManager.m */,
+				84BBAD7B1960049700BBBD6F /* FELogInOrRegisterViewController.h */,
+				84BBAD7C1960049700BBBD6F /* FELogInOrRegisterViewController.m */,
+				84BBAD7D1960049700BBBD6F /* FELogInViewController.h */,
+				84BBAD7E1960049700BBBD6F /* FELogInViewController.m */,
+				84BBAD7F1960049700BBBD6F /* FERegisterViewController.h */,
+				84BBAD801960049700BBBD6F /* FERegisterViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		C32712DB18FC2DA600971956 = {
 			isa = PBXGroup;
 			children = (
+				84F5966D195FBC2500827C01 /* Crashlytics.framework */,
 				C32712ED18FC2DA600971956 /* Jewelry */,
 				C327130F18FC2DA600971956 /* JewelryTests */,
 				C32712E618FC2DA600971956 /* Frameworks */,
@@ -647,6 +682,7 @@
 		C32712EE18FC2DA600971956 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				84BBAD8519600CC400BBBD6F /* Localizable.strings */,
 				2AE97EDA1947F55900C973E6 /* ico_deco_shake.png */,
 				2AE97EDB1947F55900C973E6 /* shake.wav */,
 				C32712EF18FC2DA600971956 /* Jewelry-Info.plist */,
@@ -870,6 +906,7 @@
 		C3D0055819056C8700FC4A64 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				84BBAD781960049700BBBD6F /* Login */,
 				C3D0056B19056C8700FC4A64 /* TabbarVC */,
 				C3D0055919056C8700FC4A64 /* FirstTabVC */,
 				C3D0056319056C8700FC4A64 /* FourthTabVC */,
@@ -1048,6 +1085,7 @@
 		C3F72C5318FD8A78007FDB69 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				84BBAD8719600E0A00BBBD6F /* login_logo.png */,
 				C3B96A7D194C81DC00DFA998 /* defaultJEwelry.png */,
 				C36062591949FB4C00ED0CA6 /* tab_bareDiamondH@2x.png */,
 				C360625A1949FB4C00ED0CA6 /* tab_homeH@2x.png */,
@@ -1209,6 +1247,7 @@
 				2ABBCB0619395C2C00F1A5EB /* dashed@2x.png in Resources */,
 				2ABC72CE193E1BA50080D274 /* JEGoldQuotationVC.xib in Resources */,
 				C30582F7193212C800DE14E5 /* cover@2x.png in Resources */,
+				84BBAD8819600E0A00BBBD6F /* login_logo.png in Resources */,
 				C3F72CF418FD8A78007FDB69 /* login_gray_normal.png in Resources */,
 				C30582F319320F6100DE14E5 /* JEShopHomeVC.xib in Resources */,
 				2AE97ED91947F37D00C973E6 /* JEShakeVC.xib in Resources */,
@@ -1224,6 +1263,7 @@
 				2A17B5281938F66A0094F749 /* JECollectListVC.xib in Resources */,
 				2A17B5231938F2110094F749 /* like@2x.png in Resources */,
 				C3F72CEF18FD8A78007FDB69 /* checked@2x.png in Resources */,
+				84BBAD8619600CC400BBBD6F /* Localizable.strings in Resources */,
 				C311C667193217F800BB3660 /* JEShopHomeTableViewCell.xib in Resources */,
 				C3F72CF718FD8A78007FDB69 /* notchecked.png in Resources */,
 				2A1C708C194DFC14003EE0E2 /* ButtonSelected.png in Resources */,
@@ -1304,6 +1344,7 @@
 				C311C666193217F800BB3660 /* JEShopHomeTableViewCell.m in Sources */,
 				2A17B52B1938F7710094F749 /* JECollectCell.m in Sources */,
 				C3D0057519056C8700FC4A64 /* JEFirstTabbarVC.m in Sources */,
+				84BBAD841960049700BBBD6F /* FERegisterViewController.m in Sources */,
 				2A1C708B194DFC14003EE0E2 /* JEDiamondModel.m in Sources */,
 				C3CDCF43192E4D74006E1BD8 /* JEJewelryCircleModel.m in Sources */,
 				2A17B51B1938EBE70094F749 /* JEMyFollowVC.m in Sources */,
@@ -1320,6 +1361,7 @@
 				C3D00592190573A900FC4A64 /* JEHomePageModel.m in Sources */,
 				C3D0058819056CD000FC4A64 /* JEPriceRange.m in Sources */,
 				2A17B51F1938EE3E0094F749 /* JEMyFollowCell.m in Sources */,
+				84BBAD811960049700BBBD6F /* FEAccountManager.m in Sources */,
 				2ABC72CD193E1BA50080D274 /* JEGoldQuotationVC.m in Sources */,
 				2A17B5171938E69A0094F749 /* JEUserInfoUpgradeCell.m in Sources */,
 				2A2D98A919508C3300594325 /* JEMyPointsModel.m in Sources */,
@@ -1338,8 +1380,10 @@
 				2ABF1A00193637D600B2BA5E /* JESettingUserInfoCell.m in Sources */,
 				C31BC343193C6A200045BB42 /* JEDetailVCListTableViewCell.m in Sources */,
 				C3D0057719056C8700FC4A64 /* JELeftSidePanelVC.m in Sources */,
+				84BBAD821960049700BBBD6F /* FELogInOrRegisterViewController.m in Sources */,
 				C32712F418FC2DA600971956 /* main.m in Sources */,
 				C3703BDF190EA89900DBE8C8 /* JEHomePageManager.m in Sources */,
+				84BBAD831960049700BBBD6F /* FELogInViewController.m in Sources */,
 				C3CBDAEE1930E44E001B193A /* JEJewelryCircleTableViewCell.m in Sources */,
 				2ABBCB0219395ADA00F1A5EB /* JEMyPointsCell.m in Sources */,
 				C311C65F193215A200BB3660 /* JEJewelryShopModel.m in Sources */,

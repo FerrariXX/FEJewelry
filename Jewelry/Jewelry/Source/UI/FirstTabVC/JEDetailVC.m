@@ -11,6 +11,7 @@
 #import "JEDetailModel.h"
 #import "FEMicroMsgPopoverView.h"
 #import "JEDetailVCListTableViewCell.h"
+#import "FELogInOrRegisterViewController.h"
 
 @interface JEDetailVC () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet FEScrollPageView *imagesView;
@@ -199,9 +200,19 @@
 //        NSLog(@">>>xxx 2");
 //    }];
     FEMicroMsgPopoverItem *item3 = [[FEMicroMsgPopoverItem alloc] initWithImage:[UIImage imageNamed:@"icon_retweet"] title:@"收藏" clickedBlock:^(id sender) {
-        [weakSelf.model favoriteWithUserID:@"" numberID:weakSelf.model.idNumber completion:^(BOOL isSuccess) {
-            
-        }];
+        if (![[FELogInOrRegisterViewController sharedInstance] isLogin]) {
+            [[FELogInOrRegisterViewController sharedInstance] showLoginVCWithCompletionBlock:^(BOOL isSuccess, id info) {
+                if (isSuccess) {
+                    [weakSelf.model favoriteWithUserID:[[FEAccountManager shareInstance] account] numberID:weakSelf.model.idNumber completion:^(BOOL isSuccess) {
+                        
+                    }];
+                }
+            }];
+        } else {
+            [weakSelf.model favoriteWithUserID:[[FEAccountManager shareInstance] account]  numberID:weakSelf.model.idNumber completion:^(BOOL isSuccess) {
+                
+            }];
+        }
     }];
     FEMicroMsgPopoverItem *item4 = [[FEMicroMsgPopoverItem alloc] initWithImage:[UIImage imageNamed:@"icon_favorite"] title:@"分享" clickedBlock:^(id sender) {
         

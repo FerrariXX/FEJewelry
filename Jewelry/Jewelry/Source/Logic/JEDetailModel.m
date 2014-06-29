@@ -147,7 +147,6 @@
 }
 
 - (void)favoriteWithUserID:(NSString*)userID numberID:(NSString*)numberID  completion:(JECompletionBlock)block{
-    __weak __typeof(self) weakSelf = self;
     NSMutableString *urlStr = [NSMutableString stringWithFormat:@"%@SetCollect/%@/%@", kBaseURLString,numberID,userID];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:urlStr]];
     request.timeoutInterval = kTimeoutInterval;
