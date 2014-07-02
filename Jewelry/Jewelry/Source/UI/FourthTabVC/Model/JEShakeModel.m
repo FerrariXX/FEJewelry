@@ -6,17 +6,16 @@
 //  Copyright (c) 2014年 FE. All rights reserved.
 //
 
-#import "JECollectionModel.h"
+#import "JEShakeModel.h"
 
-@implementation JECollectionItem
+@implementation JEShakeItem
 - (instancetype)initWithDictionary:(NSDictionary*)dict;
 {
     self = [super init];
     if (self) {
         if (dict && [dict isKindOfClass:[NSDictionary class]]) {
-            self.name     = [dict objectForKey:@"name"];
-            self.numberID       = [dict objectForKey:@"numberID"];
-            self.price         = [NSString stringWithFormat:@"%.2f", [[dict objectForKey:@"price"] floatValue]];
+            self.isLottery     = [dict objectForKey:@"isLottery"];
+            self.lotteryMessage = [dict objectForKey:@"lotteryMessage"];
         }
     }
     return self;
@@ -25,33 +24,29 @@
 @end
 
 
-@interface JECollectionModel()
-@property(nonatomic, assign)NSInteger pageNumber;
+@interface JEShakeModel()
 @end
 
-@implementation JECollectionModel
+@implementation JEShakeModel
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        _collectionList = [[NSMutableArray alloc] initWithCapacity:1];
+        
     }
     return self;
 }
 
-- (void)loadCollectionList:(NSString*)userId completion:(JECompletionBlock)block {
+- (void)shakeOffAction:(NSString*) userId completion:(JECompletionBlock)block {
     __weak __typeof(self) weakSelf = self;
-    NSMutableString *urlStr = [NSMutableString stringWithFormat:@"%@GetCollects/%@", kBaseURLString,userId];
+    NSMutableString *urlStr = [NSMutableString stringWithFormat:@"%@SharkItOff/%@", kBaseURLString,userId];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:urlStr]];
     request.timeoutInterval = kTimeoutInterval;
 
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        NSArray *jsonArray = (NSArray*)JSON;
-        for (NSDictionary * collectionItem  in jsonArray) {
-            JECollectionItem * listItem = [[JECollectionItem alloc] initWithDictionary:collectionItem];
-            [weakSelf.collectionList addObject:listItem];
-        }
+        NSDictionary *dictJson = (NSDictionary*)JSON;
+        weakSelf.shakeItem = [[JEShakeItem alloc] initWithDictionary:dictJson];
         if (block) {
             block(YES);
         }

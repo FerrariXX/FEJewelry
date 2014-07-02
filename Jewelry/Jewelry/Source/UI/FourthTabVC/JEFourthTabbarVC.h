@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "JEUserInfoModel.h"
+#import "JEAboutMeModel.h"
 
 @interface JEFourthTabbarVC : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) JEUserInfoModel *userModel;
+@property (strong, nonatomic) JEAboutMeModel  *aboutMeModel;
 @end

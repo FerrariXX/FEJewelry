@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JECollectionModel.h"
 
 @interface JECollectListVC : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) JECollectionModel *collectionModel;
 @end

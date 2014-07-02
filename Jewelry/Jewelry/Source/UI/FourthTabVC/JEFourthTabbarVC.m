@@ -15,9 +15,11 @@
 #import "JEGoldQuotationVC.h"
 #import "JEShakeVC.h"
 #import "FEToastView.h"
+#import "JEWebViewController.h"
+#import "UIImageView+WebCache.h"
 
 @interface JEFourthTabbarVC ()
-
+@property (nonatomic, strong)NSString   *aboutMeUrl;
 @end
 
 @implementation JEFourthTabbarVC
@@ -39,6 +41,19 @@
     _tableView.dataSource = self;
     _tableView.delegate = self;
     _userModel = [[JEUserInfoModel alloc] init];
+    __weak __typeof(self) weakSelf = self;
+    _aboutMeModel = [[JEAboutMeModel alloc] init];
+    [weakSelf.aboutMeModel getAboutMeH5Url:^(BOOL isSuccess) {
+        if (isSuccess) {
+            weakSelf.aboutMeUrl  = weakSelf.aboutMeModel.aboutMeUrl;
+        }else {
+            TBShowErrorToast;
+        }
+    }];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     __weak __typeof(self) weakSelf = self;
     [FEToastView showWithTitle:@"正在加载中..." animation:YES];
     [weakSelf.userModel loadUserInfo:@"0001" completion:^(BOOL isSuccess) {
@@ -78,6 +93,8 @@
         JESettingUserInfoCell *infoCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (infoCell == nil) {
             infoCell = [JESettingUserInfoCell settingUserInfoCell];
+            [infoCell.portraitImageView setImageWithURL:[NSURL URLWithString:_userModel.userInfo.avatarURL] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+            }];
             infoCell.nameLable.text = _userModel.userInfo.nickName;
             infoCell.orzLable.text = [NSString stringWithFormat:@"微信号:%@",_userModel.userInfo.microMessageID];
             infoCell.accountLable.text = [NSString stringWithFormat:@"我的账号:%@",_userModel.userInfo.userID];
@@ -134,6 +151,7 @@
     NSUInteger section = (NSUInteger) [indexPath section];
     if (section == 0) {
         JEUserInfoSettingViewController *userInfoVC = [[JEUserInfoSettingViewController alloc] init];
+        userInfoVC.userModel = self.userModel;
         [self.navigationController pushViewController:userInfoVC animated:YES];
     }else if(section==1){
         if (indexPath.row == 0){
@@ -150,7 +168,10 @@
             [self.navigationController pushViewController:pointsVC animated:YES];
         }
     }else if(section == 2){
-        
+        if (_aboutMeUrl) {
+            JEWebViewController *webVC = [[JEWebViewController alloc] initWithURL:_aboutMeUrl];
+            [self.navigationController pushViewController:webVC animated:YES];
+        }
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

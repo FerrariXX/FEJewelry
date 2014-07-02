@@ -26,9 +26,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"摇一摇";
     // Do any additional setup after loading the view from its nib.
     NSString *path = [[NSBundle mainBundle] pathForResource:@"shake" ofType:@"wav"];
 	AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:path], &soundID);
+    
+    _shakeModel = [[JEShakeModel alloc] init];
 
 }
 
@@ -46,6 +49,24 @@
     
     [_shakeImageView.layer addAnimation:translation forKey:@"translation"];
     
+    [self performSelector:@selector(shakeOffRequest) withObject:nil afterDelay:2.0];
+}
+
+
+- (void)shakeOffRequest {
+     __weak __typeof(self) weakSelf = self;
+    [_shakeModel shakeOffAction:@"0001" completion:^(BOOL isSuccess) {
+        if (isSuccess) {
+            [FEToastView showWithTitle:weakSelf.shakeModel.shakeItem.isLottery animation:YES interval:3.];
+            if ([weakSelf.shakeModel.shakeItem.isLottery isEqualToString:@"中奖"] &&
+                weakSelf.shakeModel.shakeItem.lotteryMessage) {
+                [weakSelf.lotteryTextView setHidden:NO];
+                [weakSelf.lotteryTextView setText:_shakeModel.shakeItem.lotteryMessage];
+            }else{
+                 [weakSelf.lotteryTextView setHidden:YES];
+            }
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,11 +91,8 @@
 
 -(void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event{
     
-    
     if(motion==UIEventSubtypeMotionShake)
     {
-        
-        
         [self addAnimations];
         AudioServicesPlaySystemSound (soundID);
         

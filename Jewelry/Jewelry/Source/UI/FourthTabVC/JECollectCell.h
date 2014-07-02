@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JECollectionModel.h"
 
 @interface JECollectCell : UITableViewCell
 
@@ -14,6 +15,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *productNO;
 @property (strong, nonatomic) IBOutlet UILabel *priceLabel;
-@property (strong, nonatomic) IBOutlet UILabel *dateLabel;
 + (JECollectCell*)collectCell;
+- (void)refreshCollectionCell:(JECollectionItem*)collectionItem;
 @end

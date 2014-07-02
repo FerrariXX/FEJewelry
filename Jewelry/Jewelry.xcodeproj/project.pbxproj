@@ -42,6 +42,11 @@
 		2ABF1A0319363B3800B2BA5E /* hzw.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2ABF1A0119363B3800B2BA5E /* hzw.jpg */; };
 		2ABF1A0419363B3800B2BA5E /* hzw@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2ABF1A0219363B3800B2BA5E /* hzw@2x.jpg */; };
 		2ABF1A0619363DC700B2BA5E /* JESettingUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ABF1A0519363DC700B2BA5E /* JESettingUserInfoCell.xib */; };
+		2AD0988B1962FA9A00060FAC /* JEModifyUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD098891962FA9A00060FAC /* JEModifyUserInfoViewController.m */; };
+		2AD0988C1962FA9A00060FAC /* JEModifyUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD0988A1962FA9A00060FAC /* JEModifyUserInfoViewController.xib */; };
+		2AD098901963B13400060FAC /* JEUserInfoModifyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD0988F1963B13400060FAC /* JEUserInfoModifyModel.m */; };
+		2AD7E531195F0B9200DD70BC /* JEShakeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD7E52F195F0B9200DD70BC /* JEShakeModel.m */; };
+		2AD7E534195F167200DD70BC /* JEAboutMeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD7E533195F167200DD70BC /* JEAboutMeModel.m */; };
 		2AE97ED81947F37D00C973E6 /* JEShakeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE97ED61947F37D00C973E6 /* JEShakeVC.m */; };
 		2AE97ED91947F37D00C973E6 /* JEShakeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AE97ED71947F37D00C973E6 /* JEShakeVC.xib */; };
 		2AE97EDC1947F55900C973E6 /* ico_deco_shake.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AE97EDA1947F55900C973E6 /* ico_deco_shake.png */; };
@@ -267,6 +272,15 @@
 		2ABF1A0119363B3800B2BA5E /* hzw.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hzw.jpg; sourceTree = "<group>"; };
 		2ABF1A0219363B3800B2BA5E /* hzw@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "hzw@2x.jpg"; sourceTree = "<group>"; };
 		2ABF1A0519363DC700B2BA5E /* JESettingUserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JESettingUserInfoCell.xib; sourceTree = "<group>"; };
+		2AD098881962FA9A00060FAC /* JEModifyUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEModifyUserInfoViewController.h; sourceTree = "<group>"; };
+		2AD098891962FA9A00060FAC /* JEModifyUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEModifyUserInfoViewController.m; sourceTree = "<group>"; };
+		2AD0988A1962FA9A00060FAC /* JEModifyUserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JEModifyUserInfoViewController.xib; sourceTree = "<group>"; };
+		2AD0988E1963B13400060FAC /* JEUserInfoModifyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEUserInfoModifyModel.h; sourceTree = "<group>"; };
+		2AD0988F1963B13400060FAC /* JEUserInfoModifyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEUserInfoModifyModel.m; sourceTree = "<group>"; };
+		2AD7E52F195F0B9200DD70BC /* JEShakeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEShakeModel.m; sourceTree = "<group>"; };
+		2AD7E530195F0B9200DD70BC /* JEShakeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEShakeModel.h; sourceTree = "<group>"; };
+		2AD7E532195F167200DD70BC /* JEAboutMeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEAboutMeModel.h; sourceTree = "<group>"; };
+		2AD7E533195F167200DD70BC /* JEAboutMeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEAboutMeModel.m; sourceTree = "<group>"; };
 		2AE97ED51947F37D00C973E6 /* JEShakeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEShakeVC.h; sourceTree = "<group>"; };
 		2AE97ED61947F37D00C973E6 /* JEShakeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEShakeVC.m; sourceTree = "<group>"; };
 		2AE97ED71947F37D00C973E6 /* JEShakeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JEShakeVC.xib; sourceTree = "<group>"; };
@@ -592,6 +606,12 @@
 		2A2D98A019508B2C00594325 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2AD0988E1963B13400060FAC /* JEUserInfoModifyModel.h */,
+				2AD0988F1963B13400060FAC /* JEUserInfoModifyModel.m */,
+				2AD7E532195F167200DD70BC /* JEAboutMeModel.h */,
+				2AD7E533195F167200DD70BC /* JEAboutMeModel.m */,
+				2AD7E52F195F0B9200DD70BC /* JEShakeModel.m */,
+				2AD7E530195F0B9200DD70BC /* JEShakeModel.h */,
 				2A6817C01959CE0500E3838B /* JEUserInfoModel.h */,
 				2A6817C11959CE0500E3838B /* JEUserInfoModel.m */,
 				2A2D98A119508C3300594325 /* JECollectionModel.h */,
@@ -981,6 +1001,9 @@
 				2AE97ED51947F37D00C973E6 /* JEShakeVC.h */,
 				2AE97ED61947F37D00C973E6 /* JEShakeVC.m */,
 				2AE97ED71947F37D00C973E6 /* JEShakeVC.xib */,
+				2AD098881962FA9A00060FAC /* JEModifyUserInfoViewController.h */,
+				2AD098891962FA9A00060FAC /* JEModifyUserInfoViewController.m */,
+				2AD0988A1962FA9A00060FAC /* JEModifyUserInfoViewController.xib */,
 			);
 			path = FourthTabVC;
 			sourceTree = "<group>";
@@ -1209,6 +1232,7 @@
 				C36062601949FB4C00ED0CA6 /* tab_mySettingH@2x.png in Resources */,
 				C3D0057E19056C8700FC4A64 /* JESecondTabbarVC.xib in Resources */,
 				2A17B51C1938EBE70094F749 /* JEMyFollowVC.xib in Resources */,
+				2AD0988C1962FA9A00060FAC /* JEModifyUserInfoViewController.xib in Resources */,
 				C360625D1949FB4C00ED0CA6 /* tab_bareDiamondH@2x.png in Resources */,
 				C3F72CF218FD8A78007FDB69 /* login_button_normal.png in Resources */,
 				C3CBDAEF1930E44E001B193A /* JEJewelryCircleTableViewCell.xib in Resources */,
@@ -1360,6 +1384,8 @@
 				C3D0057919056C8700FC4A64 /* JERightSidePanelVC.m in Sources */,
 				C3D00592190573A900FC4A64 /* JEHomePageModel.m in Sources */,
 				C3D0058819056CD000FC4A64 /* JEPriceRange.m in Sources */,
+				2AD7E531195F0B9200DD70BC /* JEShakeModel.m in Sources */,
+				2AD098901963B13400060FAC /* JEUserInfoModifyModel.m in Sources */,
 				2A17B51F1938EE3E0094F749 /* JEMyFollowCell.m in Sources */,
 				84BBAD811960049700BBBD6F /* FEAccountManager.m in Sources */,
 				2ABC72CD193E1BA50080D274 /* JEGoldQuotationVC.m in Sources */,
@@ -1376,6 +1402,7 @@
 				C3D0058B1905719E00FC4A64 /* JEHomePageTableViewCell.m in Sources */,
 				C3BBA8311917E26C00FA9D07 /* JEDetailModel.m in Sources */,
 				2ABC72D2193E223D0080D274 /* JEGoldQuotationCell.m in Sources */,
+				2AD0988B1962FA9A00060FAC /* JEModifyUserInfoViewController.m in Sources */,
 				C3D0057B19056C8700FC4A64 /* JEFourthTabbarVC.m in Sources */,
 				2ABF1A00193637D600B2BA5E /* JESettingUserInfoCell.m in Sources */,
 				C31BC343193C6A200045BB42 /* JEDetailVCListTableViewCell.m in Sources */,
@@ -1387,6 +1414,7 @@
 				C3CBDAEE1930E44E001B193A /* JEJewelryCircleTableViewCell.m in Sources */,
 				2ABBCB0219395ADA00F1A5EB /* JEMyPointsCell.m in Sources */,
 				C311C65F193215A200BB3660 /* JEJewelryShopModel.m in Sources */,
+				2AD7E534195F167200DD70BC /* JEAboutMeModel.m in Sources */,
 				2A17B5121938D22A0094F749 /* JEUserInfoSettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

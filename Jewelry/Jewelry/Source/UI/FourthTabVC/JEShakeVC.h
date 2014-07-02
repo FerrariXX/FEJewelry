@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import "JEShakeModel.h"
 
 @interface JEShakeVC : UIViewController {
     SystemSoundID soundID;
 }
-@property (strong, nonatomic) IBOutlet UIImageView *shakeImageView;
-- (IBAction)shakeAction:(id)sender;
+@property (strong, nonatomic) IBOutlet UITextView *lotteryTextView;
+@property (nonatomic, strong) IBOutlet UIImageView *shakeImageView;
+@property (nonatomic, strong) JEShakeModel      *shakeModel;
 @end

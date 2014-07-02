@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JEUserInfoModel.h"
 
 @interface JEUserInfoSettingViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) JEUserInfoModel *userModel;
 @end

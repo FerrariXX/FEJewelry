@@ -31,6 +31,16 @@
     self.title = @"我的收藏";
     _tableView.dataSource = self;
     _tableView.delegate = self;
+    
+    _collectionModel = [[JECollectionModel alloc] init];
+    __weak __typeof(self) weakSelf = self;
+    [FEToastView showWithTitle:@"正在加载中..." animation:YES];
+    [weakSelf.collectionModel loadCollectionList:@"0001" completion:^(BOOL isSuccess) {
+        [FEToastView dismissWithAnimation:YES];
+        if (isSuccess) {
+            [weakSelf.tableView reloadData];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,7 +55,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return _collectionModel.collectionList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

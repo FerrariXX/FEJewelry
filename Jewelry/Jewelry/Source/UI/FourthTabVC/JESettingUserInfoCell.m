@@ -39,8 +39,8 @@
         JESettingUserInfoCell *cell = obj;
         cell.portraitImageView.layer.cornerRadius  = cell.portraitImageView.frame.size.width/2.0;
         cell.portraitImageView.layer.masksToBounds = YES;
-        cell.portraitImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hzw"]];
-        cell.nameLable.text = [NSString stringWithFormat:@"大笨钟"];
+//        cell.portraitImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hzw"]];
+//        cell.nameLable.text = [NSString stringWithFormat:@"大笨钟"];
         return cell;
     }
     return nil;

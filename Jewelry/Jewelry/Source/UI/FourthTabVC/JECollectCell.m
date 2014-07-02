@@ -31,6 +31,11 @@
     // Configure the view for the selected state
 }
 
+- (void)refreshCollectionCell:(JECollectionItem*)collectionItem {
+    _nameLabel.text = collectionItem.name;
+    _productNO.text = collectionItem.numberID;
+    _priceLabel.text = collectionItem.price;
+}
 + (JECollectCell*)collectCell {
     id obj =  [self instanceWithNibName:@"JESettingUserInfoCell" bundle:nil owner:nil index:3];
     if ([obj isKindOfClass:[JECollectCell class]]) {
