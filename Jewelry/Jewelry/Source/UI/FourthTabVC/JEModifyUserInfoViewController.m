@@ -10,7 +10,7 @@
 #import "JEUserInfoModifyModel.h"
 
 @interface JEModifyUserInfoViewController ()
-
+@property (nonatomic, strong)UITextField     *textField;
 @end
 
 @implementation JEModifyUserInfoViewController
@@ -63,13 +63,13 @@
     if (filedCell == nil) {
         filedCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    UITextField     *textField = [[UITextField alloc] initWithFrame:CGRectMake(10, 0, 300, 44)];
-    textField.delegate = self;
-    textField.text = _modifyText;
-    textField.borderStyle =  UITextBorderStyleNone;
-    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    textField.returnKeyType = UIReturnKeyDone;
-    [filedCell.contentView addSubview:textField];
+    _textField = [[UITextField alloc] initWithFrame:CGRectMake(10, 0, 300, 44)];
+    _textField.delegate = self;
+    _textField.text = _modifyText;
+    _textField.borderStyle =  UITextBorderStyleNone;
+    _textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    _textField.returnKeyType = UIReturnKeyDone;
+    [filedCell.contentView addSubview:_textField];
     return filedCell;
     
 }
@@ -81,9 +81,9 @@
     return YES;
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    _modifyText = textField.text;
-}
+//- (void)textFieldDidEndEditing:(UITextField *)textField {
+//    _modifyText = textField.text;
+//}
 
 - (IBAction)backAction:(id)sender {
     [self dismissModalViewControllerAnimated:YES];
@@ -92,7 +92,7 @@
 - (IBAction)updateAction:(id)sender {
     __weak __typeof(self) weakSelf = self;
     if (_type == 1) {
-        [_modifyModel updateNikeName:_modifyText completion:^(BOOL isSuccess) {
+        [_modifyModel updateNikeName:weakSelf.textField.text completion:^(BOOL isSuccess) {
             if (isSuccess) {
                 NSDictionary *userInfo = [NSDictionary dictionaryWithObject:weakSelf.modifyModel.userInfoItem forKey:@"userInfoItem"];
                 
@@ -102,7 +102,7 @@
             }
         }];
     }else if(_type == 2){
-        [_modifyModel updateMicroMessageID:_modifyText completion:^(BOOL isSuccess) {
+        [_modifyModel updateMicroMessageID:weakSelf.textField.text completion:^(BOOL isSuccess) {
             if (isSuccess) {
                 NSDictionary *userInfo = [NSDictionary dictionaryWithObject:weakSelf.modifyModel.userInfoItem forKey:@"userInfoItem"];
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshUserInfoNoti" object:nil userInfo:userInfo];

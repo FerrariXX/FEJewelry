@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) JEUserInfoItem  *userInfoItem;
 @property (nonatomic, strong)NSString  *result;
+- (void)updateAvatarURL:(NSString*)imagePath completion:(JECompletionBlock)block;
 - (void)updateNikeName:(NSString*)nikeName completion:(JECompletionBlock)block;
 - (void)updateMicroMessageID:(NSString*)microMessageID completion:(JECompletionBlock)block;
 @end

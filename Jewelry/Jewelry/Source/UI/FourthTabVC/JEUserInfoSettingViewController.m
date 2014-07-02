@@ -9,10 +9,13 @@
 #import "JEUserInfoSettingViewController.h"
 #import "JEUserInfoUpgradeCell.h"
 #import "JEModifyUserInfoViewController.h"
+#import "JEUserInfoModifyModel.h"
 
+static NSString *localCacheFolder;
 
 @interface JEUserInfoSettingViewController ()
-@property (nonatomic, strong)UIImageView *portraitImageView;
+@property (nonatomic, strong)JEUserInfoUpgradeCell *userInfoCell;
+@property (nonatomic, strong)JEUserInfoModifyModel *modifyModel;
 @end
 
 @implementation JEUserInfoSettingViewController
@@ -37,22 +40,19 @@
 - (void)updateUserInfo:(NSNotification*)notification {
     if (notification.userInfo) {
         _userModel.userInfo = [notification.userInfo objectForKey:@"userInfoItem"];
-//        [_tableView reloadData];
+        [_tableView reloadData];
     }
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _modifyModel = [[JEUserInfoModifyModel alloc] init];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUserInfo:) name:@"refreshUserInfoNoti" object:nil];
     // Do any additional setup after loading the view from its nib.
     self.title = @"个人信息";
     _tableView.dataSource = self;
     _tableView.delegate = self;
-//    _portraitImageView = [[UIImageView alloc] initWithFrame: CGRectMake(kScreenWith - 100, 10, 60, 60)];
-//    _portraitImageView.image = [UIImage imageNamed:@"hzw"];
-//    _portraitImageView.layer.cornerRadius  = _portraitImageView.frame.size.width/2.0;
-//    _portraitImageView.layer.masksToBounds = YES;
     [_tableView reloadData];
 }
 
@@ -75,12 +75,13 @@
     
      static NSString *upgradeCellIdentifier = @"userInfoUpgradeCell";
     if (indexPath.section == 0 && indexPath.row==0) {
-        JEUserInfoUpgradeCell *userInfoCell = [tableView dequeueReusableCellWithIdentifier:upgradeCellIdentifier];
-        if (userInfoCell == nil) {
-            userInfoCell = [JEUserInfoUpgradeCell userInfoUpgradeCell];
-            userInfoCell.textLabel.textColor = [UIColor blackColor];
+        _userInfoCell = [tableView dequeueReusableCellWithIdentifier:upgradeCellIdentifier];
+        if (_userInfoCell == nil) {
+            _userInfoCell = [JEUserInfoUpgradeCell userInfoUpgradeCell];
+            _userInfoCell.textLabel.textColor = [UIColor blackColor];
         }
-        return userInfoCell;
+        [_userInfoCell refreshCell:_userModel.userInfo.avatarURL];
+        return _userInfoCell;
     }
     
     static NSString *CellIdentifier = @"userInfoCell";
@@ -91,6 +92,10 @@
                                       reuseIdentifier:CellIdentifier];
         cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
         cell.textLabel.textColor = [UIColor blackColor];
+    }else{
+        [[cell.contentView viewWithTag:1] removeFromSuperview];
+        [[cell.contentView viewWithTag:2] removeFromSuperview];
+        [[cell.contentView viewWithTag:3] removeFromSuperview];
     }
     
     NSUInteger section = (NSUInteger) [indexPath section];
@@ -141,20 +146,170 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    JEModifyUserInfoViewController *modifyVC = [JEModifyUserInfoViewController alloc];
-    if (indexPath.row == 1) {
-        modifyVC.type = 1;
-        modifyVC.modifyText = _userModel.userInfo.nickName;
+    if (indexPath.row == 0) {
+        [self chooseImage];
     }else{
-        modifyVC.type = 2;
-        modifyVC.modifyText = _userModel.userInfo.microMessageID;
+        JEModifyUserInfoViewController *modifyVC = [JEModifyUserInfoViewController alloc];
+        if (indexPath.row == 1) {
+            modifyVC.type = 1;
+            modifyVC.modifyText = _userModel.userInfo.nickName;
+        }else{
+            modifyVC.type = 2;
+            modifyVC.modifyText = _userModel.userInfo.microMessageID;
+        }
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        [self presentViewController:modifyVC animated:YES completion:^{
+        }];
     }
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self.navigationController presentModalViewController:modifyVC animated:YES];
+   
 }
+
+- (void)chooseImage {
+    
+    UIActionSheet *sheet;
+    
+    // 判断是否支持相机
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        sheet  = [[UIActionSheet alloc] initWithTitle:@"选择" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"拍照",@"从相册选择", nil];
+    }
+    else {
+        
+        sheet = [[UIActionSheet alloc] initWithTitle:@"选择" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"取消" otherButtonTitles:@"从相册选择", nil];
+    }
+    
+    sheet.tag = 255;
+    
+    [sheet showInView:self.view];
+    
+}
+
+#pragma mark - 保存图片至沙盒
+- (void) saveImage:(UIImage *)currentImage withName:(NSString *)imageName
+{
+    
+    NSData *imageData = UIImageJPEGRepresentation(currentImage, 0.5);
+    // 获取沙盒目录
+    
+    NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:imageName];
+    
+    // 将图片写入文件
+    
+    [imageData writeToFile:fullPath atomically:NO];
+}
+
+#pragma mark - image picker delegte
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+	[picker dismissViewControllerAnimated:YES completion:^{}];
+    
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    NSDate* date = [NSDate dateWithTimeIntervalSinceNow:0];
+    NSTimeInterval timeInterval = [date timeIntervalSince1970]*1000;
+    NSString *timeString = [NSString stringWithFormat:@"%.0f", timeInterval];//转为字符型
+    NSString *imgName = [timeString stringByAppendingString:@".jpg"];
+    [self saveImage:image withName:imgName];
+//
+    NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:imgName];
+    [_modifyModel updateAvatarURL:fullPath completion:^(BOOL isSuccess) {
+        
+    }];
+//
+//    UIImage *savedImage = [[UIImage alloc] initWithContentsOfFile:fullPath];
+//    
+//    isFullScreen = NO;
+//    [self.imageView setImage:savedImage];
+//    
+//    self.imageView.tag = 100;
+    
+      
+}
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+	[self dismissViewControllerAnimated:YES completion:^{}];
+}
+
+
+#pragma mark - actionsheet delegate
+-(void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (actionSheet.tag == 255) {
+        
+        NSUInteger sourceType = 0;
+        
+        // 判断是否支持相机
+        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            
+            switch (buttonIndex) {
+                case 0:
+                    // 取消
+                    return;
+                case 1:
+                    // 相机
+                    sourceType = UIImagePickerControllerSourceTypeCamera;
+                    break;
+                    
+                case 2:
+                    // 相册
+                    sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                    break;
+            }
+        }
+        else {
+            if (buttonIndex == 0) {
+                
+                return;
+            } else {
+                sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+            }
+        }
+        // 跳转到相机或相册页面
+        UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+        
+        imagePickerController.delegate = self;
+        
+        imagePickerController.allowsEditing = YES;
+        
+        imagePickerController.sourceType = sourceType;
+        
+        [self presentViewController:imagePickerController animated:YES completion:^{}];
+
+    }
+}
+
+//+ (NSString *)localCacheFolder
+//{
+//    if(localCacheFolder==nil)
+//    {
+//        NSString *TempDirectory = NSTemporaryDirectory();
+//        TempDirectory = [TempDirectory stringByAppendingString:@"/temp_images"];
+//        
+//        if(![[NSFileManager defaultManager]fileExistsAtPath:TempDirectory])
+//        {
+//            BOOL r = [[NSFileManager defaultManager]createDirectoryAtPath:TempDirectory withIntermediateDirectories:YES attributes:nil error:nil];
+//            if(r==NO)
+//            {
+//                NSLog(@"创建图片临时存放目录失败: %@", TempDirectory);
+//            }
+//        }
+//        localCacheFolder = TempDirectory;
+//    }
+//    return localCacheFolder;
+//}
+//
+//+ (void)clearLocalImages
+//{
+//    NSArray *files = [[NSFileManager defaultManager]contentsOfDirectoryAtPath:[self localCacheFolder] error:nil];
+//    for(NSString *fileName in files){
+//        NSString  *path = [[JEUserInfoSettingViewController localCacheFolder] stringByAppendingPathComponent:fileName];
+//        [[NSFileManager defaultManager]removeItemAtPath:path error:nil];
+//    }
+//}
+
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"refreshUserInfoNoti" object:nil];
+//    [JEUserInfoSettingViewController clearLocalImages];
 }
 
 @end

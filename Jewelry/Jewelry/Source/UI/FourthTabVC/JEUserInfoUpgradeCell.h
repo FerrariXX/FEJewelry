@@ -10,9 +10,9 @@
 
 @interface JEUserInfoUpgradeCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *portraitImageView;
-
 @property (strong, nonatomic) IBOutlet UILabel *nameLable;
 
+- (void)refreshCell:(NSString*)avatarURL;
 + (JEUserInfoUpgradeCell*)userInfoUpgradeCell;
 + (CGFloat)height;
 

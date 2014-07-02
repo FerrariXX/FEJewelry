@@ -7,6 +7,7 @@
 //
 
 #import "JEUserInfoUpgradeCell.h"
+#import "UIImageView+WebCache.h"
 
 @implementation JEUserInfoUpgradeCell
 
@@ -24,6 +25,12 @@
     // Initialization code
 }
 
+- (void)refreshCell:(NSString*)avatarURL {
+    [_portraitImageView setImageWithURL:[NSURL URLWithString:avatarURL] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+    }];
+
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
@@ -38,7 +45,6 @@
         JEUserInfoUpgradeCell *cell = obj;
         cell.portraitImageView.layer.cornerRadius  = cell.portraitImageView.frame.size.width/2.0;
         cell.portraitImageView.layer.masksToBounds = YES;
-        cell.portraitImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hzw"]];
         cell.nameLable.text = [NSString stringWithFormat:@"头像"];
         return cell;
     }

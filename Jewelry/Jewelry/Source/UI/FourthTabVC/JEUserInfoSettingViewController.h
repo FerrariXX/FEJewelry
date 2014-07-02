@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "JEUserInfoModel.h"
 
-@interface JEUserInfoSettingViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface JEUserInfoSettingViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) JEUserInfoModel *userModel;

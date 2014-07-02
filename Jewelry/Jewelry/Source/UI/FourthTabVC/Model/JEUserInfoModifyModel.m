@@ -23,6 +23,32 @@
     return self;
 }
 
+- (void)updateAvatarURL:(NSString*)imagePath completion:(JECompletionBlock)block {
+    
+    AFHTTPClient *uploadFileClient = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:[NSMutableString stringWithFormat:@"%@SetUserAvatar/0001", kBaseURLString]]];
+    NSMutableURLRequest *fileUpRequest = [uploadFileClient multipartFormRequestWithMethod:@"POST" path:@"" parameters:nil constructingBodyWithBlock:^(id formData) {
+        
+        [formData appendPartWithFileURL:[NSURL fileURLWithPath:imagePath] name:@"RequestStream" error:nil];
+        
+    }];
+    
+    __weak __typeof(self) weakSelf = self;
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:fileUpRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSDictionary *dictResult = (NSDictionary*)JSON;
+        NSLog(@"%@",dictResult);
+//        weakSelf.userInfoItem = [[JEUserInfoItem alloc] initWithDictionary:dictResult];
+        if (block) {
+            block(YES);
+        }
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        if (block) {
+            block(NO);
+        }
+    }];
+    [operation start];
+}
+
 - (void)updateNikeName:(NSString*)nikeName completion:(JECompletionBlock)block {
     NSMutableString *urlStr = [NSMutableString stringWithFormat:@"%@SetUserNickName/0001/%@", kBaseURLString,nikeName];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:urlStr]];
