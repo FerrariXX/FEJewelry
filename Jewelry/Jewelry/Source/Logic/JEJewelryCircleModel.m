@@ -102,14 +102,22 @@
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         if (JSON && [JSON isKindOfClass:[NSDictionary class]]) {
             NSDictionary *jsonDict = (NSDictionary*)JSON;
-            NSArray *imageURLs = [jsonDict objectForKey:@"salesPromotionArray"];
-            NSInteger index = 0;
-            NSMutableArray *imageItems = [NSMutableArray arrayWithCapacity:[imageURLs count]];
-            for (NSString *url in imageURLs) {
-                FEImageItem *item = [[FEImageItem alloc] initWithTitle:nil imageURL:url tag:index++];
-                [imageItems addObject:item];
+            id imageURLs = [jsonDict objectForKey:@"salesPromotionArray"];
+            
+            if ([imageURLs isKindOfClass:[NSArray class]]) {
+                NSInteger index = 0;
+                NSMutableArray *imageItems = [NSMutableArray arrayWithCapacity:[imageURLs count]];
+                for (NSString *url in imageURLs) {
+                    FEImageItem *item = [[FEImageItem alloc] initWithTitle:nil imageURL:url tag:index++];
+                    [imageItems addObject:item];
+                }
+                weakSelf.bannerImages = [imageItems copy];
+
+            } else if ([imageURLs isKindOfClass:[NSString class]]) {
+                FEImageItem *item = [[FEImageItem alloc] initWithTitle:nil imageURL:imageURLs tag:0];
+                weakSelf.bannerImages = @[item];
             }
-            weakSelf.bannerImages = [imageItems copy];
+        
             
             NSArray *shopArray = [jsonDict objectForKey:@"shopArray"];
             if ([shopArray count] >0) {
