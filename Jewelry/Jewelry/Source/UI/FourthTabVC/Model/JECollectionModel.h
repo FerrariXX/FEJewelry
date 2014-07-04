@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface JECollectionItem : NSObject
-@property(nonatomic, strong)NSString* name;
-@property(nonatomic, strong)NSString* numberID;
+@property(nonatomic, strong)NSString* styleName;
+@property(nonatomic, strong)NSString* styleID;
 @property(nonatomic, strong)NSString* price;
+@property(nonatomic, strong)NSString* imageArray;
 - (instancetype)initWithDictionary:(NSDictionary*)dict;
 @end
 

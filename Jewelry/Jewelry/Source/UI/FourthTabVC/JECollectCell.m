@@ -7,6 +7,7 @@
 //
 
 #import "JECollectCell.h"
+#import "UIImageView+WebCache.h"
 
 @implementation JECollectCell
 
@@ -32,15 +33,16 @@
 }
 
 - (void)refreshCollectionCell:(JECollectionItem*)collectionItem {
-    _nameLabel.text = collectionItem.name;
-    _productNO.text = collectionItem.numberID;
+    _nameLabel.text = collectionItem.styleName;
+    _productNO.text = collectionItem.styleID;
     _priceLabel.text = collectionItem.price;
+    [_coverImageView setImageWithURL:[NSURL URLWithString:collectionItem.imageArray] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+    }];
 }
 + (JECollectCell*)collectCell {
     id obj =  [self instanceWithNibName:@"JESettingUserInfoCell" bundle:nil owner:nil index:3];
     if ([obj isKindOfClass:[JECollectCell class]]) {
         JECollectCell *cell = obj;
-        cell.coverImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hzw"]];
         cell.nameLabel.text = [NSString stringWithFormat:@"千足金绿玉吊坠"];
         cell.productNO.text = [NSString stringWithFormat:@"编号：180811066954"];
         return cell;

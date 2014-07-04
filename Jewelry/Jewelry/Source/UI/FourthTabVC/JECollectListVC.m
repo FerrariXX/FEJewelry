@@ -8,6 +8,8 @@
 
 #import "JECollectListVC.h"
 #import "JECollectCell.h"
+#import "JEDetailModel.h"
+#import "JEDetailVC.h"
 
 @interface JECollectListVC ()
 
@@ -68,6 +70,7 @@
         infoCell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
         infoCell.textLabel.textColor = [UIColor blackColor];
     }
+    [infoCell refreshCollectionCell:[_collectionModel.collectionList objectAtIndex:indexPath.row]];
     return infoCell;
     
 }
@@ -78,6 +81,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    JECollectionItem *collectionItem = [_collectionModel.collectionList objectAtIndex:indexPath.row];
+    JEDetailModel *model = [[JEDetailModel alloc] initWithId:collectionItem.styleID];
+    JEDetailVC *detailVC = [[JEDetailVC alloc] initWithNibName:@"JEDetailVC" bundle:nil];
+    [detailVC setModel:model];
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 @end
