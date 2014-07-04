@@ -11,7 +11,7 @@
 typedef void(^JEAuthCompletionBlock)(BOOL isSuccess, id info);
 
 @interface FEAccountManager : NSObject
-@property(nonatomic,assign) BOOL isLogin;
+@property(nonatomic,assign) BOOL        isLogin;
 @property(nonatomic,retain) NSString*	account;
 @property(nonatomic,retain) NSString*	passWord;
 

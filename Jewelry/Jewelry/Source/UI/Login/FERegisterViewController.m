@@ -225,7 +225,14 @@ enum
     [[FEAccountManager shareInstance] registerWithAccount:userNameStr password:passwordStr referral:authCode completionBlock:^(BOOL isSuccess, id info) {
         if (!isSuccess) {
             FEALERTVIEW(@"注册出错", info , nil,NSLocalizedString(@"kOK", nil) ,nil,nil);
-        }
+        } else {
+            [FEToastView showWithTitle:@"  注册成功  " animation:YES interval:1.0];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self.navigationController popToRootViewControllerAnimated:NO];
+                [[[[UIApplication sharedApplication] keyWindow] rootViewController]  dismissModalViewControllerAnimated:YES];
+            
+            });
+          }
         if (weakSelf.completionBlock) {
             weakSelf.completionBlock(isSuccess,info);
         }

@@ -36,7 +36,7 @@
 }
 
 - (BOOL)isLogin{
-    return NO;
+    return [[FEAccountManager shareInstance] isLogin];
 }
 
 - (void)showLoginVCWithCompletionBlock:(JEAuthCompletionBlock)block{
@@ -152,5 +152,8 @@
 
 - (void)cancelButtonPressed:(id)sender{
     [self dismissLoginVC];
+    if (self.block) {
+        self.block(NO,nil);
+    }
 }
 @end
