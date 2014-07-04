@@ -36,12 +36,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+    //self.edgesForExtendedLayout = UIRectEdgeNone;
+    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
+        [self setEdgesForExtendedLayout:UIRectEdgeNone];
+    }
+    if ([self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)]) {
+        [self setAutomaticallyAdjustsScrollViewInsets:NO];
+    }
     self.tableView.separatorColor = [UIColor clearColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.tableHeaderView = self.bannerView;
     
-    self.bannerView.palceHoldImage = @"defaultJEwelry";//默认图片
+//    self.bannerView.palceHoldImage = @"defaultJEwelry";//默认图片
     
     [FEToastView showWithTitle:@"正在加载中..." animation:YES];
     __weak  JESecondTabbarVC *weakSelf = self;

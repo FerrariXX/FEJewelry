@@ -23,44 +23,44 @@
             <subviews>
                 <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" id="Dpo-yS-VeW" customClass="MKHorizMenu">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="41"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <autoresizingMask key="autoresizingMask"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="UCh-b2-b4Q"/>
                         <outlet property="itemSelectedDelegate" destination="-1" id="icx-vF-3qs"/>
                     </connections>
                 </scrollView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="21" contentMode="scaleToFill" id="bA1-yU-wkL" customClass="MKHorizMenu">
-                    <rect key="frame" x="0.0" y="143" width="320" height="41"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <rect key="frame" x="0.0" y="82" width="320" height="41"/>
+                    <autoresizingMask key="autoresizingMask"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="oCd-8L-Umc"/>
                         <outlet property="itemSelectedDelegate" destination="-1" id="4FA-u6-zDG"/>
                     </connections>
                 </scrollView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="31" contentMode="scaleToFill" id="Ytr-8P-2sV" customClass="MKHorizMenu">
-                    <rect key="frame" x="0.0" y="182" width="320" height="41"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <rect key="frame" x="0.0" y="123" width="320" height="41"/>
+                    <autoresizingMask key="autoresizingMask"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Pq1-k7-iZU"/>
                         <outlet property="itemSelectedDelegate" destination="-1" id="1ob-Mh-DFK"/>
                     </connections>
                 </scrollView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="11" contentMode="scaleToFill" id="PRs-md-xl4" customClass="MKHorizMenu">
-                    <rect key="frame" x="0.0" y="65" width="320" height="41"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="41"/>
+                    <autoresizingMask key="autoresizingMask"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Feb-k1-Nmk"/>
                         <outlet property="itemSelectedDelegate" destination="-1" id="qnu-aA-JmK"/>
                     </connections>
                 </scrollView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="KHL-JZ-Qpj">
-                    <rect key="frame" x="0.0" y="223" width="320" height="312"/>
+                    <rect key="frame" x="0.0" y="165" width="320" height="403"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="41" contentMode="scaleToFill" id="mic-GF-DgE" customClass="MKHorizMenu">
-                    <rect key="frame" x="0.0" y="104" width="320" height="41"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <rect key="frame" x="0.0" y="41" width="320" height="41"/>
+                    <autoresizingMask key="autoresizingMask"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="vSA-fi-abt"/>
                         <outlet property="itemSelectedDelegate" destination="-1" id="dkh-6I-Kyy"/>

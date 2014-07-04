@@ -66,7 +66,7 @@
     [self.tableView addInfiniteScrollingWithActionHandler:^{
         if ([weakSelf.model isHaveMore]) {
             weakSelf.pageNumber++;
-            [weakSelf.model loadDiamondList:[NSString stringWithFormat:@"%d",weakSelf.pageNumber] neatness:@"" color:@"" weightID:@"" priceID:@"" completion:^(BOOL isSuccess) {
+            [weakSelf.model loadDiamondList:[NSString stringWithFormat:@"%d",weakSelf.pageNumber] neatness:weakSelf.neatnessStr color:weakSelf.colorStr weightID:weakSelf.stonesStr priceID:weakSelf.priceStr completion:^(BOOL isSuccess) {
                 [FEToastView dismissWithAnimation:YES];
                 if (isSuccess) {
                     [weakSelf.tableView.infiniteScrollingView stopAnimating];
@@ -83,7 +83,7 @@
     }];
     
     [FEToastView showWithTitle:@"正在加载中..." animation:YES];
-    [weakSelf.model loadDiamondList:@"1" neatness:@"" color:@"" weightID:@"" priceID:@"" completion:^(BOOL isSuccess) {
+    [weakSelf.model loadDiamondList:@"1" neatness:weakSelf.neatnessStr color:weakSelf.colorStr weightID:weakSelf.stonesStr priceID:weakSelf.priceStr completion:^(BOOL isSuccess) {
         [FEToastView dismissWithAnimation:YES];
         if (isSuccess) {
             [weakSelf.tableView reloadData];
