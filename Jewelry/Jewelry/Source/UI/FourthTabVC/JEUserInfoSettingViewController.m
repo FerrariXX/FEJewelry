@@ -157,11 +157,10 @@ static NSString *localCacheFolder;
             modifyVC.type = 2;
             modifyVC.modifyText = _userModel.userInfo.microMessageID;
         }
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
         [self presentViewController:modifyVC animated:YES completion:^{
         }];
     }
-   
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)chooseImage {
