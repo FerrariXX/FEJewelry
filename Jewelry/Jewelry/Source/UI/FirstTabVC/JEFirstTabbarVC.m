@@ -43,7 +43,14 @@
     
 //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分类" style:UIBarButtonItemStyleBordered target:self action:@selector(leftBarButtonPressed:)];
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"筛选" style:UIBarButtonItemStyleBordered target:self action:@selector(rightBarButtonPressed:)];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+    //self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
+        [self setEdgesForExtendedLayout:UIRectEdgeNone];
+    }
+    if ([self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)]) {
+        [self setAutomaticallyAdjustsScrollViewInsets:NO];
+    }
     
     CGFloat height = [[[UIDevice currentDevice] systemVersion] floatValue] <7.0 ? kScreenHeight- 88 - 50 : kScreenHeight - 20 - 88 - 50;
     self.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, height);

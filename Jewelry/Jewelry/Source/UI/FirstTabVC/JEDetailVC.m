@@ -56,7 +56,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"商品详情";
-    self.edgesForExtendedLayout = UIRectEdgeBottom;
+    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
+        [self setEdgesForExtendedLayout:UIRectEdgeNone];
+    }
+    if ([self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)]) {
+        [self setAutomaticallyAdjustsScrollViewInsets:NO];
+    }
     
     self.blankView = [[UIView alloc] initWithFrame:self.view.bounds];
     self.blankView.backgroundColor = [UIColor whiteColor];
