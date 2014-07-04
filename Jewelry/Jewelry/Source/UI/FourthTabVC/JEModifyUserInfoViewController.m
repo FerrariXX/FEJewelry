@@ -66,6 +66,8 @@
     _textField = [[UITextField alloc] initWithFrame:CGRectMake(10, 0, 300, 44)];
     _textField.delegate = self;
     _textField.text = _modifyText;
+    _textField.textAlignment = NSTextAlignmentLeft;
+    _textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     _textField.borderStyle =  UITextBorderStyleNone;
     _textField.clearButtonMode = UITextFieldViewModeWhileEditing;
     _textField.returnKeyType = UIReturnKeyDone;
