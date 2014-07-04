@@ -17,6 +17,8 @@
 #import "FEToastView.h"
 #import "JEWebViewController.h"
 #import "UIImageView+WebCache.h"
+#import "FELogInOrRegisterViewController.h"
+#import "UIViewController+FETabbarVC.h"
 
 @interface JEFourthTabbarVC ()
 @property (nonatomic, strong)NSString   *aboutMeUrl;
@@ -54,9 +56,24 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    if ([[FELogInOrRegisterViewController sharedInstance] isLogin]) {
+        [self loadData];
+    } else {
+        __weak __typeof(self) weakSelf = self;
+        [[FELogInOrRegisterViewController sharedInstance] showLoginVCWithCompletionBlock:^(BOOL isSuccess, id info) {
+            if (isSuccess) {
+                [weakSelf loadData];
+            } else {
+                [weakSelf.tabbarViewController setCustomSelectedIndex:0];
+            }
+        }];
+    }
+}
+
+- (void)loadData{
     __weak __typeof(self) weakSelf = self;
     [FEToastView showWithTitle:@"正在加载中..." animation:YES];
-    [weakSelf.userModel loadUserInfo:@"0001" completion:^(BOOL isSuccess) {
+    [weakSelf.userModel loadUserInfo:[[FEAccountManager shareInstance] account]  completion:^(BOOL isSuccess) {
         [FEToastView dismissWithAnimation:YES];
         if (isSuccess) {
             [weakSelf.tableView reloadData];

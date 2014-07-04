@@ -55,7 +55,7 @@
 
 - (void)shakeOffRequest {
      __weak __typeof(self) weakSelf = self;
-    [_shakeModel shakeOffAction:@"0001" completion:^(BOOL isSuccess) {
+    [_shakeModel shakeOffAction:[[FEAccountManager shareInstance] account]  completion:^(BOOL isSuccess) {
         if (isSuccess) {
             [FEToastView showWithTitle:weakSelf.shakeModel.shakeItem.isLottery animation:YES interval:3.];
             if ([weakSelf.shakeModel.shakeItem.isLottery isEqualToString:@"中奖"] &&

@@ -204,13 +204,21 @@
             [[FELogInOrRegisterViewController sharedInstance] showLoginVCWithCompletionBlock:^(BOOL isSuccess, id info) {
                 if (isSuccess) {
                     [weakSelf.model favoriteWithUserID:[[FEAccountManager shareInstance] account] numberID:weakSelf.model.idNumber completion:^(BOOL isSuccess) {
-                        
+                        NSString *msg = isSuccess ? @"收藏成功" : @"收藏失败";
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                [FEToastView showWithTitle:msg animation:YES interval:2.0];
+                            });
+                        });
                     }];
                 }
             }];
         } else {
             [weakSelf.model favoriteWithUserID:[[FEAccountManager shareInstance] account]  numberID:weakSelf.model.idNumber completion:^(BOOL isSuccess) {
-                
+                NSString *msg = isSuccess ? @"收藏成功" : @"收藏失败";
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [FEToastView showWithTitle:msg animation:YES interval:2.0];
+                });
             }];
         }
     }];

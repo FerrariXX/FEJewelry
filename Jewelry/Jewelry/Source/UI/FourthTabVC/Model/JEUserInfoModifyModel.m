@@ -25,7 +25,7 @@
 
 - (void)updateAvatarURL:(NSString*)imagePath completion:(JECompletionBlock)block {
     
-    AFHTTPClient *uploadFileClient = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:[NSMutableString stringWithFormat:@"%@SetUserAvatar/0001", kBaseURLString]]];
+    AFHTTPClient *uploadFileClient = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:[NSMutableString stringWithFormat:@"%@SetUserAvatar/%@", kBaseURLString,[[FEAccountManager shareInstance] account] ]]];
     NSMutableURLRequest *fileUpRequest = [uploadFileClient multipartFormRequestWithMethod:@"POST" path:@"" parameters:nil constructingBodyWithBlock:^(id formData) {
         
         [formData appendPartWithFileURL:[NSURL fileURLWithPath:imagePath] name:@"RequestStream" error:nil];
@@ -50,7 +50,7 @@
 }
 
 - (void)updateNikeName:(NSString*)nikeName completion:(JECompletionBlock)block {
-    NSMutableString *urlStr = [NSMutableString stringWithFormat:@"%@SetUserNickName/0001/%@", kBaseURLString,nikeName];
+    NSMutableString *urlStr = [NSMutableString stringWithFormat:@"%@SetUserNickName/%@/%@", [[FEAccountManager shareInstance] account] ,kBaseURLString,nikeName];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:urlStr]];
     request.timeoutInterval = kTimeoutInterval;
     __weak __typeof(self) weakSelf = self;
@@ -69,7 +69,7 @@
     [operation start];
 }
 - (void)updateMicroMessageID:(NSString*)microMessageID completion:(JECompletionBlock)block {
-    NSMutableString *urlStr = [NSMutableString stringWithFormat:@"%@SetUserMicroMessageID/0001/%@", kBaseURLString,microMessageID];
+    NSMutableString *urlStr = [NSMutableString stringWithFormat:@"%@SetUserMicroMessageID/%@/%@",[[FEAccountManager shareInstance] account] , kBaseURLString,microMessageID];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:urlStr]];
     request.timeoutInterval = kTimeoutInterval;
     __weak __typeof(self) weakSelf = self;

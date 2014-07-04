@@ -34,7 +34,7 @@
     // Do any additional setup after loading the view from its nib.
     __weak __typeof(self) weakSelf = self;
     [FEToastView showWithTitle:@"正在加载中..." animation:YES];
-    [_myPointsModel loadMyPointList:@"0001" completion:^(BOOL isSuccess) {
+    [_myPointsModel loadMyPointList:[[FEAccountManager shareInstance] account]  completion:^(BOOL isSuccess) {
         [FEToastView dismissWithAnimation:YES];
         if (isSuccess) {
             [weakSelf.tableView reloadData];

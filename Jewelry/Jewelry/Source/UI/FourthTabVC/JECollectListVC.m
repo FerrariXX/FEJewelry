@@ -35,7 +35,7 @@
     _collectionModel = [[JECollectionModel alloc] init];
     __weak __typeof(self) weakSelf = self;
     [FEToastView showWithTitle:@"正在加载中..." animation:YES];
-    [weakSelf.collectionModel loadCollectionList:@"0001" completion:^(BOOL isSuccess) {
+    [weakSelf.collectionModel loadCollectionList:[[FEAccountManager shareInstance] account] completion:^(BOOL isSuccess) {
         [FEToastView dismissWithAnimation:YES];
         if (isSuccess) {
             [weakSelf.tableView reloadData];

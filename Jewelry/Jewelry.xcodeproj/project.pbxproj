@@ -54,6 +54,7 @@
 		2AE97EDF1947F6BB00C973E6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE97EDE1947F6BB00C973E6 /* QuartzCore.framework */; };
 		2AE97EE11947F6CB00C973E6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE97EE01947F6CB00C973E6 /* AudioToolbox.framework */; };
 		6B4A0FC8E3F64B148EE1BE36 /* libPods-Jewelry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7BAA831549477B9B0AB83F /* libPods-Jewelry.a */; };
+		847846741966E02C00B960CE /* UIViewController+FETabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 847846731966E02C00B960CE /* UIViewController+FETabbarVC.m */; };
 		84BBAD811960049700BBBD6F /* FEAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBAD7A1960049700BBBD6F /* FEAccountManager.m */; };
 		84BBAD821960049700BBBD6F /* FELogInOrRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBAD7C1960049700BBBD6F /* FELogInOrRegisterViewController.m */; };
 		84BBAD831960049700BBBD6F /* FELogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBAD7E1960049700BBBD6F /* FELogInViewController.m */; };
@@ -289,6 +290,8 @@
 		2AE97EDE1947F6BB00C973E6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2AE97EE01947F6CB00C973E6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4F7BAA831549477B9B0AB83F /* libPods-Jewelry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Jewelry.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		847846721966E02C00B960CE /* UIViewController+FETabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FETabbarVC.h"; sourceTree = "<group>"; };
+		847846731966E02C00B960CE /* UIViewController+FETabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FETabbarVC.m"; sourceTree = "<group>"; };
 		84BBAD791960049700BBBD6F /* FEAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FEAccountManager.h; sourceTree = "<group>"; };
 		84BBAD7A1960049700BBBD6F /* FEAccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FEAccountManager.m; sourceTree = "<group>"; };
 		84BBAD7B1960049700BBBD6F /* FELogInOrRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FELogInOrRegisterViewController.h; sourceTree = "<group>"; };
@@ -1036,6 +1039,8 @@
 				C3D0056D19056C8700FC4A64 /* FETabBarView.m */,
 				C3D0056E19056C8700FC4A64 /* FETabBarViewController.h */,
 				C3D0056F19056C8700FC4A64 /* FETabBarViewController.m */,
+				847846721966E02C00B960CE /* UIViewController+FETabbarVC.h */,
+				847846731966E02C00B960CE /* UIViewController+FETabbarVC.m */,
 			);
 			path = TabbarVC;
 			sourceTree = "<group>";
@@ -1393,6 +1398,7 @@
 				2A2D98A919508C3300594325 /* JEMyPointsModel.m in Sources */,
 				C3D0057F19056C8700FC4A64 /* FETabBarView.m in Sources */,
 				C3D0058119056C8700FC4A64 /* JEThirdTabbarVC.m in Sources */,
+				847846741966E02C00B960CE /* UIViewController+FETabbarVC.m in Sources */,
 				C3F13F1D192857A10024AEC3 /* JEFirstTabbarWrapperPageVC.m in Sources */,
 				C3D0057D19056C8700FC4A64 /* JESecondTabbarVC.m in Sources */,
 				C31BC347193C949F0045BB42 /* JEWebViewController.m in Sources */,
