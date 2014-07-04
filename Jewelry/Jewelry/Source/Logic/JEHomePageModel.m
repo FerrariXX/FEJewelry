@@ -34,7 +34,7 @@
         }
         self.desInfo  = [dict objectForKey:@"styleName"];
         self.idNumber = [dict objectForKey:@"styleID"];
-        self.price    = [NSString stringWithFormat:@"%f",[[dict objectForKey:@"price"] floatValue]];
+        self.price    = [NSString stringWithFormat:@"%.2f",[[dict objectForKey:@"price"] floatValue]];
     }
     return self;
 }

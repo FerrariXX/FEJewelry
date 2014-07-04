@@ -168,6 +168,10 @@
     [operation start];
 }
 
+- (void)resetData{
+    [self.detailListArray removeAllObjects];
+}
+
 #pragma mark - Private Method
 - (void)initImagesArray{
     FEImageItem *item1 = [[FEImageItem alloc] initWithTitle:nil imageURL:@"http://gw2.alicdn.com/bao/uploaded/i3/T1QPnBFmleXXXXXXXX_!!0-item_pic.jpg" tag:0];

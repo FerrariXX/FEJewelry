@@ -38,7 +38,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.view.backgroundColor = [UIColor whiteColor];
 	//useless when add code here
 	//[self hideExistingTabBar];
     //[self.view addSubview:customTabBarView_];

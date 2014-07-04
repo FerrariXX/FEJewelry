@@ -40,4 +40,5 @@
 - (void)praiseWithNumberID:(NSString*)idNumber completion:(JECompletionBlock)block;
 - (void)favoriteWithUserID:(NSString*)userID numberID:(NSString*)numberID completion:(JECompletionBlock)block;
 
+- (void)resetData;
 @end

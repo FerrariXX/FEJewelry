@@ -63,6 +63,7 @@
         [self setAutomaticallyAdjustsScrollViewInsets:NO];
     }
     
+    self.view.backgroundColor = [UIColor whiteColor];
     self.blankView = [[UIView alloc] initWithFrame:self.view.bounds];
     self.blankView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.blankView];
@@ -125,6 +126,10 @@
 }
 
 - (void)loadCategoryID:(NSString*)categoryID goodID:(NSString*)goodID {
+
+    //清除数据
+    [self.model resetData];
+
     [FEToastView showWithTitle:@"正在加载中..." animation:YES];
     __weak  JEDetailVC *weakSelf = self;
     [self.model loadWithID:categoryID goodID:goodID completion:^(BOOL isSuccess) {
@@ -209,7 +214,7 @@
             [[FELogInOrRegisterViewController sharedInstance] showLoginVCWithCompletionBlock:^(BOOL isSuccess, id info) {
                 if (isSuccess) {
                     [weakSelf.model favoriteWithUserID:[[FEAccountManager shareInstance] account] numberID:weakSelf.model.idNumber completion:^(BOOL isSuccess) {
-                        NSString *msg = isSuccess ? @"收藏成功" : @"收藏失败";
+                        NSString *msg = isSuccess ? @"  收藏成功   " : @"  收藏失败   ";
                         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                             dispatch_async(dispatch_get_main_queue(), ^{
                                 [FEToastView showWithTitle:msg animation:YES interval:2.0];
@@ -220,7 +225,7 @@
             }];
         } else {
             [weakSelf.model favoriteWithUserID:[[FEAccountManager shareInstance] account]  numberID:weakSelf.model.idNumber completion:^(BOOL isSuccess) {
-                NSString *msg = isSuccess ? @"收藏成功" : @"收藏失败";
+                NSString *msg = isSuccess ? @"  收藏成功   " : @"  收藏失败   ";
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [FEToastView showWithTitle:msg animation:YES interval:2.0];
                 });

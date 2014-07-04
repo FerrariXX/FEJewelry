@@ -137,7 +137,7 @@
     NSInteger index = indexPath.row *2 ;
     
     JEHomePageItem* item = [self.homePageModel contentAtIndexPath:index];
-//    [cell.leftItemView.imageView setImageWithURL:[NSURL URLWithString:item.imgURL] placeholderImage:nil];
+    [cell.leftItemView.imageView setImageWithURL:[NSURL URLWithString:item.imgURL] placeholderImage:nil];
     cell.leftItemView.descrption.text = item.desInfo;
     cell.leftItemView.idLabel.text    = item.idNumber;
     cell.leftItemView.priceLabel.text = item.price;
