@@ -35,17 +35,14 @@
 
 - (void)viewDidLoad
 {
-    _neatnessStr = @"0";
-    _stonesStr = @"0";
-    _colorStr = @"0";
-    _priceStr = @"0";
+    [super viewDidLoad];
     
     _pageNumber = 1;
     _model = [[JEDiamondModel alloc] init];
     // Do any additional setup after loading the view from its nib.
     _neatness = [NSMutableArray arrayWithObjects:@"全部",@"FL",@"IF",@"VVS1",@"VVS2",@"VS1",@"VS2",@"SI1",@"SI2", nil];
     _colors = [NSMutableArray arrayWithObjects:@"全部",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K", nil];
-    _stones = [NSMutableArray arrayWithObjects:@"全部",@"30-40ct",@"40-50ct",@"50-60ct",@"60-80ct",@"80-100ct",@"100ct", nil];
+    _stones = [NSMutableArray arrayWithObjects:@"全部",@"0.3-0.4ct",@"0.4-0.5ct",@"0.5-0.6ct",@"0.6-0.8ct",@"0.8-1ct",@"1ct", nil];
     _prices = [NSMutableArray arrayWithObjects:@"全部",@"0~5000",@"5000~8000",@"8000~12000",@"12000~20000",@" 20000~30000",@"30000~50000",@"50000以上",nil];
     
     [_neatnessMenu reloadData];
@@ -53,7 +50,22 @@
     [_stoneMenu reloadData];
     [_priceMenu reloadData];
     
-    [super viewDidLoad];
+
+    if (JE_SYSTEM_VERSION_GREATER_THAN(@"7.0")) {
+        _neatnessMenu.frame = CGRectMake(0., 64., 320., 41.);
+    }else{
+        _neatnessMenu.frame = CGRectMake(0., 86., 320., 41.);
+    }
+    _colorMenu.frame = CGRectMake(0., CGRectGetMaxY(_neatnessMenu.frame), 320., 41);
+    _stoneMenu.frame = CGRectMake(0., CGRectGetMaxY(_colorMenu.frame), 320., 41);
+    _priceMenu.frame = CGRectMake(0., CGRectGetMaxY(_stoneMenu.frame), 320., 41);
+    
+    _tableView.frame = CGRectMake(0., CGRectGetMaxY(_priceMenu.frame), 320., 403);
+    _neatnessStr = @"0";
+    _stonesStr = @"0";
+    _colorStr = @"0";
+    _priceStr = @"0";
+    
     self.tableView.dataSource = self;
     self.tableView.delegate   = self;
     
