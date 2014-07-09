@@ -36,15 +36,15 @@
 #pragma mark - Private Method
 - (void)initTabBarController
 {
-	NSArray* titlesArr = [NSArray arrayWithObjects:@"商城",@"珠宝圈",@"裸钻",@"我", nil];
-	UIImage* image1 = [UIImage imageNamed:@"tab_homeH.png"];
-	UIImage* image2 = [UIImage imageNamed:@"tab_bareDiamondH.png"];
+	NSArray* titlesArr = [NSArray arrayWithObjects:@"",@"",@"",@"", nil];
+	UIImage* image1 = [UIImage imageNamed:@"tab_home.png"];
+	UIImage* image2 = [UIImage imageNamed:@"tab_bareDiamond.png"];
 	UIImage* image3 = [UIImage imageNamed:@"tab_jewelryCircle.png"];
-	UIImage* image4 = [UIImage imageNamed:@"tab_mySettingH.png"];
+	UIImage* image4 = [UIImage imageNamed:@"tab_mySetting.png"];
 	NSArray* imageNArr = [NSArray arrayWithObjects:image1,image2,image3,image4, nil];
 	UIImage* imageH1 = [UIImage imageNamed:@"tab_homeH.png"];
 	UIImage* imageH2 = [UIImage imageNamed:@"tab_bareDiamondH.png"];
-	UIImage* imageH3 = [UIImage imageNamed:@"tab_jewelryCircle.png"];
+	UIImage* imageH3 = [UIImage imageNamed:@"tab_jewelryCircleH.png"];
 	UIImage* imageH4 = [UIImage imageNamed:@"tab_mySettingH.png"];
 	NSArray* imageHArr = [NSArray arrayWithObjects:imageH1,imageH2,imageH3,imageH4, nil];
     

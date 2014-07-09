@@ -30,6 +30,10 @@
 		2A2D98A919508C3300594325 /* JEMyPointsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D98A619508C3300594325 /* JEMyPointsModel.m */; };
 		2A5EB8CD195C6392007BA142 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A5EB8CC195C6392007BA142 /* Crashlytics.framework */; };
 		2A6817C21959CE0500E3838B /* JEUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6817C11959CE0500E3838B /* JEUserInfoModel.m */; };
+		2A9AFCB6196D990F00B9E710 /* tab_mySetting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A9AFCB2196D990F00B9E710 /* tab_mySetting@2x.png */; };
+		2A9AFCB7196D990F00B9E710 /* tab_bareDiamond@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A9AFCB3196D990F00B9E710 /* tab_bareDiamond@2x.png */; };
+		2A9AFCB8196D990F00B9E710 /* tab_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A9AFCB4196D990F00B9E710 /* tab_home@2x.png */; };
+		2A9AFCB9196D990F00B9E710 /* tab_jewelryCircleH@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A9AFCB5196D990F00B9E710 /* tab_jewelryCircleH@2x.png */; };
 		2ABBCAFE19395A2A00F1A5EB /* JEMyPointsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBCAFC19395A2A00F1A5EB /* JEMyPointsViewController.m */; };
 		2ABBCAFF19395A2A00F1A5EB /* JEMyPointsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ABBCAFD19395A2A00F1A5EB /* JEMyPointsViewController.xib */; };
 		2ABBCB0219395ADA00F1A5EB /* JEMyPointsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBCB0119395ADA00F1A5EB /* JEMyPointsCell.m */; };
@@ -256,6 +260,10 @@
 		2A5EB8CC195C6392007BA142 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		2A6817C01959CE0500E3838B /* JEUserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEUserInfoModel.h; sourceTree = "<group>"; };
 		2A6817C11959CE0500E3838B /* JEUserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEUserInfoModel.m; sourceTree = "<group>"; };
+		2A9AFCB2196D990F00B9E710 /* tab_mySetting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_mySetting@2x.png"; sourceTree = "<group>"; };
+		2A9AFCB3196D990F00B9E710 /* tab_bareDiamond@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bareDiamond@2x.png"; sourceTree = "<group>"; };
+		2A9AFCB4196D990F00B9E710 /* tab_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_home@2x.png"; sourceTree = "<group>"; };
+		2A9AFCB5196D990F00B9E710 /* tab_jewelryCircleH@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_jewelryCircleH@2x.png"; sourceTree = "<group>"; };
 		2ABBCAFB19395A2A00F1A5EB /* JEMyPointsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEMyPointsViewController.h; sourceTree = "<group>"; };
 		2ABBCAFC19395A2A00F1A5EB /* JEMyPointsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEMyPointsViewController.m; sourceTree = "<group>"; };
 		2ABBCAFD19395A2A00F1A5EB /* JEMyPointsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JEMyPointsViewController.xib; sourceTree = "<group>"; };
@@ -1113,6 +1121,10 @@
 		C3F72C5318FD8A78007FDB69 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				2A9AFCB2196D990F00B9E710 /* tab_mySetting@2x.png */,
+				2A9AFCB3196D990F00B9E710 /* tab_bareDiamond@2x.png */,
+				2A9AFCB4196D990F00B9E710 /* tab_home@2x.png */,
+				2A9AFCB5196D990F00B9E710 /* tab_jewelryCircleH@2x.png */,
 				84BBAD8719600E0A00BBBD6F /* login_logo.png */,
 				C3B96A7D194C81DC00DFA998 /* defaultJEwelry.png */,
 				C36062591949FB4C00ED0CA6 /* tab_bareDiamondH@2x.png */,
@@ -1240,6 +1252,7 @@
 				2AD0988C1962FA9A00060FAC /* JEModifyUserInfoViewController.xib in Resources */,
 				C360625D1949FB4C00ED0CA6 /* tab_bareDiamondH@2x.png in Resources */,
 				C3F72CF218FD8A78007FDB69 /* login_button_normal.png in Resources */,
+				2A9AFCB6196D990F00B9E710 /* tab_mySetting@2x.png in Resources */,
 				C3CBDAEF1930E44E001B193A /* JEJewelryCircleTableViewCell.xib in Resources */,
 				C3F72CF118FD8A78007FDB69 /* ico_choose.png in Resources */,
 				C3D0057A19056C8700FC4A64 /* JERightSidePanelVC.xib in Resources */,
@@ -1253,6 +1266,7 @@
 				2A1C708E194DFC14003EE0E2 /* MenuBar@2x.png in Resources */,
 				C3938062194A9F000068945A /* ShareSDKFlatShareViewUI.bundle in Resources */,
 				C3CDCF3C192E4A24006E1BD8 /* icon_favorite@2x.png in Resources */,
+				2A9AFCB7196D990F00B9E710 /* tab_bareDiamond@2x.png in Resources */,
 				C3938051194A9EFF0068945A /* Resource.bundle in Resources */,
 				2A17B5131938D22A0094F749 /* JEUserInfoSettingViewController.xib in Resources */,
 				2AE97EDC1947F55900C973E6 /* ico_deco_shake.png in Resources */,
@@ -1289,6 +1303,7 @@
 				C393805A194A9F000068945A /* RennSDK.bundle in Resources */,
 				C3CDCF3D192E4A24006E1BD8 /* icon_reply.png in Resources */,
 				C3F72CF018FD8A78007FDB69 /* ico_checkbox.png in Resources */,
+				2A9AFCB8196D990F00B9E710 /* tab_home@2x.png in Resources */,
 				2A17B5281938F66A0094F749 /* JECollectListVC.xib in Resources */,
 				2A17B5231938F2110094F749 /* like@2x.png in Resources */,
 				C3F72CEF18FD8A78007FDB69 /* checked@2x.png in Resources */,
@@ -1298,6 +1313,7 @@
 				2A1C708C194DFC14003EE0E2 /* ButtonSelected.png in Resources */,
 				C360625E1949FB4C00ED0CA6 /* tab_homeH@2x.png in Resources */,
 				C3D0058219056C8700FC4A64 /* JEThirdTabbarVC.xib in Resources */,
+				2A9AFCB9196D990F00B9E710 /* tab_jewelryCircleH@2x.png in Resources */,
 				C32712F218FC2DA600971956 /* InfoPlist.strings in Resources */,
 				C3F72D0A18FD8A78007FDB69 /* tab_settingsN@2x.png in Resources */,
 				C3D0057619056C8700FC4A64 /* JEFirstTabbarVC.xib in Resources */,
@@ -1488,7 +1504,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Qing Yu (H6QFL5S9G3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Qing Yu (H6QFL5S9G3)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1526,7 +1543,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Qing Yu (H6QFL5S9G3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Qing Yu (H6QFL5S9G3)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1550,7 +1568,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libstdc++";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Qing Yu (H6QFL5S9G3)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Jewelry/ShareSDK/Connection",
@@ -1588,7 +1606,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libstdc++";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Qing Yu (H6QFL5S9G3)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Jewelry/ShareSDK/Connection",
