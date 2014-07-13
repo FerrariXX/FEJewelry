@@ -39,7 +39,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    self.title = @"个人信息";
+
     _tableView.dataSource = self;
     _tableView.delegate = self;
     _userModel = [[JEUserInfoModel alloc] init];

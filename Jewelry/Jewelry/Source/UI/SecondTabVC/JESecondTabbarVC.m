@@ -47,6 +47,7 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.tableHeaderView = self.bannerView;
     
+    self.title = @"珠宝圈";
 //    self.bannerView.palceHoldImage = @"defaultJEwelry";//默认图片
     
     [FEToastView showWithTitle:@"正在加载中..." animation:YES];

@@ -41,6 +41,7 @@
     self.tabItemWidth = 60.0;
     self.view.backgroundColor = [UIColor colorWithRed:241/255.0 green:241/255.0 blue:241/255.0 alpha:1.0];
     
+    self.title = @"商城";
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.

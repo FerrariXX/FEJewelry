@@ -37,6 +37,8 @@
 {
     [super viewDidLoad];
     
+
+    self.title = @"裸钻";
     _pageNumber = 1;
     _model = [[JEDiamondModel alloc] init];
     // Do any additional setup after loading the view from its nib.
