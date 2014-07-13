@@ -60,7 +60,7 @@
 }
 
 + (CGFloat)height{
-    return 205.0f;
+    return 236.0f;
     //((UIView*)[self instanceWithNibName:@"JEHomePageTableViewCell" bundle:nil owner:nil]).frame.size.height;
 ;
 }

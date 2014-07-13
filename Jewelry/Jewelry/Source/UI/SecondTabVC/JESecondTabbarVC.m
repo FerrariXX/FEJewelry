@@ -115,7 +115,7 @@
     cell.phoneLabel.text   = item.shopPhone;
     [cell.detailScrollImagsView setImageItems:item.shopGoodsURL selectedBlock:^(FEImageItem *sender) {
     } isAutoPlay:NO];
-    cell.detailScrollImagsView.itemWidth = 160.0;
+    cell.detailScrollImagsView.itemWidth = 80.0f;
     return cell;    
 }
 
