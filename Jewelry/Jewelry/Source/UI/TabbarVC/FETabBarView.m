@@ -32,7 +32,7 @@
         // Initialization code
 		tabBarItemsButtonArr_ = [[NSMutableArray alloc] initWithCapacity:0];
 		cellImageN_ = [UIImage imageNamed:@"tab_normal.png"];
-		cellImageH_ = [UIImage imageNamed:@"tab_selected.png"];
+		cellImageH_ = cellImageN_;//[UIImage imageNamed:@"tab_selected.png"];
 		curSeletedIndex_ = 0;
     }
     return self;
