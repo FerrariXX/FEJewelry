@@ -98,6 +98,17 @@
 	//tabBarController_.tabBar.tintColor = kTabCtlColor;
 	//tabBarController_.tabBar.tintColor = kToolBarColor;
 
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,nil];//font, NSFontAttributeName,
+    UIColor *naviColor = [UIColor colorWithRed:41/255.0f green:112/255.0f blue:222/255.0f alpha:1.0];
+    UINavigationBar *naviBar = [UINavigationBar appearance];
+    if (JE_SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        [naviBar setBarTintColor:naviColor];        
+    } else {
+        [naviBar setTintColor:naviColor];
+    }
+    [naviBar setTitleTextAttributes:attributes];
+
+    
 }
 
 #pragma mark - Life Circle
