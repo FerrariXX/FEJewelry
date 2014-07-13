@@ -94,7 +94,13 @@
 }
 
 - (void)loadWithCompletionBlock:(JECompletionBlock)block{
-    __weak __typeof(self) weakSelf = self;//__typeof(&*self)
+#if DEBUG_FAKE
+    if (block) {
+        block(YES);
+    }
+    return;
+#endif
+    __weak __typeof(self) weakSelf = self;
     NSString *urlStr = [NSString stringWithFormat:@"%@GetJewelryRing", kBaseURLString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:urlStr]];
     request.timeoutInterval = kTimeoutInterval;
@@ -147,7 +153,7 @@
 - (void)baseInit{
     
     self.contentArray = [NSMutableArray arrayWithCapacity:0];
-#if 0
+#if DEBUG_FAKE
     JEJewelryCircleItem * item = [[JEJewelryCircleItem alloc] init];
     self.contentArray = @[item,[[JEJewelryCircleItem alloc] init],[[JEJewelryCircleItem alloc] init],[[JEJewelryCircleItem alloc] init],[[JEJewelryCircleItem alloc] init],[[JEJewelryCircleItem alloc] init],[[JEJewelryCircleItem alloc] init],[[JEJewelryCircleItem alloc] init]];
     FEImageItem *item1 = [[FEImageItem alloc] initWithTitle:nil imageURL:@"http://gw2.alicdn.com/bao/uploaded/i3/T1QPnBFmleXXXXXXXX_!!0-item_pic.jpg" tag:0];

@@ -5,6 +5,9 @@
 //  Copyright 2012 XXXXX. All rights reserved.
 //
 
+//1 for debug
+#define DEBUG_FAKE                      0
+
 
 #define kBaseURLString                  @"http://60.191.108.245:33681/brosapiservice.svc/"
 

@@ -101,7 +101,7 @@
     self.contentArray = [NSMutableArray arrayWithCapacity:0];
     self.isHaveMore   = YES;
     self.pageNumber   = 1;
-#if 0
+#if DEBUG_FAKE
     JEHomePageItem * item = [[JEHomePageItem alloc] init];
     NSArray * items = @[item,[[JEHomePageItem alloc] init],[[JEHomePageItem alloc] init],[[JEHomePageItem alloc] init],[[JEHomePageItem alloc] init],[[JEHomePageItem alloc] init],[[JEHomePageItem alloc] init],[[JEHomePageItem alloc] init]];
     [self.contentArray addObjectsFromArray:items];
@@ -122,6 +122,12 @@
 
 
 - (void)loadDataWithCategory:(NSString*)categroyID pageNumber:(NSInteger)pageNumber  completionBlock:(JECompletionBlock)block{
+#if DEBUG_FAKE
+    if (block) {
+        block(YES);
+    }
+    return;
+#endif
     NSString *urlStr = [NSString stringWithFormat:@"%@GetStyleByCategory/%@/%d", kBaseURLString,categroyID,pageNumber];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:urlStr]];
     request.timeoutInterval = kTimeoutInterval;

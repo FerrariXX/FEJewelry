@@ -82,6 +82,13 @@
 }
 
 - (void)loadCategoryWithCompletionBlock:(JECompletionBlock)block{
+    
+#if DEBUG_FAKE
+    if (block) {
+        block(YES);
+    }
+    return;
+#endif
     __weak __typeof(self) weakSelf = self;//__typeof(&*self)
     NSString *urlStr = [NSString stringWithFormat:@"%@GetCategory", kBaseURLString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:urlStr]];

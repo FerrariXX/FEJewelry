@@ -42,7 +42,7 @@
         self.idNumber = idNumber;
         self.detailListArray = [NSMutableArray arrayWithCapacity:0];
         self.pageNumber = 1;
-#if 0
+#if DEBUG_FAKE
         self.title  = @"千足金绿玉吊坠";
         self.price  = @"234324";
         self.category = @"黄金铂金》黄金吊坠";
@@ -64,7 +64,12 @@
 
 //- (void)loadWithID:(NSString*)idNumber goodID:(NSString*)goodID deviceID:(NSString*)deviceID completion:(JECompletionBlock)block{
 - (void)loadWithID:(NSString*)idNumber goodID:(NSString*)goodID completion:(JECompletionBlock)block{
-
+#if DEBUG_FAKE
+    if (block) {
+        block(YES);
+    }
+    return;
+#endif
     if ([idNumber length] ==0) {
         return;
     }
