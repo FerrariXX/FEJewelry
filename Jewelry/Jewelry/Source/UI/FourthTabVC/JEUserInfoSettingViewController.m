@@ -97,7 +97,7 @@ static NSString *localCacheFolder;
         [[cell.contentView viewWithTag:2] removeFromSuperview];
         [[cell.contentView viewWithTag:3] removeFromSuperview];
     }
-    
+    cell.userInteractionEnabled = YES;
     NSUInteger section = (NSUInteger) [indexPath section];
     NSUInteger row = (NSUInteger) [indexPath row];
     UILabel *rightLable = [[UILabel alloc] init]; //定义一个在cell最右边显示的label
@@ -115,6 +115,7 @@ static NSString *localCacheFolder;
             rightLable.text = _userModel.userInfo.userID;
             rightLable.tag = 2;
             cell.accessoryType = UITableViewCellAccessoryNone;
+            cell.userInteractionEnabled = NO;
         }else if(row == 3){
             cellText = @"我的微信号";
             rightLable.tag = 3;

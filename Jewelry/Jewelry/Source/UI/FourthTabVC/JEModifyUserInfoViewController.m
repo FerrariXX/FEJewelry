@@ -37,6 +37,10 @@
     }else {
         self.titleLable.text = @"修改微信号";
     }
+    if (JE_SYSTEM_VERSION_LESS_THAN(@"7.0")) {
+        _navView.frame = CGRectMake(0, 1, 320, 44);
+        _tableView.frame = CGRectMake(0, 44, 320, 44);
+    }
     // Do any additional setup after loading the view from its nib.
 }
 

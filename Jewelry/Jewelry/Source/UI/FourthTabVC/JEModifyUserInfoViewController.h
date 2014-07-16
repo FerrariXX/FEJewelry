@@ -17,6 +17,7 @@
 - (IBAction)backAction:(id)sender;
 - (IBAction)updateAction:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UIView *navView;
 @property (nonatomic, assign) NSInteger   type;
 @property (nonatomic, strong) NSString    *modifyText;
 @end

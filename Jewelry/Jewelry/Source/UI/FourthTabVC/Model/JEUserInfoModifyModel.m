@@ -26,10 +26,10 @@
 - (void)updateAvatarURL:(NSString*)imagePath completion:(JECompletionBlock)block {
     
     AFHTTPClient *uploadFileClient = [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:[NSMutableString stringWithFormat:@"%@SetUserAvatar/%@", kBaseURLString,[[FEAccountManager shareInstance] account] ]]];
-    NSMutableURLRequest *fileUpRequest = [uploadFileClient multipartFormRequestWithMethod:@"POST" path:@"" parameters:nil constructingBodyWithBlock:^(id formData) {
+    NSMutableURLRequest *fileUpRequest = [uploadFileClient multipartFormRequestWithMethod:@"POST" path:@"Mindex/getimg" parameters:nil constructingBodyWithBlock:^(id formData) {
         
-        [formData appendPartWithFileURL:[NSURL fileURLWithPath:imagePath] name:@"RequestStream" error:nil];
-        
+//        [formData appendPartWithFileData:[NSData dataWithContentsOfFile:imagePath] name:@"RequestStream" fileName:@"file.jpg" mimeType:@"image/png"];
+        [formData appendPartWithFileData:UIImageJPEGRepresentation([UIImage imageWithContentsOfFile:imagePath], 0.5) name:@"image1" fileName:@"image1.jpg" mimeType:@"image/jpeg"];
     }];
     
     __weak __typeof(self) weakSelf = self;
@@ -47,10 +47,11 @@
         }
     }];
     [operation start];
+    
 }
 
 - (void)updateNikeName:(NSString*)nikeName completion:(JECompletionBlock)block {
-    NSMutableString *urlStr = [NSMutableString stringWithFormat:@"%@SetUserNickName/%@/%@", [[FEAccountManager shareInstance] account] ,kBaseURLString,nikeName];
+    NSMutableString *urlStr = [NSMutableString stringWithFormat:@"%@SetUserNickName/%@/%@",kBaseURLString,[[FEAccountManager shareInstance] account],nikeName];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:urlStr]];
     request.timeoutInterval = kTimeoutInterval;
     __weak __typeof(self) weakSelf = self;
@@ -69,7 +70,7 @@
     [operation start];
 }
 - (void)updateMicroMessageID:(NSString*)microMessageID completion:(JECompletionBlock)block {
-    NSMutableString *urlStr = [NSMutableString stringWithFormat:@"%@SetUserMicroMessageID/%@/%@",[[FEAccountManager shareInstance] account] , kBaseURLString,microMessageID];
+    NSMutableString *urlStr = [NSMutableString stringWithFormat:@"%@SetUserMicroMessageID/%@/%@", kBaseURLString,[[FEAccountManager shareInstance] account],microMessageID];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:urlStr]];
     request.timeoutInterval = kTimeoutInterval;
     __weak __typeof(self) weakSelf = self;

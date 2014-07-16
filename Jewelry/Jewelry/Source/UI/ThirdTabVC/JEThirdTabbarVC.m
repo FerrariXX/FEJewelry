@@ -56,7 +56,7 @@
     if (JE_SYSTEM_VERSION_GREATER_THAN(@"7.0")) {
         _neatnessMenu.frame = CGRectMake(0., 64., 320., 41.);
     }else{
-        _neatnessMenu.frame = CGRectMake(0., 86., 320., 41.);
+        _neatnessMenu.frame = CGRectMake(0., 0., 320., 41.);
     }
     _colorMenu.frame = CGRectMake(0., CGRectGetMaxY(_neatnessMenu.frame), 320., 41);
     _stoneMenu.frame = CGRectMake(0., CGRectGetMaxY(_colorMenu.frame), 320., 41);

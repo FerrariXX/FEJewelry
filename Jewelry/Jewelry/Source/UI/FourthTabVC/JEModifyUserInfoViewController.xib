@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JEModifyUserInfoViewController">
             <connections>
+                <outlet property="navView" destination="2Um-pK-Ugn" id="aIy-3W-FH5"/>
                 <outlet property="tableView" destination="Tpc-7y-z2s" id="eH2-yP-fAO"/>
                 <outlet property="titleLable" destination="S1q-bT-NkF" id="kSy-gc-jMg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
