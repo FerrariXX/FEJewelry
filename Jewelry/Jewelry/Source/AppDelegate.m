@@ -102,9 +102,11 @@
     UIColor *naviColor = [UIColor colorWithRed:41/255.0f green:112/255.0f blue:222/255.0f alpha:1.0];
     UINavigationBar *naviBar = [UINavigationBar appearance];
     if (JE_SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        [naviBar setBarTintColor:naviColor];        
+        [naviBar setBarTintColor:naviColor];
+        [naviBar setTintColor:[UIColor whiteColor]];
+    } else {
+        [naviBar setTintColor:naviColor];
     }
-    [naviBar setTintColor:[UIColor whiteColor]];
     [naviBar setTitleTextAttributes:attributes];
 }
 
