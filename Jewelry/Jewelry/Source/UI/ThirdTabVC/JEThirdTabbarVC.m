@@ -37,7 +37,7 @@
 {
     [super viewDidLoad];
     
-
+    self.view.backgroundColor = [UIColor grayColor];
     self.title = @"裸钻";
     _pageNumber = 1;
     _model = [[JEDiamondModel alloc] init];
@@ -58,11 +58,21 @@
     }else{
         _neatnessMenu.frame = CGRectMake(0., 0., 320., 41.);
     }
-    _colorMenu.frame = CGRectMake(0., CGRectGetMaxY(_neatnessMenu.frame), 320., 41);
-    _stoneMenu.frame = CGRectMake(0., CGRectGetMaxY(_colorMenu.frame), 320., 41);
-    _priceMenu.frame = CGRectMake(0., CGRectGetMaxY(_stoneMenu.frame), 320., 41);
+    UIView *lineDashedView0 = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_neatnessMenu.frame)+1, 320, 1)];
+    lineDashedView0.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"line_dashed"]];
+    [self.view addSubview:lineDashedView0];
     
-    _tableView.frame = CGRectMake(0., CGRectGetMaxY(_priceMenu.frame), 320., 403);
+    _colorMenu.frame = CGRectMake(0., CGRectGetMaxY(lineDashedView0.frame), 320., 41);
+    UIView *lineDashedView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_colorMenu.frame)+1, 320, 1)];
+    lineDashedView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"line_dashed"]];
+    [self.view addSubview:lineDashedView];
+    _stoneMenu.frame = CGRectMake(0., CGRectGetMaxY(lineDashedView.frame), 320., 41);
+    UIView *lineDashedView1 = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_stoneMenu.frame)+1, 320, 1)];
+    lineDashedView1.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"line_dashed"]];
+    [self.view addSubview:lineDashedView1];
+    _priceMenu.frame = CGRectMake(0., CGRectGetMaxY(lineDashedView1.frame), 320., 41);
+    
+    _tableView.frame = CGRectMake(0., CGRectGetMaxY(_priceMenu.frame) + 10, 320., 403);
     _neatnessStr = @"0";
     _stonesStr = @"0";
     _colorStr = @"0";

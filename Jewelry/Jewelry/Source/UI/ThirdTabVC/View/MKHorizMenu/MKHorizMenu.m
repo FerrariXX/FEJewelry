@@ -43,7 +43,7 @@
 -(void) reloadData
 {
     self.itemCount = [dataSource numberOfItemsForMenu:self];
-    self.backgroundColor = [dataSource backgroundColorForMenu:self];
+    self.backgroundColor = RGBCOLOR(245, 242, 244);
     self.selectedImage = [dataSource selectedItemImageForMenu:self];
 
     UIFont *buttonFont = [UIFont boldSystemFontOfSize:15];
@@ -61,12 +61,20 @@
         
         [customButton setBackgroundImage:self.selectedImage forState:UIControlStateSelected];
         
+        if (i > 0) {
+            [customButton setTitleColor:RGBCOLOR(86, 77, 74) forState:UIControlStateNormal];
+        }else{
+            customButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+            [customButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        }
+        [customButton setBackgroundColor:RGBCOLOR(245, 242, 244)];
+        
         customButton.tag = tag++;
         [customButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
         
         int buttonWidth = [title sizeWithFont:customButton.titleLabel.font
                             constrainedToSize:CGSizeMake(150, 28) 
-                                lineBreakMode:UILineBreakModeClip].width;
+                                lineBreakMode:NSLineBreakByClipping].width;
         
         customButton.frame = CGRectMake(xPos, 7, buttonWidth + buttonPadding, 28);
         xPos += buttonWidth;
