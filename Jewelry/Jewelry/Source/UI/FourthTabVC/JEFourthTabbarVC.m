@@ -17,7 +17,6 @@
 #import "FEToastView.h"
 #import "JEWebViewController.h"
 #import "UIImageView+WebCache.h"
-#import "FELogInOrRegisterViewController.h"
 #import "UIViewController+FETabbarVC.h"
 
 @interface JEFourthTabbarVC ()
@@ -57,11 +56,11 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    if ([[FELogInOrRegisterViewController sharedInstance] isLogin]) {
+    if ([FELoginRootVC isLogin]) {
         [self loadData];
     } else {
         __weak __typeof(self) weakSelf = self;
-        [[FELogInOrRegisterViewController sharedInstance] showLoginVCWithCompletionBlock:^(BOOL isSuccess, id info) {
+        [FELoginRootVC showLoginVCWithCompletionBlock:^(BOOL isSuccess, id info) {
             if (isSuccess) {
                 [weakSelf loadData];
             } else {

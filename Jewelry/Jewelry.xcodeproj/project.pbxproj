@@ -30,8 +30,6 @@
 		2A2D98A919508C3300594325 /* JEMyPointsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D98A619508C3300594325 /* JEMyPointsModel.m */; };
 		2A5EB8CD195C6392007BA142 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A5EB8CC195C6392007BA142 /* Crashlytics.framework */; };
 		2A6817C21959CE0500E3838B /* JEUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6817C11959CE0500E3838B /* JEUserInfoModel.m */; };
-		2A9061E11976CEA40099FC91 /* line_dashed.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A9061DF1976CEA40099FC91 /* line_dashed.png */; };
-		2A9061E21976CEA40099FC91 /* line_dashed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A9061E01976CEA40099FC91 /* line_dashed@2x.png */; };
 		2A9AFCB6196D990F00B9E710 /* tab_mySetting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A9AFCB2196D990F00B9E710 /* tab_mySetting@2x.png */; };
 		2A9AFCB7196D990F00B9E710 /* tab_bareDiamond@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A9AFCB3196D990F00B9E710 /* tab_bareDiamond@2x.png */; };
 		2A9AFCB8196D990F00B9E710 /* tab_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A9AFCB4196D990F00B9E710 /* tab_home@2x.png */; };
@@ -61,9 +59,11 @@
 		2AE97EE11947F6CB00C973E6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE97EE01947F6CB00C973E6 /* AudioToolbox.framework */; };
 		6B4A0FC8E3F64B148EE1BE36 /* libPods-Jewelry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7BAA831549477B9B0AB83F /* libPods-Jewelry.a */; };
 		847846741966E02C00B960CE /* UIViewController+FETabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 847846731966E02C00B960CE /* UIViewController+FETabbarVC.m */; };
-		84B94EDB197D549900E44726 /* JEFilterType.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B94ED9197D549900E44726 /* JEFilterType.m */; };
+		8481C4B41976CFAD008F862B /* FELoginRootVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8481C4B11976CFAD008F862B /* FELoginRootVC.xib */; };
+		8481C4B51976CFAD008F862B /* FELoginRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8481C4B31976CFAD008F862B /* FELoginRootVC.m */; };
+		84B94EDE197D583E00E44726 /* account@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B94EDC197D583E00E44726 /* account@2x.png */; };
+		84B94EDF197D583E00E44726 /* password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B94EDD197D583E00E44726 /* password@2x.png */; };
 		84BBAD811960049700BBBD6F /* FEAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBAD7A1960049700BBBD6F /* FEAccountManager.m */; };
-		84BBAD821960049700BBBD6F /* FELogInOrRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBAD7C1960049700BBBD6F /* FELogInOrRegisterViewController.m */; };
 		84BBAD831960049700BBBD6F /* FELogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBAD7E1960049700BBBD6F /* FELogInViewController.m */; };
 		84BBAD841960049700BBBD6F /* FERegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBAD801960049700BBBD6F /* FERegisterViewController.m */; };
 		84BBAD8619600CC400BBBD6F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84BBAD8519600CC400BBBD6F /* Localizable.strings */; };
@@ -192,6 +192,7 @@
 		C3D0058119056C8700FC4A64 /* JEThirdTabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D0057219056C8700FC4A64 /* JEThirdTabbarVC.m */; };
 		C3D0058219056C8700FC4A64 /* JEThirdTabbarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D0057319056C8700FC4A64 /* JEThirdTabbarVC.xib */; };
 		C3D0058519056CB400FC4A64 /* JECategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D0058419056CB400FC4A64 /* JECategory.m */; };
+		C3D0058819056CD000FC4A64 /* JEFilterType.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D0058719056CD000FC4A64 /* JEFilterType.m */; };
 		C3D0058B1905719E00FC4A64 /* JEHomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D0058A1905719E00FC4A64 /* JEHomePageTableViewCell.m */; };
 		C3D0058F190571FD00FC4A64 /* JEHomePageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D0058E190571FD00FC4A64 /* JEHomePageTableViewCell.xib */; };
 		C3D00592190573A900FC4A64 /* JEHomePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D00591190573A900FC4A64 /* JEHomePageModel.m */; };
@@ -262,8 +263,6 @@
 		2A5EB8CC195C6392007BA142 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		2A6817C01959CE0500E3838B /* JEUserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEUserInfoModel.h; sourceTree = "<group>"; };
 		2A6817C11959CE0500E3838B /* JEUserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEUserInfoModel.m; sourceTree = "<group>"; };
-		2A9061DF1976CEA40099FC91 /* line_dashed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line_dashed.png; sourceTree = "<group>"; };
-		2A9061E01976CEA40099FC91 /* line_dashed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line_dashed@2x.png"; sourceTree = "<group>"; };
 		2A9AFCB2196D990F00B9E710 /* tab_mySetting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_mySetting@2x.png"; sourceTree = "<group>"; };
 		2A9AFCB3196D990F00B9E710 /* tab_bareDiamond@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bareDiamond@2x.png"; sourceTree = "<group>"; };
 		2A9AFCB4196D990F00B9E710 /* tab_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_home@2x.png"; sourceTree = "<group>"; };
@@ -304,12 +303,13 @@
 		4F7BAA831549477B9B0AB83F /* libPods-Jewelry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Jewelry.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		847846721966E02C00B960CE /* UIViewController+FETabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FETabbarVC.h"; sourceTree = "<group>"; };
 		847846731966E02C00B960CE /* UIViewController+FETabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FETabbarVC.m"; sourceTree = "<group>"; };
-		84B94ED9197D549900E44726 /* JEFilterType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEFilterType.m; sourceTree = "<group>"; };
-		84B94EDA197D549900E44726 /* JEFilterType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEFilterType.h; sourceTree = "<group>"; };
+		8481C4B11976CFAD008F862B /* FELoginRootVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FELoginRootVC.xib; sourceTree = "<group>"; };
+		8481C4B21976CFAD008F862B /* FELoginRootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FELoginRootVC.h; sourceTree = "<group>"; };
+		8481C4B31976CFAD008F862B /* FELoginRootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FELoginRootVC.m; sourceTree = "<group>"; };
+		84B94EDC197D583E00E44726 /* account@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "account@2x.png"; sourceTree = "<group>"; };
+		84B94EDD197D583E00E44726 /* password@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "password@2x.png"; sourceTree = "<group>"; };
 		84BBAD791960049700BBBD6F /* FEAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FEAccountManager.h; sourceTree = "<group>"; };
 		84BBAD7A1960049700BBBD6F /* FEAccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FEAccountManager.m; sourceTree = "<group>"; };
-		84BBAD7B1960049700BBBD6F /* FELogInOrRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FELogInOrRegisterViewController.h; sourceTree = "<group>"; };
-		84BBAD7C1960049700BBBD6F /* FELogInOrRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FELogInOrRegisterViewController.m; sourceTree = "<group>"; };
 		84BBAD7D1960049700BBBD6F /* FELogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FELogInViewController.h; sourceTree = "<group>"; };
 		84BBAD7E1960049700BBBD6F /* FELogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FELogInViewController.m; sourceTree = "<group>"; };
 		84BBAD7F1960049700BBBD6F /* FERegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FERegisterViewController.h; sourceTree = "<group>"; };
@@ -472,6 +472,8 @@
 		C3D0057319056C8700FC4A64 /* JEThirdTabbarVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JEThirdTabbarVC.xib; sourceTree = "<group>"; };
 		C3D0058319056CB400FC4A64 /* JECategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JECategory.h; sourceTree = "<group>"; };
 		C3D0058419056CB400FC4A64 /* JECategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JECategory.m; sourceTree = "<group>"; };
+		C3D0058619056CD000FC4A64 /* JEFilterType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEFilterType.h; sourceTree = "<group>"; };
+		C3D0058719056CD000FC4A64 /* JEFilterType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEFilterType.m; sourceTree = "<group>"; };
 		C3D005891905719E00FC4A64 /* JEHomePageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEHomePageTableViewCell.h; sourceTree = "<group>"; };
 		C3D0058A1905719E00FC4A64 /* JEHomePageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEHomePageTableViewCell.m; sourceTree = "<group>"; };
 		C3D0058E190571FD00FC4A64 /* JEHomePageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JEHomePageTableViewCell.xib; sourceTree = "<group>"; };
@@ -644,8 +646,9 @@
 			children = (
 				84BBAD791960049700BBBD6F /* FEAccountManager.h */,
 				84BBAD7A1960049700BBBD6F /* FEAccountManager.m */,
-				84BBAD7B1960049700BBBD6F /* FELogInOrRegisterViewController.h */,
-				84BBAD7C1960049700BBBD6F /* FELogInOrRegisterViewController.m */,
+				8481C4B21976CFAD008F862B /* FELoginRootVC.h */,
+				8481C4B31976CFAD008F862B /* FELoginRootVC.m */,
+				8481C4B11976CFAD008F862B /* FELoginRootVC.xib */,
 				84BBAD7D1960049700BBBD6F /* FELogInViewController.h */,
 				84BBAD7E1960049700BBBD6F /* FELogInViewController.m */,
 				84BBAD7F1960049700BBBD6F /* FERegisterViewController.h */,
@@ -1087,8 +1090,8 @@
 				C3BBA8301917E26C00FA9D07 /* JEDetailModel.m */,
 				C3D0058319056CB400FC4A64 /* JECategory.h */,
 				C3D0058419056CB400FC4A64 /* JECategory.m */,
-				84B94EDA197D549900E44726 /* JEFilterType.h */,
-				84B94ED9197D549900E44726 /* JEFilterType.m */,
+				C3D0058619056CD000FC4A64 /* JEFilterType.h */,
+				C3D0058719056CD000FC4A64 /* JEFilterType.m */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -1125,8 +1128,8 @@
 		C3F72C5318FD8A78007FDB69 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				2A9061DF1976CEA40099FC91 /* line_dashed.png */,
-				2A9061E01976CEA40099FC91 /* line_dashed@2x.png */,
+				84B94EDC197D583E00E44726 /* account@2x.png */,
+				84B94EDD197D583E00E44726 /* password@2x.png */,
 				2A9AFCB2196D990F00B9E710 /* tab_mySetting@2x.png */,
 				2A9AFCB3196D990F00B9E710 /* tab_bareDiamond@2x.png */,
 				2A9AFCB4196D990F00B9E710 /* tab_home@2x.png */,
@@ -1252,6 +1255,7 @@
 				C3F72D0818FD8A78007FDB69 /* tab_settingsH@2x.png in Resources */,
 				C360625F1949FB4C00ED0CA6 /* tab_jewelryCircle@2x.png in Resources */,
 				2ABBCAFF19395A2A00F1A5EB /* JEMyPointsViewController.xib in Resources */,
+				84B94EDF197D583E00E44726 /* password@2x.png in Resources */,
 				C36062601949FB4C00ED0CA6 /* tab_mySettingH@2x.png in Resources */,
 				C3D0057E19056C8700FC4A64 /* JESecondTabbarVC.xib in Resources */,
 				2A17B51C1938EBE70094F749 /* JEMyFollowVC.xib in Resources */,
@@ -1288,15 +1292,16 @@
 				C327130318FC2DA600971956 /* Images.xcassets in Resources */,
 				C3F72D0618FD8A78007FDB69 /* tab_selected.png in Resources */,
 				C3E0589D19168E2C002E2770 /* JEDetailVC.xib in Resources */,
+				8481C4B41976CFAD008F862B /* FELoginRootVC.xib in Resources */,
 				C3D0057C19056C8700FC4A64 /* JEFourthTabbarVC.xib in Resources */,
 				C3938050194A9EFF0068945A /* ShareSDKLocalizable.strings in Resources */,
-				2A9061E11976CEA40099FC91 /* line_dashed.png in Resources */,
 				C30582F6193212C800DE14E5 /* cover.png in Resources */,
 				2A1C708D194DFC14003EE0E2 /* MenuBar.png in Resources */,
 				C31BC344193C6A200045BB42 /* JEDetailVCListTableViewCell.xib in Resources */,
 				2ABBCB0619395C2C00F1A5EB /* dashed@2x.png in Resources */,
 				2ABC72CE193E1BA50080D274 /* JEGoldQuotationVC.xib in Resources */,
 				C30582F7193212C800DE14E5 /* cover@2x.png in Resources */,
+				84B94EDE197D583E00E44726 /* account@2x.png in Resources */,
 				84BBAD8819600E0A00BBBD6F /* login_logo.png in Resources */,
 				C3F72CF418FD8A78007FDB69 /* login_gray_normal.png in Resources */,
 				C30582F319320F6100DE14E5 /* JEShopHomeVC.xib in Resources */,
@@ -1310,7 +1315,6 @@
 				C393805A194A9F000068945A /* RennSDK.bundle in Resources */,
 				C3CDCF3D192E4A24006E1BD8 /* icon_reply.png in Resources */,
 				C3F72CF018FD8A78007FDB69 /* ico_checkbox.png in Resources */,
-				2A9061E21976CEA40099FC91 /* line_dashed@2x.png in Resources */,
 				2A9AFCB8196D990F00B9E710 /* tab_home@2x.png in Resources */,
 				2A17B5281938F66A0094F749 /* JECollectListVC.xib in Resources */,
 				2A17B5231938F2110094F749 /* like@2x.png in Resources */,
@@ -1394,6 +1398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ABBCAFE19395A2A00F1A5EB /* JEMyPointsViewController.m in Sources */,
+				8481C4B51976CFAD008F862B /* FELoginRootVC.m in Sources */,
 				C311C666193217F800BB3660 /* JEShopHomeTableViewCell.m in Sources */,
 				2A17B52B1938F7710094F749 /* JECollectCell.m in Sources */,
 				C3D0057519056C8700FC4A64 /* JEFirstTabbarVC.m in Sources */,
@@ -1412,6 +1417,7 @@
 				2A17B5271938F66A0094F749 /* JECollectListVC.m in Sources */,
 				C3D0057919056C8700FC4A64 /* JERightSidePanelVC.m in Sources */,
 				C3D00592190573A900FC4A64 /* JEHomePageModel.m in Sources */,
+				C3D0058819056CD000FC4A64 /* JEFilterType.m in Sources */,
 				2AD7E531195F0B9200DD70BC /* JEShakeModel.m in Sources */,
 				2AD098901963B13400060FAC /* JEUserInfoModifyModel.m in Sources */,
 				2A17B51F1938EE3E0094F749 /* JEMyFollowCell.m in Sources */,
@@ -1433,11 +1439,9 @@
 				2ABC72D2193E223D0080D274 /* JEGoldQuotationCell.m in Sources */,
 				2AD0988B1962FA9A00060FAC /* JEModifyUserInfoViewController.m in Sources */,
 				C3D0057B19056C8700FC4A64 /* JEFourthTabbarVC.m in Sources */,
-				84B94EDB197D549900E44726 /* JEFilterType.m in Sources */,
 				2ABF1A00193637D600B2BA5E /* JESettingUserInfoCell.m in Sources */,
 				C31BC343193C6A200045BB42 /* JEDetailVCListTableViewCell.m in Sources */,
 				C3D0057719056C8700FC4A64 /* JELeftSidePanelVC.m in Sources */,
-				84BBAD821960049700BBBD6F /* FELogInOrRegisterViewController.m in Sources */,
 				C32712F418FC2DA600971956 /* main.m in Sources */,
 				C3703BDF190EA89900DBE8C8 /* JEHomePageManager.m in Sources */,
 				84BBAD831960049700BBBD6F /* FELogInViewController.m in Sources */,

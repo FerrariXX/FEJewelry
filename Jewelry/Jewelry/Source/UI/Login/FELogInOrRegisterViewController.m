@@ -35,18 +35,20 @@
     return sharedInstance;
 }
 
-- (BOOL)isLogin{
++ (BOOL)isLogin{
     return [[FEAccountManager shareInstance] isLogin];
 }
 
-- (void)showLoginVCWithCompletionBlock:(JEAuthCompletionBlock)block{
++ (void)showLoginVCWithCompletionBlock:(JEAuthCompletionBlock)block{
     FELogInOrRegisterViewController *vc = [[FELogInOrRegisterViewController alloc] init];
     vc.block = block;
+    vc.modalPresentationStyle = UIModalPresentationCurrentContext;
+
     UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:vc];
     [[[[UIApplication sharedApplication] keyWindow] rootViewController] presentModalViewController:naviVC animated:YES];
 }
 
-- (void)dismissLoginVC{
++ (void)dismissLoginVC{
     [[[[UIApplication sharedApplication] keyWindow] rootViewController]  dismissModalViewControllerAnimated:YES];
 }
 
@@ -56,7 +58,7 @@
     if (self) {
         // Custom initialization
 		logImageView_ = [[UIImageView alloc] initWithFrame:CGRectZero];
-		logImageView_.image = [UIImage imageNamed:@"login_logo.png"];
+		//logImageView_.image = [UIImage imageNamed:@"login_logo.png"];
 		logImageView_.contentMode = UIViewContentModeCenter;
 		logTextLabel_ = [[UILabel alloc] initWithFrame:CGRectZero];
 		logTextLabel_.text = NSLocalizedString(@"kLogText", nil);
@@ -104,10 +106,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分类" style:UIBarButtonItemStyleBordered target:self action:@selector(leftBarButtonPressed:)];
+
 	self.title = NSLocalizedString(@"kInitViewTitle", nil); 
-	self.view.frame = [UIScreen mainScreen].bounds;
+	//self.view.frame = [UIScreen mainScreen].bounds;
 	self.view.backgroundColor = [UIColor colorWithRed:214.0/255 green:220.0/255 blue:225.0/255 alpha:1.0];
-	[self.view addSubview:logImageView_];
+	//[self.view addSubview:logImageView_];
 	[self.view addSubview:logTextLabel_];
 	[self.view addSubview:registerButton_];
 	[self.view addSubview:logInButton_];
@@ -151,7 +155,7 @@
 }
 
 - (void)cancelButtonPressed:(id)sender{
-    [self dismissLoginVC];
+    [FELogInOrRegisterViewController dismissLoginVC];
     if (self.block) {
         self.block(NO,nil);
     }

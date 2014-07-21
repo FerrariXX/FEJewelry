@@ -106,7 +106,7 @@
         weakSelf.address     = [jsonDict objectForKey:@"address"];
         weakSelf.phone       = [jsonDict objectForKey:@"servicePhone"];
         NSInteger praiseCount = [[jsonDict objectForKey:@"praiseCount"] integerValue];
-        weakSelf.praiseCount = praiseCount > 0 ?  [NSString stringWithFormat:@"%d", praiseCount] : @"";
+        weakSelf.praiseCount = [NSString stringWithFormat:@"%d", praiseCount];
         weakSelf.price       = [NSString stringWithFormat:@"%.2f", [[jsonDict objectForKey:@"price"] floatValue]];
         NSArray *detailListArray = [jsonDict objectForKey:@"detailListArray"];
         for (NSDictionary * item  in detailListArray) {

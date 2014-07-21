@@ -86,9 +86,10 @@ enum
 		highLightImage = [highLightImage stretchableImageWithLeftCapWidth:10 topCapHeight:10];
 		normalImage_   = [UIImage imageNamed:@"ico_checkbox.png"];
 		selectedImage_ = [UIImage imageNamed:@"ico_choose.png"];
-        [registerNowButton_  setBackgroundImage:norImage   forState:UIControlStateNormal];
-		[registerNowButton_  setBackgroundImage:highLightImage forState:UIControlStateHighlighted];
-		[registerNowButton_  setTitle:NSLocalizedString(@"kRegisterNow", nil) forState:UIControlStateNormal];
+        //[registerNowButton_  setBackgroundImage:norImage   forState:UIControlStateNormal];
+		//[registerNowButton_  setBackgroundImage:highLightImage forState:UIControlStateHighlighted];
+		registerNowButton_.backgroundColor = [UIColor colorWithRed:41/255.0f green:112/255.0f blue:222/255.0f alpha:1.0];
+        [registerNowButton_  setTitle:NSLocalizedString(@"kRegisterNow", nil) forState:UIControlStateNormal];
 				
 		[registerNowButton_ addTarget:self action:@selector(registerNowButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
 	}
@@ -104,7 +105,7 @@ enum
 {
 	[super viewWillAppear:animated];
 	self.navigationController.navigationBarHidden = NO;
-	self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:39.0/255 green:160.0/255 blue:218.0/255 alpha:1.0];
+	//self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:39.0/255 green:160.0/255 blue:218.0/255 alpha:1.0];
 }
 - (void)viewDidLoad
 {

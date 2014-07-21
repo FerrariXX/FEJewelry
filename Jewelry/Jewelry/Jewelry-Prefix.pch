@@ -22,12 +22,12 @@
 #import "FEToastView.h"
 #import "UIImageView+WebCache.h"
 #import "ViewPagerController.h"
-#import "FELogInOrRegisterViewController.h"
 
 #import <AFNetworking/AFNetworking.h>
 #import <UIScrollView+SVInfiniteScrolling.h>
 
 #import <ShareSDK/ShareSDK.h>
 #import "NSString+FEExtension.h"
+#import "FELoginRootVC.h"
 
 #endif

@@ -9,8 +9,8 @@
 #import "FEAccountManager.h"
 
 @interface FELogInOrRegisterViewController : UIViewController
-+ (instancetype)sharedInstance;
-- (BOOL)isLogin;
-- (void)showLoginVCWithCompletionBlock:(JEAuthCompletionBlock)block;
-- (void)dismissLoginVC;
+//+ (instancetype)sharedInstance;
++ (BOOL)isLogin;
++ (void)showLoginVCWithCompletionBlock:(JEAuthCompletionBlock)block;
++ (void)dismissLoginVC;
 @end
