@@ -61,6 +61,7 @@
 		2AE97EE11947F6CB00C973E6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE97EE01947F6CB00C973E6 /* AudioToolbox.framework */; };
 		6B4A0FC8E3F64B148EE1BE36 /* libPods-Jewelry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7BAA831549477B9B0AB83F /* libPods-Jewelry.a */; };
 		847846741966E02C00B960CE /* UIViewController+FETabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 847846731966E02C00B960CE /* UIViewController+FETabbarVC.m */; };
+		84B94EDB197D549900E44726 /* JEFilterType.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B94ED9197D549900E44726 /* JEFilterType.m */; };
 		84BBAD811960049700BBBD6F /* FEAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBAD7A1960049700BBBD6F /* FEAccountManager.m */; };
 		84BBAD821960049700BBBD6F /* FELogInOrRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBAD7C1960049700BBBD6F /* FELogInOrRegisterViewController.m */; };
 		84BBAD831960049700BBBD6F /* FELogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBAD7E1960049700BBBD6F /* FELogInViewController.m */; };
@@ -191,7 +192,6 @@
 		C3D0058119056C8700FC4A64 /* JEThirdTabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D0057219056C8700FC4A64 /* JEThirdTabbarVC.m */; };
 		C3D0058219056C8700FC4A64 /* JEThirdTabbarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D0057319056C8700FC4A64 /* JEThirdTabbarVC.xib */; };
 		C3D0058519056CB400FC4A64 /* JECategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D0058419056CB400FC4A64 /* JECategory.m */; };
-		C3D0058819056CD000FC4A64 /* JEPriceRange.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D0058719056CD000FC4A64 /* JEPriceRange.m */; };
 		C3D0058B1905719E00FC4A64 /* JEHomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D0058A1905719E00FC4A64 /* JEHomePageTableViewCell.m */; };
 		C3D0058F190571FD00FC4A64 /* JEHomePageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D0058E190571FD00FC4A64 /* JEHomePageTableViewCell.xib */; };
 		C3D00592190573A900FC4A64 /* JEHomePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D00591190573A900FC4A64 /* JEHomePageModel.m */; };
@@ -304,6 +304,8 @@
 		4F7BAA831549477B9B0AB83F /* libPods-Jewelry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Jewelry.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		847846721966E02C00B960CE /* UIViewController+FETabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FETabbarVC.h"; sourceTree = "<group>"; };
 		847846731966E02C00B960CE /* UIViewController+FETabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FETabbarVC.m"; sourceTree = "<group>"; };
+		84B94ED9197D549900E44726 /* JEFilterType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEFilterType.m; sourceTree = "<group>"; };
+		84B94EDA197D549900E44726 /* JEFilterType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEFilterType.h; sourceTree = "<group>"; };
 		84BBAD791960049700BBBD6F /* FEAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FEAccountManager.h; sourceTree = "<group>"; };
 		84BBAD7A1960049700BBBD6F /* FEAccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FEAccountManager.m; sourceTree = "<group>"; };
 		84BBAD7B1960049700BBBD6F /* FELogInOrRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FELogInOrRegisterViewController.h; sourceTree = "<group>"; };
@@ -470,8 +472,6 @@
 		C3D0057319056C8700FC4A64 /* JEThirdTabbarVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JEThirdTabbarVC.xib; sourceTree = "<group>"; };
 		C3D0058319056CB400FC4A64 /* JECategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JECategory.h; sourceTree = "<group>"; };
 		C3D0058419056CB400FC4A64 /* JECategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JECategory.m; sourceTree = "<group>"; };
-		C3D0058619056CD000FC4A64 /* JEPriceRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEPriceRange.h; sourceTree = "<group>"; };
-		C3D0058719056CD000FC4A64 /* JEPriceRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEPriceRange.m; sourceTree = "<group>"; };
 		C3D005891905719E00FC4A64 /* JEHomePageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEHomePageTableViewCell.h; sourceTree = "<group>"; };
 		C3D0058A1905719E00FC4A64 /* JEHomePageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEHomePageTableViewCell.m; sourceTree = "<group>"; };
 		C3D0058E190571FD00FC4A64 /* JEHomePageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JEHomePageTableViewCell.xib; sourceTree = "<group>"; };
@@ -1087,8 +1087,8 @@
 				C3BBA8301917E26C00FA9D07 /* JEDetailModel.m */,
 				C3D0058319056CB400FC4A64 /* JECategory.h */,
 				C3D0058419056CB400FC4A64 /* JECategory.m */,
-				C3D0058619056CD000FC4A64 /* JEPriceRange.h */,
-				C3D0058719056CD000FC4A64 /* JEPriceRange.m */,
+				84B94EDA197D549900E44726 /* JEFilterType.h */,
+				84B94ED9197D549900E44726 /* JEFilterType.m */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -1412,7 +1412,6 @@
 				2A17B5271938F66A0094F749 /* JECollectListVC.m in Sources */,
 				C3D0057919056C8700FC4A64 /* JERightSidePanelVC.m in Sources */,
 				C3D00592190573A900FC4A64 /* JEHomePageModel.m in Sources */,
-				C3D0058819056CD000FC4A64 /* JEPriceRange.m in Sources */,
 				2AD7E531195F0B9200DD70BC /* JEShakeModel.m in Sources */,
 				2AD098901963B13400060FAC /* JEUserInfoModifyModel.m in Sources */,
 				2A17B51F1938EE3E0094F749 /* JEMyFollowCell.m in Sources */,
@@ -1434,6 +1433,7 @@
 				2ABC72D2193E223D0080D274 /* JEGoldQuotationCell.m in Sources */,
 				2AD0988B1962FA9A00060FAC /* JEModifyUserInfoViewController.m in Sources */,
 				C3D0057B19056C8700FC4A64 /* JEFourthTabbarVC.m in Sources */,
+				84B94EDB197D549900E44726 /* JEFilterType.m in Sources */,
 				2ABF1A00193637D600B2BA5E /* JESettingUserInfoCell.m in Sources */,
 				C31BC343193C6A200045BB42 /* JEDetailVCListTableViewCell.m in Sources */,
 				C3D0057719056C8700FC4A64 /* JELeftSidePanelVC.m in Sources */,
