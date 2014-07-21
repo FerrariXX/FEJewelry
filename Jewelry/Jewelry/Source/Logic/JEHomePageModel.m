@@ -76,14 +76,14 @@
     return FEObjectAtIndex(self.contentArray,index);
 }
 
-- (void)loadMoreDataWithCategoryID:(NSString*)categroyID completionBlock:(JECompletionBlock)block{
+- (void)loadMoreDataWithCategoryID:(NSString*)categroyID filterArgs:(NSDictionary*)filterDict completionBlock:(JECompletionBlock)block{
     self.pageNumber ++ ;
-    [self loadDataWithCategory:categroyID pageNumber:self.pageNumber completionBlock:block];
+    [self loadDataWithCategory:categroyID pageNumber:self.pageNumber filterArgs:filterDict completionBlock:block];
 }
 
-- (void)loadFirstDataWithCategoryID:(NSString*)categroyID completionBlock:(JECompletionBlock)block{
+- (void)loadFirstDataWithCategoryID:(NSString*)categroyID filterArgs:(NSDictionary*)filterDict completionBlock:(JECompletionBlock)block{
     self.pageNumber = 1;
-    [self loadDataWithCategory:categroyID pageNumber:self.pageNumber completionBlock:block];
+    [self loadDataWithCategory:categroyID pageNumber:self.pageNumber filterArgs:filterDict completionBlock:block];
 }
 
 
@@ -121,14 +121,21 @@
 }
 
 
-- (void)loadDataWithCategory:(NSString*)categroyID pageNumber:(NSInteger)pageNumber  completionBlock:(JECompletionBlock)block{
+- (void)loadDataWithCategory:(NSString*)categroyID pageNumber:(NSInteger)pageNumber  filterArgs:(NSDictionary*)filterDict completionBlock:(JECompletionBlock)block{
 #if DEBUG_FAKE
     if (block) {
         block(YES);
     }
     return;
 #endif
-    NSString *urlStr = [NSString stringWithFormat:@"%@GetStyleByCategory/%@/%d", kBaseURLString,categroyID,pageNumber];
+    NSMutableString *urlStr = [NSMutableString stringWithFormat:@"%@GetStyleByCategory/%@/%d", kBaseURLString,categroyID,pageNumber];
+    if ([filterDict count] >0) {
+        [urlStr appendString:@"?"];
+        for (NSString*key in [filterDict allKeys]) {
+            NSString* value = [filterDict objectForKey:key];
+            [urlStr appendFormat:@"%@=%@",key,[value URLEncodedString]];
+        }
+    }
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:urlStr]];
     request.timeoutInterval = kTimeoutInterval;
     

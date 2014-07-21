@@ -8,12 +8,12 @@
 
 #import "JERightSidePanelVC.h"
 #import "JEHomePageManager.h"
-#import "JEPriceRange.h"
+#import "JEFilterType.h"
 #import "FESidePanelController.h"
 
 
 @interface JERightSidePanelVC ()
-@property(nonatomic, strong)JEPriceRange *priceRange;
+@property(nonatomic, strong)JEFilterType *filterType;
 
 @end
 
@@ -24,7 +24,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        _priceRange = [[JEHomePageManager sharedHomePageManager] jewelryPriceRange];
+        _filterType = [[JEHomePageManager sharedHomePageManager] jewelryFilterType];
     }
     return self;
 }
@@ -42,19 +42,30 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    __weak __typeof(self) weakSelf = self;
+    [self.filterType  loadFilterTypeWithCompletionBlock:^(BOOL isSuccess) {
+        if (isSuccess) {
+            [weakSelf.tableView reloadData];
+        }else {
+            [FEToastView showWithTitle:@"  加载出错，请稍候再试。  " animation:YES interval:2.0];
+        }
+    }];
+}
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return [self.priceRange numberOfSection];
+    return [self.filterType numberOfSection];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.priceRange numberOfRowsInSection:section];
+    return [self.filterType numberOfRowsInSection:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -65,7 +76,7 @@
     if (cell == nil){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 	}
-	cell.textLabel.text = [self.priceRange contentAtIndexPath:indexPath];
+	cell.textLabel.text = [self.filterType contentAtIndexPath:indexPath];
 	cell.accessoryType  = UITableViewCellAccessoryNone;
     return cell;
 }
@@ -76,11 +87,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.priceRange didSelectRowAtIndexPath:indexPath];
-    [self.sidePanelController showCenterPanelAnimated:YES];
-
+    [self.filterType didSelectRowAtIndexPath:indexPath];
+    //[self.sidePanelController showCenterPanelAnimated:YES];
+    [[[[UIApplication sharedApplication] keyWindow] rootViewController] dismissViewControllerAnimated:YES completion:nil];
 }
-
-
 
 @end

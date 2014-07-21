@@ -11,13 +11,14 @@
 #import "JEHomePageModel.h"
 #import "JEHomePageManager.h"
 #import "JECategory.h"
-#import "JEPriceRange.h"
+#import "JEFilterType.h"
 #import "FESidePanelController.h"
 #import "FEToastView.h"
+#import "JERightSidePanelVC.h"
 
 @interface JEFirstTabbarWrapperPageVC ()<FEScrollPageViewControllerDataSource,FEScrollPageViewControllerDelegate>
 @property(nonatomic, readonly)JECategory *jewelryCategory;
-@property(nonatomic, readonly)JEPriceRange *jewelryPriceRange;
+@property(nonatomic, readonly)JEFilterType *jewelryFilterType;
 @property(nonatomic, assign)NSInteger currentTabIndex;
 @property(nonatomic, strong)NSString    *currentPriceRange;
 @property(nonatomic, strong)FEToastView *toastView;
@@ -46,7 +47,7 @@
     
     // Do any additional setup after loading the view.
     //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分类" style:UIBarButtonItemStyleBordered target:self action:@selector(leftBarButtonPressed:)];
-    //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"筛选" style:UIBarButtonItemStyleBordered target:self action:@selector(rightBarButtonPressed:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"筛选" style:UIBarButtonItemStyleBordered target:self action:@selector(rightBarButtonPressed:)];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -62,7 +63,7 @@
                 //首次加载第一个分类的第一页
                 NSString *categoryID = [weakSelf.jewelryCategory categoryIDAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
                 categoryID = [categoryID length] >0 ? categoryID : @"01";
-                [[JEHomePageManager sharedHomePageManager].homePageModel loadFirstDataWithCategoryID:categoryID  completionBlock:^(BOOL isSuccess) {
+                [[JEHomePageManager sharedHomePageManager].homePageModel loadFirstDataWithCategoryID:categoryID filterArgs:self.jewelryFilterType.filterArgs completionBlock:^(BOOL isSuccess) {
                     if (isSuccess) {
                         [weakSelf reloadData];
                         [(JEFirstTabbarVC*)weakSelf.visibleViewController reloadData];
@@ -82,7 +83,7 @@
   //  });
 
     NSInteger index = [self.jewelryCategory currentSelectedIndex];
-    NSString *priceRange = [self.jewelryPriceRange currentSelectedPriceRange];
+    NSString *priceRange = [self.jewelryFilterType currentSelectedFilterType];
     if (self.currentTabIndex != index || [self.currentPriceRange isEqualToString:priceRange]) {
         //[self selectTabAtIndex:index];
         self.currentTabIndex = index;
@@ -113,7 +114,10 @@
 }
 
 - (void)rightBarButtonPressed:(id)sender{
-    [self.sidePanelController showRightPanelAnimated:YES];
+    //[self.sidePanelController showRightPanelAnimated:YES];
+    JERightSidePanelVC* rightVC = [[JERightSidePanelVC alloc] initWithNibName:@"JERightSidePanelVC" bundle:nil];
+    UINavigationController* rightNavi  = [[UINavigationController alloc] initWithRootViewController:rightVC];
+    [[[[UIApplication sharedApplication] keyWindow] rootViewController] presentViewController:rightNavi animated:YES completion:nil];
 }
 
 
@@ -123,15 +127,15 @@
     return  [[JEHomePageManager sharedHomePageManager] jewelryCategory];
 }
 
-- (JEPriceRange *)jewelryPriceRange{
-    return  [[JEHomePageManager sharedHomePageManager] jewelryPriceRange];
+- (JEFilterType *)jewelryFilterType{
+    return  [[JEHomePageManager sharedHomePageManager] jewelryFilterType];
 }
 
 - (void)loadCategoryWithID:(NSString*)categoryID{
     
     [[JEHomePageManager sharedHomePageManager].homePageModel resetData];
     [FEToastView showWithTitle:@"正在加载中..." animation:YES];
-    [[JEHomePageManager sharedHomePageManager].homePageModel loadFirstDataWithCategoryID:categoryID  completionBlock:^(BOOL isSuccess) {
+    [[JEHomePageManager sharedHomePageManager].homePageModel loadFirstDataWithCategoryID:categoryID filterArgs:self.jewelryFilterType.filterArgs completionBlock:^(BOOL isSuccess) {
         if (isSuccess) {
             [(JEFirstTabbarVC*)self.visibleViewController reloadData];
             [FEToastView dismissWithAnimation:YES];

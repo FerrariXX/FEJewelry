@@ -22,8 +22,8 @@
 - (NSInteger)numberOfRowsInSection:(NSInteger)section;
 - (JEHomePageItem*)contentAtIndexPath:(NSInteger)index;
 
-- (void)loadMoreDataWithCategoryID:(NSString*)categroyID completionBlock:(JECompletionBlock)block;
-- (void)loadFirstDataWithCategoryID:(NSString*)categroyID completionBlock:(JECompletionBlock)block;
+- (void)loadMoreDataWithCategoryID:(NSString*)categroyID  filterArgs:(NSDictionary*)filterDict completionBlock:(JECompletionBlock)block;
+- (void)loadFirstDataWithCategoryID:(NSString*)categroyID filterArgs:(NSDictionary*)filterDict completionBlock:(JECompletionBlock)block;
 - (BOOL)isHaveMore;
 //清空数据
 - (void)resetData;

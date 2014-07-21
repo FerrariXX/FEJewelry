@@ -28,5 +28,6 @@
 #import <UIScrollView+SVInfiniteScrolling.h>
 
 #import <ShareSDK/ShareSDK.h>
+#import "NSString+FEExtension.h"
 
 #endif

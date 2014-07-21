@@ -32,6 +32,7 @@
 @property(nonatomic, strong)NSArray*contentArray;
 @property(nonatomic, strong)NSString *currentSelected;
 @property(nonatomic, assign)NSInteger currentIndex;
+@property(nonatomic, assign)BOOL isSuccessLoad;
 
 @end
 
@@ -89,6 +90,13 @@
     }
     return;
 #endif
+    
+    if (self.isSuccessLoad) {
+        if (block) {
+            block(YES);
+        }
+        return;
+    }
     __weak __typeof(self) weakSelf = self;//__typeof(&*self)
     NSString *urlStr = [NSString stringWithFormat:@"%@GetCategory", kBaseURLString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:urlStr]];
@@ -107,6 +115,9 @@
             weakSelf.currentSelected = [[weakSelf.contentArray objectAtIndex:weakSelf.currentIndex] categoryName];
             [[NSUserDefaults standardUserDefaults] setObject:weakSelf.currentSelected forKey:kJECurrentSelectedCategoryKey];
             [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            //set load only one times flag
+            weakSelf.isSuccessLoad = YES;
         }
 
         if (block) {

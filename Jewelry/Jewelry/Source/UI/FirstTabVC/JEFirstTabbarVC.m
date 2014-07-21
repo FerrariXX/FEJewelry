@@ -17,7 +17,7 @@
 #import "UIView+FETouchBlocks.h"
 #import "JEHomePageManager.h"
 #import "JECategory.h"
-#import "JEPriceRange.h"
+#import "JEFilterType.h"
 #import "JEConst.h"
 
 @interface JEFirstTabbarVC ()
@@ -68,7 +68,7 @@
     __weak __typeof(self) weakSelf = self;
     [self.tableView addInfiniteScrollingWithActionHandler:^{
         if ([weakSelf.homePageModel isHaveMore]) {
-            [weakSelf.homePageModel loadMoreDataWithCategoryID:weakSelf.categoryID completionBlock:^(BOOL isSuccess) {
+            [weakSelf.homePageModel loadMoreDataWithCategoryID:weakSelf.categoryID filterArgs:[[JEHomePageManager sharedHomePageManager] jewelryFilterType].filterArgs completionBlock:^(BOOL isSuccess) {
                 [weakSelf.tableView.infiniteScrollingView stopAnimating];
                 if (isSuccess) {
                     [weakSelf.tableView reloadData];

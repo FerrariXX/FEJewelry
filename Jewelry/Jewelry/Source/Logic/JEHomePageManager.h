@@ -10,13 +10,13 @@
 
 @class JEHomePageModel;
 @class JECategory;
-@class JEPriceRange;
+@class JEFilterType;
 
 
 @interface JEHomePageManager : NSObject
 @property(nonatomic, readonly)JEHomePageModel *homePageModel;
 @property(nonatomic, readonly)JECategory      *jewelryCategory;
-@property(nonatomic, readonly)JEPriceRange    *jewelryPriceRange;
+@property(nonatomic, readonly)JEFilterType    *jewelryFilterType;
 
 + (instancetype)sharedHomePageManager;
 @end

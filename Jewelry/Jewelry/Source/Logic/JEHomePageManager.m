@@ -9,12 +9,12 @@
 #import "JEHomePageManager.h"
 #import "JEHomePageModel.h"
 #import "JECategory.h"
-#import "JEPriceRange.h"
+#import "JEFilterType.h"
 
 @interface JEHomePageManager ()
 @property(nonatomic, strong)JEHomePageModel *homePageModel;
 @property(nonatomic, strong)JECategory      *jewelryCategory;
-@property(nonatomic, strong)JEPriceRange    *jewelryPriceRange;
+@property(nonatomic, strong)JEFilterType    *jewelryPriceRange;
 @end
 
 @implementation JEHomePageManager
@@ -42,9 +42,9 @@
     return _jewelryCategory;
 }
 
-- (JEPriceRange *)jewelryPriceRange{
+- (JEFilterType *)jewelryFilterType{
     if (_jewelryPriceRange == nil) {
-        _jewelryPriceRange = [[JEPriceRange alloc] init];
+        _jewelryPriceRange = [[JEFilterType alloc] init];
     }
     return _jewelryPriceRange;
 }
