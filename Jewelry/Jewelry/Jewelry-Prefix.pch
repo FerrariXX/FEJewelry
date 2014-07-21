@@ -31,3 +31,7 @@
 #import "FELoginRootVC.h"
 
 #endif
+
+#ifndef DEBUG
+#define NSLog(...) {}
+#endif
