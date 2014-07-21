@@ -100,9 +100,9 @@
         weakSelf.title      = [jsonDict objectForKey:@"styleName"];
         weakSelf.category   = [jsonDict objectForKey:@"category"];
         weakSelf.idNumber   = [jsonDict objectForKey:@"styleID"];
-        weakSelf.totalWeight    = [NSString stringWithFormat:@"%.2f", [[jsonDict objectForKey:@"totalWeight"] floatValue]];
-        weakSelf.masterWeight   = [NSString stringWithFormat:@"%.2f", [[jsonDict objectForKey:@"masterWeight"] floatValue]];
-        weakSelf.slaveWeight    = [NSString stringWithFormat:@"%.2f", [[jsonDict objectForKey:@"slaveWeight"] floatValue]];
+        weakSelf.totalWeight    = [NSString stringWithFormat:@"%.2f g", [[jsonDict objectForKey:@"totalWeight"] floatValue]];
+        weakSelf.masterWeight   = [NSString stringWithFormat:@"%.2f ct", [[jsonDict objectForKey:@"masterWeight"] floatValue]];
+        weakSelf.slaveWeight    = [NSString stringWithFormat:@"%.2f ct", [[jsonDict objectForKey:@"slaveWeight"] floatValue]];
         weakSelf.address     = [jsonDict objectForKey:@"address"];
         weakSelf.phone       = [jsonDict objectForKey:@"servicePhone"];
         NSInteger praiseCount = [[jsonDict objectForKey:@"praiseCount"] integerValue];
