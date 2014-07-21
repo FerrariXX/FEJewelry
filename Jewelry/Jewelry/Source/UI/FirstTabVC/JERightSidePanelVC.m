@@ -33,6 +33,8 @@
 {
     [super viewDidLoad];
     self.title = @"筛选";
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleBordered target:self action:@selector(leftBarButtonPressed:)];
+
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -89,6 +91,11 @@
 {
     [self.filterType didSelectRowAtIndexPath:indexPath];
     //[self.sidePanelController showCenterPanelAnimated:YES];
+    [[[[UIApplication sharedApplication] keyWindow] rootViewController] dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark -
+- (void)leftBarButtonPressed:(id)sender{
     [[[[UIApplication sharedApplication] keyWindow] rootViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
