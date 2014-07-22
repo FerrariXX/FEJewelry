@@ -8,6 +8,7 @@
 
 #import "FELoginRootVC.h"
 #import "FERegisterViewController.h"
+#import "FETabBarViewController.h"
 
 @interface FELoginRootVC ()
 @property (weak, nonatomic) IBOutlet UITextField *accountTextField;
@@ -81,7 +82,11 @@
 }
 
 - (void)leftBarButtonPressed:(id)sender{
-    [[[[UIApplication sharedApplication] keyWindow] rootViewController] dismissViewControllerAnimated:YES completion:nil];
+    UIViewController *viewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+    [viewController dismissViewControllerAnimated:YES completion:nil];
+    if ([viewController isKindOfClass:[FETabBarViewController class]]) {
+        [((FETabBarViewController*)viewController) setCustomSelectedIndex:0];
+    }
 }
 
 - (IBAction)loginButtonPressed:(id)sender {
