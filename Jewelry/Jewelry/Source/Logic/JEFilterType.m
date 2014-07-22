@@ -67,7 +67,7 @@
 - (void)didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     id obj = FEObjectAtIndex(self.contentArray, indexPath.row);
     if ([obj isKindOfClass:[JETypeItem class]]) {
-        self.currentSelected = [(JETypeItem*)obj typeName];
+        self.currentSelected = [(JETypeItem*)obj typeID];
     }
     else if ([obj isKindOfClass:[NSString class]]){
         self.currentSelected = obj;
@@ -108,7 +108,7 @@
             }
             
             weakSelf.contentArray = [items copy];
-            [weakSelf setCurrentSelected:[items objectAtIndex:0]];
+            [weakSelf setCurrentSelected:((JETypeItem*)[items objectAtIndex:0]).typeID];
         }
         
         if (block) {
@@ -127,11 +127,13 @@
 
 #pragma mark - Private Method
 - (void)baseInit{
+#if DEBUG_FAKE
     self.contentArray = @[@"全部",@"200以下",@"200~500",@"500~2000",@"2000~5000",@"5000~10000",@"10000~50000",@"50000~100000",@"100000~500000"];
     self.currentSelected = [[NSUserDefaults standardUserDefaults] objectForKey:kJECurrentSelectedFilterTypeKey];
     if ([self.currentSelected length] >0) {
         self.currentSelected = @"全部";
     }
+#endif
 }
 
 - (void)setCurrentSelected:(NSString *)currentSelected{

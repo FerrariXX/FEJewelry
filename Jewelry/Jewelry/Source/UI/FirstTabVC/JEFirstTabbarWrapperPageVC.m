@@ -55,7 +55,9 @@
     
    // static dispatch_once_t onceToken;
    // dispatch_once(&onceToken, ^{
-        
+        //清除缓存
+        [[JEHomePageManager sharedHomePageManager].homePageModel resetData];
+    
         [FEToastView showWithTitle:@"正在加载中..." animation:YES];
         __weak __typeof(self) weakSelf = self;
         [self.jewelryCategory loadCategoryWithCompletionBlock:^(BOOL isSuccess) {
