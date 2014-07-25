@@ -113,7 +113,9 @@
     }
     cell.addressLabel.text = item.shopAddress;
     cell.phoneLabel.text   = item.shopPhone;
+    __weak __typeof(self) weakSelf = self;
     [cell.detailScrollImagsView setImageItems:item.shopGoodsURL selectedBlock:^(FEImageItem *sender) {
+        [weakSelf gotoShopHomeWithIndex:index];
     } isAutoPlay:NO];
     cell.detailScrollImagsView.itemWidth = 80.0f;
     return cell;    
@@ -125,12 +127,16 @@
 
 
 #pragma mark - Table view delegate
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self gotoShopHomeWithIndex:indexPath.row];
+}
+
+#pragma mark - Private Method
+- (void)gotoShopHomeWithIndex:(NSInteger)index{
     [self.bannerView stopAutoPlay];
     JEShopHomeVC *vc = [[JEShopHomeVC alloc] initWithNibName:@"JEShopHomeVC" bundle:nil];
-    JEJewelryCircleItem* item = [self.jewelryCircleModel contentAtIndexPath:indexPath.row];
+    JEJewelryCircleItem* item = [self.jewelryCircleModel contentAtIndexPath:index];
     vc.shopID = item.shopID;
     [self.navigationController pushViewController:vc animated:YES];
 }
