@@ -16,6 +16,7 @@
 #import "JERightSidePanelVC.h"
 #import "FESidePanelController.h"
 #import "JEFirstTabbarWrapperPageVC.h"
+#import "JEPostTokenModel.h"
 #import <Crashlytics/Crashlytics.h>
 
 //share
@@ -120,6 +121,10 @@
     [self initializePlat];
     //share========================
 
+    //苹果远程通知注册
+    UIRemoteNotificationType types = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound;
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:types];
+    
     // Override point for customization after application launch.
     [self initTabBarController];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -184,6 +189,34 @@
 
 #pragma mark - Shared
 
+
+- (NSString *)getDeviceTokenFormData:(NSData *)deviceTokenData
+{
+    NSString *deviceToken = [[deviceTokenData description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    deviceToken = [deviceToken stringByReplacingOccurrencesOfString:@" " withString:@""];
+    //    TBSDKFunctionNameLogLine(@"deviceToken = %@", deviceToken);
+    return deviceToken;
+}
+
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken {
+//  http://60.191.108.245:33681/POSTKey
+//    [[TBPushCenterManager sharedManager] uploadDeviceToken:deviceToken];
+//    NSLog(@"%@",[self getDeviceTokenFormData:deviceToken]);
+    JEPostTokenModel *postTokenModel = [[JEPostTokenModel alloc] init];
+    postTokenModel.deviceToken = [self getDeviceTokenFormData:deviceToken];
+    [postTokenModel postDeviceToken];
+}
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error {
+    NSLog(@"didFailToRegisterForRemoteNotificationsWithError %@", [error description]);
+}
+
+// 收到远程通知
+- (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)userInfo {
+    NSLog(@"%@",userInfo);
+    UIAlertView *alertView =[[UIAlertView alloc] initWithTitle:nil message:[userInfo objectForKey:@"aps"] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    [alertView show];
+}
 
 - (void)initializePlat
 {

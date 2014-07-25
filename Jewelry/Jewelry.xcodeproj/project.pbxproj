@@ -28,6 +28,7 @@
 		2A2D98A719508C3300594325 /* JECollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D98A219508C3300594325 /* JECollectionModel.m */; };
 		2A2D98A819508C3300594325 /* JEGoalPriceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D98A419508C3300594325 /* JEGoalPriceModel.m */; };
 		2A2D98A919508C3300594325 /* JEMyPointsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2D98A619508C3300594325 /* JEMyPointsModel.m */; };
+		2A47B1D8198296B40066711F /* JEPostTokenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A47B1D7198296B40066711F /* JEPostTokenModel.m */; };
 		2A5EB8CD195C6392007BA142 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A5EB8CC195C6392007BA142 /* Crashlytics.framework */; };
 		2A6817C21959CE0500E3838B /* JEUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6817C11959CE0500E3838B /* JEUserInfoModel.m */; };
 		2A9AFCB6196D990F00B9E710 /* tab_mySetting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A9AFCB2196D990F00B9E710 /* tab_mySetting@2x.png */; };
@@ -261,6 +262,8 @@
 		2A2D98A419508C3300594325 /* JEGoalPriceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEGoalPriceModel.m; sourceTree = "<group>"; };
 		2A2D98A519508C3300594325 /* JEMyPointsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEMyPointsModel.h; sourceTree = "<group>"; };
 		2A2D98A619508C3300594325 /* JEMyPointsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEMyPointsModel.m; sourceTree = "<group>"; };
+		2A47B1D6198296B40066711F /* JEPostTokenModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEPostTokenModel.h; sourceTree = "<group>"; };
+		2A47B1D7198296B40066711F /* JEPostTokenModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEPostTokenModel.m; sourceTree = "<group>"; };
 		2A5EB8CC195C6392007BA142 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		2A6817C01959CE0500E3838B /* JEUserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JEUserInfoModel.h; sourceTree = "<group>"; };
 		2A6817C11959CE0500E3838B /* JEUserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JEUserInfoModel.m; sourceTree = "<group>"; };
@@ -625,6 +628,8 @@
 		2A2D98A019508B2C00594325 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2A47B1D6198296B40066711F /* JEPostTokenModel.h */,
+				2A47B1D7198296B40066711F /* JEPostTokenModel.m */,
 				2AD0988E1963B13400060FAC /* JEUserInfoModifyModel.h */,
 				2AD0988F1963B13400060FAC /* JEUserInfoModifyModel.m */,
 				2AD7E532195F167200DD70BC /* JEAboutMeModel.h */,
@@ -1414,6 +1419,7 @@
 				2A6817C21959CE0500E3838B /* JEUserInfoModel.m in Sources */,
 				2A1C7089194DFC14003EE0E2 /* JEDiamondListCell.m in Sources */,
 				C30582F219320F6100DE14E5 /* JEShopHomeVC.m in Sources */,
+				2A47B1D8198296B40066711F /* JEPostTokenModel.m in Sources */,
 				2AE97ED81947F37D00C973E6 /* JEShakeVC.m in Sources */,
 				2A17B5271938F66A0094F749 /* JECollectListVC.m in Sources */,
 				C3D0057919056C8700FC4A64 /* JERightSidePanelVC.m in Sources */,
