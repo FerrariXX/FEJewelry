@@ -58,7 +58,12 @@
             [weakSelf.bannerView setImageItems:weakSelf.jewelryCircleModel.bannerImages selectedBlock:^(FEImageItem *sender) {
                 //do nothing here
                 if ([sender.imageURL length] >0) {
-                    JEWebViewController *webVC = [[JEWebViewController alloc] initWithURL:sender.imageURL];
+                    NSString *url = sender.imageURL;
+                    if ([sender.imageURL hasSuffix:@"png"]) {
+                        url = [[sender.imageURL substringToIndex:[sender.imageURL length]-3] stringByAppendingString:@"html"];
+                        NSLog(@"url=%@",url);
+                    }
+                    JEWebViewController *webVC = [[JEWebViewController alloc] initWithURL:url];
                     [weakSelf.navigationController pushViewController:webVC animated:YES];
                 }
             } isAutoPlay:YES];
