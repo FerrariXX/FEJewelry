@@ -17,4 +17,6 @@
 - (NSString*)currentSelectedFilterType;
 - (NSDictionary*)filterArgs;
 - (void)loadFilterTypeWithCompletionBlock:(JECompletionBlock)block;
+
+- (void)setFilterType:(NSInteger)filterType;
 @end

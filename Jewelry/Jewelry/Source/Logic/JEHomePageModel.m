@@ -133,7 +133,10 @@
         [urlStr appendString:@"?"];
         for (NSString*key in [filterDict allKeys]) {
             NSString* value = [filterDict objectForKey:key];
-            [urlStr appendFormat:@"%@=%@",key,[value URLEncodedString]];
+            [urlStr appendFormat:@"%@=%@&",key,[value URLEncodedString]];
+        }
+        if ([urlStr hasSuffix:@"&"]) {
+            urlStr = [NSMutableString stringWithString:[urlStr substringToIndex:urlStr.length-1]];
         }
     }
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:urlStr]];

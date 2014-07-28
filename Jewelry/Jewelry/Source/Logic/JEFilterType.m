@@ -33,6 +33,10 @@
 @interface JEFilterType()
 @property(nonatomic, strong)NSString *currentSelected;
 @property(nonatomic, strong)NSArray  *contentArray;
+@property(nonatomic, strong)NSArray  *priceRangeArray;
+@property(nonatomic, strong)NSArray  *typeArray;
+@property(nonatomic, assign)NSInteger filterType;
+
 @end
 
 @implementation JEFilterType
@@ -79,9 +83,19 @@
 }
 
 - (NSDictionary*)filterArgs{
-    if (self.currentSelected) {
-        return @{@"typeID": self.currentSelected};
+    if (self.filterType == 0) {
+        if (self.currentSelected) {
+            return @{@"typeID": self.currentSelected};
+        }
+    }else {
+        NSInteger index = [self.priceRangeArray indexOfObject:self.currentSelected];
+        if (index == 1) {
+            return @{@"startPrice":@"0",@"endPrice":@"2000"};
+        }else if (index >1){
+            return @{@"startPrice":[[self.currentSelected componentsSeparatedByString:@"~"] objectAtIndex:0],@"endPrice":[[self.currentSelected componentsSeparatedByString:@"~"] objectAtIndex:1]};
+        }
     }
+    
     return nil;
 }
 
@@ -107,7 +121,8 @@
                 [items addObject:cateItem];
             }
             
-            weakSelf.contentArray = [items copy];
+            weakSelf.typeArray = [items copy];
+            weakSelf.contentArray = self.filterType == 0 ? self.typeArray : self.priceRangeArray;
             [weakSelf setCurrentSelected:((JETypeItem*)[items objectAtIndex:0]).typeID];
         }
         
@@ -124,11 +139,18 @@
 }
 
 
+- (void)setFilterType:(NSInteger)filterType{
+    if (_filterType != filterType ) {
+        _filterType = filterType;
+        self.contentArray = self.filterType == 0 ? self.typeArray : self.priceRangeArray;
+    }
+}
 
 #pragma mark - Private Method
 - (void)baseInit{
+    self.priceRangeArray = @[@"全部",@"2000以下",@"2000~5000",@"5000~10000",@"10000~50000",@"50000~100000",@"100000~500000"];
 #if DEBUG_FAKE
-    self.contentArray = @[@"全部",@"200以下",@"200~500",@"500~2000",@"2000~5000",@"5000~10000",@"10000~50000",@"50000~100000",@"100000~500000"];
+    self.contentArray = @[@"全部",@"2000以下",@"2000~5000",@"5000~10000",@"10000~50000",@"50000~100000",@"100000~500000"];
     self.currentSelected = [[NSUserDefaults standardUserDefaults] objectForKey:kJECurrentSelectedFilterTypeKey];
     if ([self.currentSelected length] >0) {
         self.currentSelected = @"全部";

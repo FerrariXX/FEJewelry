@@ -14,6 +14,8 @@
 
 @interface JERightSidePanelVC ()
 @property(nonatomic, strong)JEFilterType *filterType;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+- (IBAction)segmentedControlPressed:(id)sender;
 
 @end
 
@@ -34,7 +36,7 @@
     [super viewDidLoad];
     self.title = @"筛选";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleBordered target:self action:@selector(leftBarButtonPressed:)];
-
+    [self.filterType setFilterType:0];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -97,6 +99,11 @@
 #pragma mark -
 - (void)leftBarButtonPressed:(id)sender{
     [[[[UIApplication sharedApplication] keyWindow] rootViewController] dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)segmentedControlPressed:(id)sender {
+    [self.filterType setFilterType:self.segmentedControl.selectedSegmentIndex];
+    [self.tableView reloadData];
 }
 
 @end
